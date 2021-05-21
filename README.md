@@ -4,7 +4,7 @@ This repository is a collection of coding projects for my middle school coding c
 
 ## Inspiration
 
-I recently stumble across the excellent [Teaching Python Podcast](https://www.teachingpython.fm/). I highly recommend it.
+I recently stumbled across the excellent [Teaching Python Podcast](https://www.teachingpython.fm/). I highly recommend it.
 
 Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U) that speaks to the creative side of coding. I plan to incorporate a bunch of ideas from this talk in my coding class.
 
