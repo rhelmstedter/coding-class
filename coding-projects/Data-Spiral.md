@@ -1,0 +1,10 @@
+# Data Spiral
+
+This is the first project I will start with next year. With the help of the maker space teacher on campus I laser engraved a sign with the source code and a QR code. Students can scan the QR code and start coding on their phones. 
+
+![Door Sign]()
+
+This is super accessible ever for students who have zero coding experience.
+Code is available on Trinket for anyone to remix. 
+
+[DATA Spiral Source Code](https://trinket.io/python/a39f53d869)
