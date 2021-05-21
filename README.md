@@ -7,11 +7,11 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 
 | Talk               | Project                                             |
 |--------------------|-----------------------------------------------------|
-| Logo               | [DATA Spiral](coding-projects/Data-Spiral)          |
+| Logo               | [DATA Spiral](coding-projects/Data-Spiral.md)       |
 | Game of life       | Game of life                                        |
 | Image Manipulation | [Meme Generator](coding-projects/meme_generator.md) |
 | Obfuscated Code    | ??? But sounds awesome                              |
 | Weird Languages    | Compare language syntax                             |
 | Machine Learning   | Machine learning 4 kids                             |
-| Music              | [Earsketch](coding-projects/Earscketch)             |
+| Music              | [Earsketch](coding-projects/Earscketch.md)          |
 
