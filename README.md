@@ -8,15 +8,15 @@ I recently stumbled across the excellent [Teaching Python Podcast](https://www.t
 
 Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U) that speaks to the creative side of coding. I plan to incorporate a bunch of ideas from this talk in my coding class.
 
-| Talk               | Project                                             |
-|--------------------|-----------------------------------------------------|
-| Logo               | [DATA Spiral](coding-projects/Data-Spiral.md)       |
-| Game of life       | Game of life                                        |
-| Image Manipulation | [Meme Generator](coding-projects/meme_generator.md) |
-| Obfuscated Code    | ??? But sounds awesome                              |
-| Weird Languages    | Compare language syntax                             |
-| Machine Learning   | Machine learning 4 kids                             |
-| Music              | [Earsketch](coding-projects/Earscketch.md)          |
+| Talk               | Project                                                        |
+|--------------------|----------------------------------------------------------------|
+| Logo               | [DATA Spiral](coding-projects/Data-Spiral.md)                  |
+| Game of life       | Game of life                                                   |
+| Image Manipulation | [Meme Generator](coding-projects/meme_generator.md)            |
+| Obfuscated Code    | ??? But sounds awesome                                         |
+| Weird Languages    | Compare language syntax                                        |
+| Machine Learning   | [Machine Learning 4 Kids](coding-projects/machine-learning.md) |
+| Music              | [Earsketch](coding-projects/Earscketch.md)                     |
 
 ## Coding Practice
 
