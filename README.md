@@ -11,12 +11,16 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 | Talk               | Project                                                        |
 |--------------------|----------------------------------------------------------------|
 | Logo               | [DATA Spiral](coding-projects/Data-Spiral.md)                  |
-| Game of life       | Game of life                                                   |
+| Game of life       | Game of life?                                                  |
 | Image Manipulation | [Meme Generator](coding-projects/meme_generator.md)            |
 | Obfuscated Code    | ??? But sounds awesome                                         |
 | Weird Languages    | Compare language syntax                                        |
 | Machine Learning   | [Machine Learning 4 Kids](coding-projects/machine-learning.md) |
 | Music              | [Earsketch](coding-projects/Earscketch.md)                     |
+
+## Other Projects
+
+- [Countdown Timer](coding-projects/countdown-timer.md)
 
 ## Coding Practice
 
