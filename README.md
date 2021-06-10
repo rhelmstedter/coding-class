@@ -21,6 +21,7 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 ## Other Projects
 
 - [Countdown Timer](coding-projects/countdown-timer.md)
+- [Rock Paper Scissors](coding-projects/rock-paper-scissors.md)
 
 ## Coding Practice
 
