@@ -17,7 +17,11 @@ class Player:
         self.wins = wins
 
 
-# parses the csv for possible actions and possible victories
+class EvenNumberException(Exception):
+    pass
+
+
+# parses the csv for possible actions and victories
 victories = defaultdict(list)
 with open("data/battle-table.csv", "r") as csvfile:
     headers = csv.DictReader(csvfile).fieldnames
@@ -37,8 +41,7 @@ def main():
     name = input("Enter your name: ")
     player1 = Player(name)
     player2 = Player("Computer")
-    BEST_OF_NUM = 3
-    print(f"Welcome {player1.name}. Let's play best of {BEST_OF_NUM} rounds.")
+    BEST_OF_NUM = best_of(player1)
     game_loop(player1, player2, BEST_OF_NUM)
     get_final_score(player1, player2, BEST_OF_NUM)
 
@@ -47,6 +50,22 @@ def print_header():
     print("=" * 30)
     print("  15-way Rock Paper Scissors")
     print("=" * 30)
+
+def best_of(player1):
+    print(f"Welcome {player1.name}!\n")
+    while True:
+        try:
+            best_of_num = int(input("Enter an odd number of rounds to play:"))
+            if best_of_num % 2 == 0:
+                raise EvenNumberException
+            print(f"OK {player1.name}, let's play best of {best_of_num} rounds. Good Luck!\n")
+            break
+        except ValueError:
+            print("You did not enter an number.\n")
+        except EvenNumberException:
+            print("You entered an even number which means the match could end in a tie.\n")
+            
+    return best_of_num
 
 
 def game_loop(player1, player2, BEST_OF_NUM):
@@ -58,7 +77,7 @@ def game_loop(player1, player2, BEST_OF_NUM):
             print(f"Invalid selection. Enter a value in range {range_str}")
             continue
 
-        print(f"You choose {p1_turn.action}")
+        print(f"You chose {p1_turn.action}")
         print("The computer is thinking.")
         time.sleep(0.5)
         print("1...")
@@ -68,7 +87,7 @@ def game_loop(player1, player2, BEST_OF_NUM):
         print("3...")
         time.sleep(0.25)
         p2_turn = get_computers_selection()
-        print(f"The Computer choose {p2_turn.action}")
+        print(f"The Computer chose {p2_turn.action}")
         determine_winner(p1_turn, p2_turn, player1, player2, victories)
         get_score(player1, player2)
         input("Press ENTER to move to the next round.")
@@ -109,7 +128,7 @@ def get_final_score(player1, player2, BEST_OF_NUM):
     print(f"\n{player1.name} won {player1.wins} times.")
     print(f"{player2.name} won {player2.wins} times.", end="\n\n")
     if player1.wins == BEST_OF_NUM - 1:
-        print("You won the match! Thanks for playing!")
+        print(f"You won the match! Thanks for playing!")
     if player2.wins == BEST_OF_NUM - 1:
         print("The Computer won the math! Better luck next time.")
 
