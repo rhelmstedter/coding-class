@@ -23,7 +23,7 @@ class EvenNumberException(Exception):
 
 # parses the csv for possible actions and victories
 victories = defaultdict(list)
-with open("data/battle-table.csv", "r") as csvfile:
+with open("battle-table.csv", "r") as csvfile:
     headers = csv.DictReader(csvfile).fieldnames
     actions = [
         Action(action, value) for value, action in enumerate(headers) if value > 0
@@ -51,6 +51,7 @@ def print_header():
     print("  15-way Rock Paper Scissors")
     print("=" * 30)
 
+
 def best_of(player1):
     print(f"Welcome {player1.name}!\n")
     while True:
@@ -64,30 +65,15 @@ def best_of(player1):
             print("You did not enter an number.\n")
         except EvenNumberException:
             print("You entered an even number which means the match could end in a tie.\n")
-            
     return best_of_num
 
 
 def game_loop(player1, player2, BEST_OF_NUM):
     while max([player1.wins, player2.wins]) < BEST_OF_NUM - 1:
-        try:
-            p1_turn = get_user_selection()
-        except ValueError:
-            range_str = f"[1, {len(actions)}]"
-            print(f"Invalid selection. Enter a value in range {range_str}")
-            continue
-
-        print(f"You chose {p1_turn.action}")
-        print("The computer is thinking.")
-        time.sleep(0.5)
-        print("1...")
-        time.sleep(0.25)
-        print("2...")
-        time.sleep(0.25)
-        print("3...")
-        time.sleep(0.25)
+        p1_turn = get_user_selection()
+        print(f"You chose {p1_turn.action}.")
         p2_turn = get_computers_selection()
-        print(f"The Computer chose {p2_turn.action}")
+        print(f"The Computer chose {p2_turn.action}.")
         determine_winner(p1_turn, p2_turn, player1, player2, victories)
         get_score(player1, player2)
         input("Press ENTER to move to the next round.")
@@ -98,12 +84,27 @@ def game_loop(player1, player2, BEST_OF_NUM):
 def get_user_selection():
     choices = [f"[{action.value}] {action.action}" for action in actions]
     choices_str = "\n".join(choices)
-    selection = int(input(f"\nChoose your move:\n\n{choices_str}\n"))
-    action = actions[selection - 1]
+    while True:
+        try:
+            selection = int(input(f"\nChoose your move:\n\n{choices_str}\n"))
+            action = actions[selection - 1]
+            break
+        except ValueError:
+            print("You did not enter a number.")
+        except IndexError:
+            print(f"You entered a number outside of the range [1, {len(choices)}].")
     return action
 
 
 def get_computers_selection():
+    print("The computer is thinking.")
+    time.sleep(0.5)
+    print("1...")
+    time.sleep(0.25)
+    print("2...")
+    time.sleep(0.25)
+    print("3...")
+    time.sleep(0.25)
     return random.choice([action for action in actions])
 
 
