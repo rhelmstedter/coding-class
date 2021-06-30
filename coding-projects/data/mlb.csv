@@ -1,0 +1,31 @@
+location,team,league,division,abbreviation,primary_color,secondary_color
+Chicago,White Sox,AL,Central,chw,#27251F,#C4CED4
+Detroit,Tigers,AL,Central,det,#0C2340,#FA4616
+Kansas,City Royals,AL,Central,kc,#004687,#BD9B60
+Minnesota,Twins,AL,Central,min,#002B5C,#D31145
+Cleveland,Indians,AL,Central,cle,#0C2340,#E31937
+Baltimore,Orioles,AL,East,bal,#DF4601,#000000
+Boston,Red Sox,AL,East,bos,#BD3039,#0C2340
+New York,Yankees,AL,East,nyy,#003087,#003087
+Tampa,Bay Rays,AL,East,tb,#092C5C,#8FBCE6
+Toronto,Blue Jays,AL,East,tor,#134A8E,#1D2D5C
+Houston,Astros,AL,West,hou,#002D62,#EB6E1F
+Los Angeles,Angels,AL,West,laa,#BA0021,#003263
+Oakland,Athletics,AL,West,oak,#003831,#EFB21E
+Seattle,Mariners,AL,West,sea,#0C2C56,#005C5C
+Texas,Rangers,AL,West,tex,#003278,#C0111F
+Chicago,Cubs,NL,Central,chc,#0E3386,#CC3433
+Cincinnati,Reds,NL,Central,cin,#C6011F,#000000
+Milwaukee,Brewers,NL,Central,mil,#FFC52F,#12284B
+Pittsburgh,Pirates,NL,Central,pit,#27251F,#FDB827
+St. Louis,Cardinals,NL,Central,stl,#C41E3A,#0C2340
+Atlanta,Braves,NL,East,atl,#CE1141,#13274F
+Miami,Marlins,NL,East,mia,#00A3E0,#EF3340
+New York,Mets,NL,East,nym,#002D72,#FF5910
+Philadelphia,Phillies,NL,East,phi,#E81828,#002D72
+Washington,Nationals,NL,East,wsh,#AB0003,#14225A
+Arizona,Diamondbacks,NL,West,ari,#A71930,#E3D4AD
+Colorado,Rockies,NL,West,col,#33006F,#C4CED4
+Los Angeles,Dodgers,NL,West,lad,#005A9C,#EF3E42
+San Diego,Padres,NL,West,sd,#2F241D,#FFC425
+San Francisco,Giants,NL,West,sf,#FD5A1E,#27251F

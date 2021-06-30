@@ -23,7 +23,7 @@ class EvenNumberException(Exception):
 
 # parses the csv for possible actions and victories
 victories = defaultdict(list)
-with open("battle-table.csv", "r") as csvfile:
+with open("data/battle-table.csv", "r") as csvfile:
     headers = csv.DictReader(csvfile).fieldnames
     actions = [
         Action(action, value) for value, action in enumerate(headers) if value > 0
