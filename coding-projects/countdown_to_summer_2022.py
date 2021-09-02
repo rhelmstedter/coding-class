@@ -41,7 +41,7 @@ HOLIDAYS_2021 = [date(2021, 9, 6),
 
 def countdown():
     event_delta = LAST_DAY_OF_SCHOOL - datetime.now()
-    print("\tTime until school is out for summer 2021:", end="\n\n")
+    print("\tTime until school is out for summer 2022:", end="\n\n")
     while (event_delta.days + event_delta.seconds) > 0:
         hours, remaining_delta = divmod(event_delta.seconds, 3600)
         mins, secs = divmod(remaining_delta, 60)
