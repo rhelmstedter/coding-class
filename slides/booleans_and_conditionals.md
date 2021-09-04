@@ -30,7 +30,7 @@ editor:
 </style>
 
 # Python
-## Datetime Module
+## Boolean Values and Conditionals
 
 Coding 2021-2022
 
@@ -38,6 +38,58 @@ Mr. Helmstedter
 
 ---
 
-## Booleans
+## Boolean Values
 
-Basically a fancy name for values that can be true or false
+
+Python uses capital letters for `True` and `False`
+
+---
+
+### Conditionals 
+
+| Operator | Definition               |
+|:--------:|:-------------------------|
+|    ==    | equal                    |
+|    !=    | not equal                |
+|     >    | greater than             |
+|     <    | less than                |
+|    >=    | greater than or equal to |
+|    <=    | less than or equal to    |
+|    is    | object identity          |
+
+---
+
+### if, elif, andelse statements
+
+```python
+if <conditional>:
+	"do something if conditional is" True
+elif <another-conditional>:
+	"do something if the other conditional is" True
+else:
+	"do something if all the conditionals were" False
+```
+
+---
+
+### building complex statements
+
+Python offers keywords for working with booleans and conditionals
+
+```python
+and
+or
+not
+```
+
+---
+
+### False Values
+
+- False
+- None
+- Zero of any numeric type
+- Any empty squence
+- Any empty mapping
+
+---
