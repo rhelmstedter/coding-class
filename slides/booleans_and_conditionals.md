@@ -38,49 +38,6 @@ Mr. Helmstedter
 
 ---
 
-# What is a module?
+## Booleans
 
-Modules are libraries of code that other people have written so you can write less code.
-
----
-
-## [The Python Standard Library](https://docs.python.org/3/library/)
-
----
-
-### Some Common Examples
-
-- datetime
-- time
-- collections
-- random
-- math
-- os
-- turtle
-
----
-
-### Datetime Objects
-
-```python
->>> from datetime import date, time, datetime
-
->>> date(year=2021, month=9, day=3)
-datetime.date(2021, 9, 3)
-
->>> time(hour=13, minute=14, second=31)
-datetime.time(13, 14, 31)
-
->>> datetime(year=2021, month=9, day=3, hour=13, minute=14, second=31)
-datetime.datetime(2021, 9, 3, 13, 14, 31)
-```
-
----
-
-### Datetime Methods
-
-1. date.today() creates a datetime.date instance with the current local date.
-2. datetime.now() creates a datetime.datetime instance with the current local date and time.
-3. datetime.combine() combines instances of datetime.date and datetime.time into a single datetime.datetime instance.
-
----
+Basically a fancy name for values that can be true or false
