@@ -26,7 +26,7 @@ editor:
 .reveal th { color: #ECBE7B; font-family: 'Source Code Pro';}
 .reveal tr { color: #51afef; font-family: 'Source Code Pro'; font-size: 90%; }
 .reveal .controls { color: #0a97b0; }
-.reveal .progress { color: #1b6ca8; }
+.reveal .progress { color: #ff6c6b; }
 </style>
 
 # Python
