@@ -23,6 +23,7 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 - [Countdown Timer](coding-projects/countdown-timer.md)
 - [Rock Paper Scissors](coding-projects/rock-paper-scissors.md)
 - [Text Analysis](coding-projects/text-analysis.md)
+- [Zigzag](coding-projects/zigzag.md)
 
 ## Coding Practice
 
