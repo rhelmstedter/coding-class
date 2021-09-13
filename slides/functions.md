@@ -9,7 +9,7 @@ hideAddressBar: true
 # Editor settings
 editor:
     fontSize: 14
-    theme: gruvbox
+    theme: github
     keybinding: vim
     
 ---
@@ -34,14 +34,14 @@ Mr. Helmstedter
   .reveal th { color: #ECBE7B; font-family: 'Source Code Pro';}
   .reveal tr { color: #51afef; font-family: 'Source Code Pro'; font-size: 90%; }
   .reveal .controls { color: #0a97b0; }
-  .reveal .progress { color: #ff cab; }
+  .reveal .progress { color: #ff6c6b; }
   .reveal strong, .reveal b { font-weight: bold; }
   .reveal em { font-style: italic; }
 </style>
 
 ---
 
-### Example Function
+## Example Function
 
 ```python
 def function_name(arguments):
@@ -50,7 +50,8 @@ def function_name(arguments):
 ```
 
 ---
-<!-- markdownlint-disable-next-line -->
+
+code:
 <pre>
   <code data-line-numbers="1|2|5" class='language-python'>def say_hello(name):
       print(f"Hello, {name}! Have a great day.")
@@ -79,6 +80,16 @@ print()
 input()
 ```
 
+---
+
+## Methods
+
+Methods are functions that you can use on objects using dot notation.
+
+---
+
+### Familiar Methods
+
 ```python
 import random
 random.randint()
@@ -86,6 +97,7 @@ random.randint()
 
 ---
 
-# Methods
+### String Methods
 
-Methods are functions that you can use on objects using dot notation.
+- [All String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [replit example](https://replit.com/@MrHelmstedter/string-methods)
