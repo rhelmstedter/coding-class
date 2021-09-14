@@ -11,7 +11,7 @@ editor:
     fontSize: 14
     theme: github
     keybinding: vim
-    
+
 ---
 
 # Python
