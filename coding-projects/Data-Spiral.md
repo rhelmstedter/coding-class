@@ -7,4 +7,5 @@ This is the first project I will start with next year. With the help of the make
 This is super accessible ever for students who have zero coding experience.
 Code is available on Trinket for anyone to remix. 
 
-[DATA Spiral Source Code](https://trinket.io/python/a39f53d869)
+- [DATA Spiral Source Code](https://trinket.io/python/a39f53d869)
+- [data_spiral.py](./data_spiral.py)

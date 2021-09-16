@@ -14,4 +14,4 @@ Here is the sample space for 15 way rock paper scissors.
 ![rps15](rps15.jpg)
 
 - [Sample Python Code](rps_classes.py)
-- [15 way Sample Space](battle-table.csv)
+- [15 way Sample Space as .csv file](battle-table.csv)
