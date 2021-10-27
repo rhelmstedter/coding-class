@@ -1,4 +1,3 @@
-
 import random
 
 NUM_DIGITS = 3
@@ -8,7 +7,8 @@ MAX_GUESSES = 10
 def main():
     """Stores the logic for the game loop."""
     # Print the Instructions outside the main game loop.
-    print(f"""Instructions:\n
+    print(
+        f"""Instructions:\n
 I am thinking of a {NUM_DIGITS}-digit number with no repeated digits.
 Try to guess what it is. Here are some clues:\n
 When I say:    That means:
@@ -17,7 +17,8 @@ When I say:    That means:
   Bagels       No digit is correct.
 
 For example, if the secret number was 248 and your guess was 843, the
-clues would be Fermi Pico.""")
+clues would be Fermi Pico."""
+    )
     pass
 
 
@@ -38,5 +39,5 @@ def get_clues(guess, secret_num):
 
 
 # If the program is run (instead of imported), run the game:
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

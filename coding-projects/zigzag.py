@@ -1,5 +1,6 @@
-!# python3
-import time, sys
+#! python3
+
+import time
 from colorama import Fore, Back
 
 

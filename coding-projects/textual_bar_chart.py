@@ -20,7 +20,3 @@ print("=" * total_width, end="\n\n")
 
 for label, data in class_size.items():
     print(f"[#98be65]{label}[/#98be65]: [#51afef]{marker*(data)}[/#51afef]")
-
-
-
-

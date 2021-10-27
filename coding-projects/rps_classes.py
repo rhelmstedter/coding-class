@@ -59,12 +59,16 @@ def best_of(player1):
             best_of_num = int(input("Enter an odd number of rounds to play:"))
             if best_of_num % 2 == 0:
                 raise EvenNumberException
-            print(f"OK {player1.name}, let's play best of {best_of_num} rounds. Good Luck!\n")
+            print(
+                f"OK {player1.name}, let's play best of {best_of_num} rounds. Good Luck!\n"
+            )
             break
         except ValueError:
             print("You did not enter an number.\n")
         except EvenNumberException:
-            print("You entered an even number which means the match could end in a tie.\n")
+            print(
+                "You entered an even number which means the match could end in a tie.\n"
+            )
     return best_of_num
 
 

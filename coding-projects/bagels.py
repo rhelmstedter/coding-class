@@ -3,10 +3,12 @@ import random
 NUM_DIGITS = 3
 MAX_GUESSES = 3
 
+
 def main():
     """Stores the logic of the game loop."""
     # Print the instructions outside the game loop.
-    print(f"""Instructions:\n
+    print(
+        f"""Instructions:\n
 I am thinking of a {NUM_DIGITS}-digit number with no repeated digits.
 Try to guess what it is. I will give you clues about your guess:
 When I say:    That means:
@@ -15,7 +17,8 @@ When I say:    That means:
   Bagels       No digit is correct.
 
 For example, if the secret number was 248 and your guess was 843, the
-clues would be Fermi Pico.\n""")
+clues would be Fermi Pico.\n"""
+    )
 
     while True:  # Main game loop.
         # Create secret number
@@ -59,6 +62,7 @@ def generate_secret_num():
         secret_num += str(numbers[digit])
     return secret_num
 
+
 def get_guess():
     while True:
         guess = input("> ")
@@ -68,6 +72,7 @@ def get_guess():
         else:
             break
     return guess
+
 
 def get_clues(guess, secret_num):
     """Returns a string with the pico, fermi, bagels clues for a guess
