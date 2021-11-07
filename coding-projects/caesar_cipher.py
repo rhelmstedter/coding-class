@@ -1,4 +1,4 @@
-SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 def main():
@@ -7,12 +7,11 @@ def main():
 
     # Let the user enter the message to encrypt/decrypt:
     print(f"Enter the message to {mode}.")
-    message = input("> ")
-    # Caesar cipher only works on uppercase letters:
-    message = message.upper()
-    translated = translate(mode, key, message)
+    message = input("> ").upper()
+    translated = translate_message(mode, key, message)
 
     # Display the encrypted/decrypted string to the screen:
+    print(f"{mode.title()}ed message:")
     print(translated)
 
 
@@ -33,31 +32,31 @@ def get_mode():
 def get_key():
     # Let the user enter the key to use:
     while True:  # Keep asking until the user enters a valid key.
-        max_key = len(SYMBOLS) - 1
+        max_key = len(LETTERS) - 1
         print(f"Please enter the key (0 to {max_key}) to use.")
         response = input("> ").upper()
         if not response.isdecimal():
             continue
-        if 0 <= int(response) < len(SYMBOLS):
+        if 0 <= int(response) < len(LETTERS):
             key = int(response)
             break
     return key
 
 
-def translate(mode, key, message):
+def translate_message(mode, key, message):
     # Stores the encrypted/decrypted form of the message:
     translated = ""
     # Encrypt/decrypt each symbol in the message:
     for symbol in message:
-        if symbol in SYMBOLS:
+        if symbol in LETTERS:
             # Get the encrypted (or decrypted) number for this symbol.
-            num = SYMBOLS.find(symbol)  # Get the number of the symbol.
+            num = LETTERS.find(symbol)  # Get the number of the symbol.
             if mode == "encrypt":
-                num = (num + key) % len(SYMBOLS)
+                num = (num + key) % len(LETTERS)
             elif mode == "decrypt":
-                num = (num - key) % len(SYMBOLS)
+                num = (num - key) % len(LETTERS)
             # Add encrypted/decrypted number's symbol to translated:
-            translated += SYMBOLS[num]
+            translated += LETTERS[num]
         else:
             # Just add the symbol without encrypting/decrypting:
             translated += symbol

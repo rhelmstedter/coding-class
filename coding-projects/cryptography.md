@@ -4,7 +4,7 @@ This project is going to contain multiple parts. Why I first learned of these ci
 
 ## Caesar Cipher
 
-The Caesar cipher was updated to use the python `if __main__` idiom. Hopefully this will help studets get more comfotable with it.
+The Caesar cipher was updated to use the python `if __name__ == "__main__"` idiom. Hopefully this will help students get more comfortable with it. It also provides opportunity for students to see the similarities between the Caesar cipher and the Vigenère cipher. When refactored in this manner we can reuse the `main()` and `get_mode()` functions.
 
 - [caesar_cipher.py](./caesar_cipher.py)
 - [caesar_cipher_template.py](./caesar_cipher_template.py)
@@ -15,5 +15,5 @@ The Caesar cipher was updated to use the python `if __main__` idiom. Hopefully t
 
 ## Vigenère Cipher
 
-- [vigenre.py](./vigenere.py)
-- [vigenre_template.py](./vigenere_template.py)
+- [vigenere.py](./vigenere.py)
+- [vigenere_template.py](./vigenere_template.py)
