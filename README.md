@@ -1,4 +1,4 @@
-# Coding
+[#](#.md) Coding
 
 This repository is a collection of coding projects for my middle school coding classes. The 2021-2022 school year will be my second year teaching coding. As I gain more experience coding I plan to piece together various coding projects aimed at beginners. Since my students are all on Chromebooks, all projects will use either [trinket.io](https://trinket.io), [replit](https://replit.com/), or [Google Colabortory (Colab)](https://youtu.be/xoo4mTujM1U).
 
@@ -26,6 +26,7 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 - [Zigzag](coding-projects/zigzag.md)
 - [Textual Bar Charts](coding-projects/textual_bar_charts.md)
 - [Bagels](coding-projects/bagels.md)
+- [Cryptography](coding-projects/cryptography.md)
 
 
 ## Coding Practice
