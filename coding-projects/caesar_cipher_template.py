@@ -13,7 +13,7 @@ def get_key():
     ...
 
 
-def translate():
+def translate_message():
     ...
 
 
