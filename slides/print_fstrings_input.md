@@ -65,7 +65,7 @@ Mr. Helmstedter
 name = "Mr. Helmstedter"
 age = 35
 
-print("My name is " + name + " and I am " + age + " years old.")
+print("My name is " + name + " and I am " + str(age) + " years old.")
 ```
 
 Output:
@@ -97,7 +97,7 @@ My name is Mr. Helmstedter and I am 35 years old.
 
 string concatenation
 ```python
-print("My name is " + name + " and I am " + age + " years old.")
+print("My name is " + name + " and I am " + str(age) + " years old.")
 ```
 
 <br> 

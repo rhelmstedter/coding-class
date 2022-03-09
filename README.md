@@ -27,6 +27,7 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 - [Textual Bar Charts](coding-projects/textual_bar_charts.md)
 - [Bagels](coding-projects/bagels.md)
 - [Cryptography](coding-projects/cryptography.md)
+- [NASA Image Fetcher](coding-projects/nasa_image_fetcher.md)
 
 
 ## Coding Practice
