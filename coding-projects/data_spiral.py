@@ -1,10 +1,10 @@
 #!python3
 
-###########################################
-# Try changing the number of sides or the
-# distance on lines 12 and 13. Replace the
-# color on line 16 and see what happens.
-###########################################
+############################################
+# Try changing the number of sides or the  #
+# distance on lines 12 and 13. Replace the #
+# color on line 16 and see what happens.   #
+############################################
 
 import turtle
 

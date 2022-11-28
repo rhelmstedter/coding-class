@@ -29,7 +29,12 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 - [Cryptography](coding-projects/cryptography.md)
 - [NASA Image Fetcher](coding-projects/nasa_image_fetcher.md)
 - [QR Code Generator](coding-projects/qr_code_generator.md)
+- [~Lunar~Mars Landing](./coding-projects/lunar_landing.md)
 
+
+## Code Reading Exercises
+
+In her book _The Programmer's Brain_, Felienne Hermans speaks about the importance of reading code. I want to put together a series of code snippets that students can practice reading and determining the output. (Perhaps these can be sorted into categories?)
 
 ## Coding Practice
 
