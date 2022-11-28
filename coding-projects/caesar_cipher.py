@@ -2,21 +2,17 @@ LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 def main():
+    """Main function that handles logic of the program."""
     mode = get_mode()
     key = get_key()
-
-    # Let the user enter the message to encrypt/decrypt:
-    print(f"Enter the message to {mode}.")
-    message = input("> ").upper()
-    translated = translate_message(mode, key, message)
-
-    # Display the encrypted/decrypted string to the screen:
-    print(f"{mode.title()}ed message:")
-    print(translated)
+    message = get_message(mode)
+    translated_message = translate_message(mode, key, message)
+    print_message(mode, translated_message)
 
 
 def get_mode():
-    while True:  # Keep asking until the user enters e or d.
+    """Get the mode from the user."""
+    while True:
         print("Do you want to (e)ncrypt or (d)ecrypt?")
         response = input("> ").lower()
         if response.startswith("e"):
@@ -30,8 +26,8 @@ def get_mode():
 
 
 def get_key():
-    # Let the user enter the key to use:
-    while True:  # Keep asking until the user enters a valid key.
+    """Get the key number from the user."""
+    while True:
         max_key = len(LETTERS) - 1
         print(f"Please enter the key (0 to {max_key}) to use.")
         response = input("> ").upper()
@@ -43,24 +39,33 @@ def get_key():
     return key
 
 
+def get_message(mode):
+    """Get the message from the user."""
+    print(f"Enter the message to {mode}.")
+    message = input("> ").upper()
+    return message
+
+
 def translate_message(mode, key, message):
-    # Stores the encrypted/decrypted form of the message:
+    """Translate the message based on the mode (encrypt/decrypt) and key."""
     translated = ""
-    # Encrypt/decrypt each symbol in the message:
     for symbol in message:
         if symbol in LETTERS:
-            # Get the encrypted (or decrypted) number for this symbol.
-            num = LETTERS.find(symbol)  # Get the number of the symbol.
+            num = LETTERS.find(symbol)
             if mode == "encrypt":
                 num = (num + key) % len(LETTERS)
             elif mode == "decrypt":
                 num = (num - key) % len(LETTERS)
-            # Add encrypted/decrypted number's symbol to translated:
             translated += LETTERS[num]
         else:
-            # Just add the symbol without encrypting/decrypting:
             translated += symbol
     return translated
+
+
+def print_message(mode, translated_message):
+    """Print the mode and translated message."""
+    print(f"{mode.title()}ed message:")
+    print(translated_message)
 
 
 if __name__ == "__main__":
