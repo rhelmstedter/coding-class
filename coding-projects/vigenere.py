@@ -1,3 +1,5 @@
+"""This module is a simple vigenere cipher"""
+
 from string import ascii_uppercase
 
 LETTERS = ascii_uppercase
@@ -53,10 +55,11 @@ def translate_message(mode: str, key: str, message: str) -> str:
     for symbol in message:
         num = LETTERS.find(symbol)
         if num != -1:
+            shift = key[key_index]
             if mode == "encrypt":
-                num += LETTERS.find(key[key_index])
+                num += LETTERS.find(shift)
             elif mode == "decrypt":
-                num -= LETTERS.find(key[key_index])
+                num -= LETTERS.find(shift)
             translated.append(LETTERS[num % len(LETTERS)])
             key_index = (key_index + 1) % len(key)
         else:
