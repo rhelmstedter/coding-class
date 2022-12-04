@@ -1,21 +1,20 @@
-# Every possible symbol that can be encrypted/decrypted:
-LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+from string import ascii_uppercase
+
+LETTERS = ascii_uppercase
 
 
-def main():
+def main() -> None:
+    """Handles the main logic of the vigenere cipher."""
     mode = get_mode()
     key = get_key()
-
-    # Let the user specify the message to encrypt/decrypt:
-    print(f"Enter the message to {mode}.")
-    message = input("> ").upper()
-    translated = translate_message(message, key, mode)
-    print(f"{mode.title()}ed message:")
-    print(translated)
+    message = get_message(mode)
+    translated_message = translate_message(mode, key, message)
+    print_message(mode, translated_message)
 
 
-def get_mode():
-    while True:  # Keep asking until the user enters e or d.
+def get_mode() -> str:
+    """Get the mode from the user."""
+    while True:
         print("Do you want to (e)ncrypt or (d)ecrypt?")
         response = input("> ").lower()
         if response.startswith("e"):
@@ -28,9 +27,9 @@ def get_mode():
     return mode
 
 
-def get_key():
-    # Let the user specify the key to use:
-    while True:  # Keep asking until the user enters a valid key.
+def get_key() -> str:
+    """Get the key from the user."""
+    while True:
         print("Please specify the key to use.")
         print("It can be a word or any combination of letters:")
         response = input("> ").upper()
@@ -40,35 +39,36 @@ def get_key():
     return key
 
 
-def translate_message(message, key, mode):
+def get_message(mode: str) -> str:
+    """Get the message from the user."""
+    print(f"Enter the message to {mode}.")
+    message = input("> ").upper()
+    return message
+
+
+def translate_message(mode: str, key: str, message: str) -> str:
     """Encrypt or decrypt the message using the key."""
-    translated = []  # Stores the encrypted/decrypted message string.
-    keyIndex = 0
-    key = key.upper()
-    for symbol in message:  # Loop through each character in message.
-        num = LETTERS.find(symbol.upper())
-        if num != -1:  # -1 means symbol.upper() was not in LETTERS.
+    translated = []
+    key_index = 0
+    for symbol in message:
+        num = LETTERS.find(symbol)
+        if num != -1:
             if mode == "encrypt":
-                # Add if encrypting:
-                num += LETTERS.find(key[keyIndex])
+                num += LETTERS.find(key[key_index])
             elif mode == "decrypt":
-                # Subtract if decrypting:
-                num -= LETTERS.find(key[keyIndex])
-            num %= len(LETTERS)  # Handle the potential wrap-around.
-            # Add the encrypted/decrypted symbol to translated.
-            if symbol.isupper():
-                translated.append(LETTERS[num])
-            elif symbol.islower():
-                translated.append(LETTERS[num].lower())
-            keyIndex += 1  # Move to the next letter in the key.
-            if keyIndex == len(key):
-                keyIndex = 0
+                num -= LETTERS.find(key[key_index])
+            translated.append(LETTERS[num % len(LETTERS)])
+            key_index = (key_index + 1) % len(key)
         else:
-            # Just add the symbol without encrypting/decrypting:
             translated.append(symbol)
     return "".join(translated)
 
 
-# If this program was run (instead of imported), run the program:
+def print_message(mode: str, translated_message: str) -> None:
+    """Print the mode and translated message."""
+    print(f"{mode.title()}ed message:")
+    print(translated_message)
+
+
 if __name__ == "__main__":
     main()
