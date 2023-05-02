@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+import datetime
 from io import BytesIO
 from pathlib import Path
 
@@ -11,7 +11,8 @@ from rich.status import Status
 API_KEY = os.environ["NASA_API"]
 API_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 IMAGE_DIR = Path() / "images"
-FIRST_DATE = datetime(1995, 6, 16)
+FIRST_DATE = datetime.date(1995, 6, 16)
+DATE_FORMAT = "%Y-%m-%d"
 
 
 def fetch_image(date):
@@ -46,12 +47,12 @@ def get_date():
             "Enter a date in the form YYYY-MM-DD or just press enter for today:\n> "
         )
         if not date:
-            return datetime.now().strftime("%Y-%m-%d")
+            return datetime.now().strftime(DATE_FORMAT)
 
         year, month, day = date.split("-")
 
         try:
-            entered_date = datetime(int(year), int(month), int(day))
+            entered_date = datetime.strptime(date, DATE_FORMAT)
         except ValueError:
             print("Please enter a valid date.")
         if entered_date < FIRST_DATE:

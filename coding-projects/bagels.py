@@ -1,11 +1,13 @@
+"""A Python Version of Bagels."""
 import random
+
 
 NUM_DIGITS = 3
 MAX_GUESSES = 3
 
 
 def main():
-    """Stores the logic of the game loop."""
+    """Store the logic of the game loop."""
     # Print the instructions outside the game loop.
     print(
         f"""Instructions:\n
@@ -51,8 +53,8 @@ clues would be Fermi Pico.\n"""
     print("Thanks for playing!")
 
 
-def generate_secret_num():
-    """Returns a string made up of NUM_DIGITS unique random digits."""
+def generate_secret_num() -> str:
+    """Return a string made up of NUM_DIGITS unique random digits."""
     numbers = list("0123456789")  # Create a list of digits 0 to 9.
     random.shuffle(numbers)  # Shuffle them into random order.
 
@@ -63,7 +65,8 @@ def generate_secret_num():
     return secret_num
 
 
-def get_guess():
+def get_guess() -> str:
+    """Get the clue from the user."""
     while True:
         guess = input("> ")
         if len(guess) != NUM_DIGITS or not guess.isdecimal():
@@ -74,14 +77,11 @@ def get_guess():
     return guess
 
 
-def get_clues(guess, secret_num):
-    """Returns a string with the pico, fermi, bagels clues for a guess
-    and secret number pair."""
+def get_clues(guess, secret_num) -> str:
+    """Calculate the clues."""
     if guess == secret_num:
         return "You got it!"
-
     clues = []
-
     for digit in range(len(guess)):
         if guess[digit] == secret_num[digit]:
             # A correct digit is in the correct place.
