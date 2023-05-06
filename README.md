@@ -30,6 +30,8 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 - [NASA Image Fetcher](coding-projects/nasa_image_fetcher.md)
 - [QR Code Generator](coding-projects/qr_code_generator.md)
 - [~Lunar~Mars Landing](./coding-projects/lunar_landing.md)
+- [Requests](./requests.md)
+- [Counters](./counters.md)
 
 
 ## Code Reading Exercises
