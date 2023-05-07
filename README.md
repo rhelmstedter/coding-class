@@ -20,6 +20,7 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 
 ## Other Projects
 
+- [Intro to datetime](./intro_to_datetime.md)
 - [Countdown Timer](coding-projects/countdown-timer.md)
 - [Rock Paper Scissors](coding-projects/rock-paper-scissors.md)
 - [Text Analysis](coding-projects/text-analysis.md)
@@ -30,8 +31,10 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 - [NASA Image Fetcher](coding-projects/nasa_image_fetcher.md)
 - [QR Code Generator](coding-projects/qr_code_generator.md)
 - [~Lunar~Mars Landing](./coding-projects/lunar_landing.md)
-- [Requests](./requests.md)
-- [Counters](./counters.md)
+- [Requests](./coding-projects/requests.md)
+- [Counters](./coding-projects/counters.md)
+- [Mean Absolute Deviation](./coding-projects/mean_absolute_deviation.md)
+- [Vocab Upgrader](./coding-projects/vocab_upgrader.md)
 
 
 ## Code Reading Exercises
@@ -47,3 +50,6 @@ The websites below offer ~~short~~ interesting coding challenges for a range of 
 - [picoCTF](https://picoctf.org/):: Not specific to coding. This is a capture the flag competition aimed at improving general computer hacking skills. Free
 - [Project Euler](https://projecteuler.net/):: Language agnostic. Math centric problems designed to be solved with code. Free.
 
+# Non-coding Assignments
+
+- [Song Analysis](./song_analysis.md)
