@@ -35,7 +35,7 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 - [Counters](./coding-projects/counters.md)
 - [Mean Absolute Deviation](./coding-projects/mean_absolute_deviation.md)
 - [Vocab Upgrader](./coding-projects/vocab_upgrader.md)
-
+- [Spirolateral Doodles](./coding-projects/spirolateral_doodles.md)
 
 ## Code Reading Exercises
 
@@ -52,4 +52,4 @@ The websites below offer ~~short~~ interesting coding challenges for a range of 
 
 # Non-coding Assignments
 
-- [Song Analysis](./song_analysis.md)
+- [Song Analysis](./coding-projects/song_analysis.md)
