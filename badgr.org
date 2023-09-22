@@ -1,0 +1,45 @@
+#+title: Badgr
+
+* Badges
+** Newbie Bites
+*** Description
+This badge shows that you have finished all 25 of the Newbie Bites.
+*** Earning Criteria
+Finish all 25 of the Newbie Bites.
+*** Criteria URL
+https://codechalleng.es/bites/newbie
+** Intro Bites
+*** Description
+This badge shows that you have finished the Intro Bites from Pybites.
+*** Earning Criteria
+Finish all 10 of the Intro Bites.
+*** Criteria URL
+https://codechalleng.es/bites/intro
+** TODO Regular Bites
+*** Description
+*** Earning Criteria
+*** Criteria URL
+** TODO Basic Python Skill Badge
+*** Description
+*** Earning Criteria
+Demonstrate knowledge of each of the following items:
++ Create and Print an Object
++ input
++ f-strings
++ strings formatting
++ if/elif/else
++ imports
++ comments
+*** Criteria URL
+** TODO Data Structures
+*** Description
+*** Earning Criteria
++ lists
++ dictionaries
+*** Criteria URL
+** TODO Python Loops Badge
+*** Description
+*** Earning Criteria
++ while loops
++ for loops
+*** Criteria URL
