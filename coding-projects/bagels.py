@@ -59,10 +59,7 @@ def generate_secret_num() -> str:
     random.shuffle(numbers)  # Shuffle them into random order.
 
     # Get the first NUM_DIGITS digits in the list for the secret number:
-    secret_num = ""
-    for digit in range(NUM_DIGITS):
-        secret_num += str(numbers[digit])
-    return secret_num
+    return "".join(numbers[:3])
 
 
 def get_guess() -> str:
@@ -82,11 +79,11 @@ def get_clues(guess, secret_num) -> str:
     if guess == secret_num:
         return "You got it!"
     clues = []
-    for digit in range(len(guess)):
-        if guess[digit] == secret_num[digit]:
+    for guess_digit, secret_digit in zip(guess, secret_num):
+        if guess_digit == secret_digit:
             # A correct digit is in the correct place.
             clues.append("Fermi")
-        elif guess[digit] in secret_num:
+        elif guess_digit in secret_num:
             # A correct digit is in the incorrect place.
             clues.append("Pico")
     if len(clues) == 0:
