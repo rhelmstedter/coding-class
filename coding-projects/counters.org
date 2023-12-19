@@ -1,4 +1,4 @@
-# Counter Challenge
+#+title: Counter Challenge
 
 <p>Your task is to fork the <a class="inline_disabled" href="https://firewalledreplit.com/@MrHelmstedter/US-States-Challenge#main.py" target="_blank" rel="noopener">US States Challenge Replit</a> and complete the <code>count_states_per_letter</code> function. You can confirm your solution works by going to the shell and typing pytest. If your code is correct, the tests will pass and turn green.</p>
 <p>Resources:</p>

@@ -1,1 +1,5 @@
 #+title: Zigzag
+This script originally came from [[automatetheboringstuff.com][automatetheboringstuff.com]] by [[https://alsweigart.com][Al Sweigart]]. Some students found the [[https://pypi.org/project/colorama/][colorama]] module so we are going to use this script to explore how to change colors in the terminal output and modify the print function.
+
+- [[file:zigzag.py][zigzag.py]]
+-

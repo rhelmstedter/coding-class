@@ -1,8 +1,8 @@
-# Textual Bar Charts
+#+title: Textual Bar Charts
 
-At the end of episode 75 of the [Teaching Python Podcast](https://www.teachingpython.fm/75), [Sean](https://twitter.com/@smtibor) mentions that he saw someone say they used dictionaries to create these textual bar charts. I have also been seeing a lot about the [rich](https://rich.readthedocs.io/en/latest/index.html) module for python written by [Will McGuan](https://twitter.com/willmcgugan). I thought it would be a cool little project to combine these two ideas. 
+At the end of episode 75 of the [[https://www.teachingpython.fm/75][Teaching Python Podcast]], [[https://twitter.com/@smtibor][Sean]] mentions that he saw someone say they used dictionaries to create these textual bar charts. I have also been seeing a lot about the [[https://rich.readthedocs.io/en/latest/index.html][rich]] module for python written by [[https://twitter.com/willmcgugan][Will McGuan]]. I thought it would be a cool little project to combine these two ideas.
 
 I created a little script that charts my class sizes by period. The whole script can be written in less than 10 lines of code. Just run `pip install rich` and you should be good to go.
 
-- .py file: [textual_bar_chart.py](textual_bar_chart.py)
-- replit: [textual_bar_chart](https://replit.com/@MrHelmstedter/textualbarchart)
+- .py file: [[file:textual_bar_chart.py][textual_bar_chart.py]]
+- replit: [[https://replit.com/@MrHelmstedter/textualbarchart][textual_bar_chart]]

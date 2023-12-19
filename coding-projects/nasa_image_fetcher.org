@@ -1,6 +1,6 @@
 # NASA Image Fetcher
 
-This idea is originally from [BugBytes](https://www.youtube.com/watch?v=rXAo8zaXQJY&list=PL-2EBeDYMIbSIvtqLVYCxW7XX14vN6_yc&index=1). I stumbled across this when I was learning how [typer](https://typer.tiangolo.com/) works.
+This idea is originally from [[https://www.youtube.com/watch?v=rXAo8zaXQJY&list=PL-2EBeDYMIbSIvtqLVYCxW7XX14vN6_yc&index=1][BugBytes]]. I stumbled across this when I was learning how [[https://typer.tiangolo.com/][typer]] works.
 
 I just started a variation of this project with 6th, 7th, and 8th graders. They loved it. I omitted the typer portion for two reasons:
 
@@ -11,7 +11,6 @@ Instead, we used user input to get a date. Then we used the datetime module to v
 
 ## Sample Code
 
-- [Replit Template](https://replit.com/@MrHelmstedter/NASA-APOD-template)
-- [Replit Complete](https://replit.com/@MrHelmstedter/NASA-APOD-Period-1#main.py)
-- [local version](./nasa_image_fetcher.py)
-
+- [[https://replit.com/@MrHelmstedter/NASA-APOD-template][Replit Template]]
+- [[https://replit.com/@MrHelmstedter/NASA-APOD-Period-1#main.py][Replit Complete]]
+- [[file:nasa_image_fetcher.py][local version]]

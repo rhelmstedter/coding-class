@@ -1,4 +1,4 @@
-# Data Spiral
+#+title: Data Spiral
 
 This is the first project I will start with next year. With the help of the maker space teacher on campus I laser engraved a sign with the source code and a QR code. Students can scan the QR code and start coding on their phones. 
 

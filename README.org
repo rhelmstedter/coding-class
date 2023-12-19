@@ -30,7 +30,7 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 - [[file:coding-projects/cryptography.org][Cryptography]]
 - [[file:./coding-projects/nasa_image_fetcher.org][NASA Image Fetcher]]
 - [[file:./coding-projects/qr_code_generator.org][QR Code Generator]]
-- [[file:coding-projects/lunar_landing.org][~Lunar~Mars Landing]]
+- [[file:coding-projects/lunar_landing.org][+Lunar+Mars Landing]]
 - [[file:coding-projects/requests.org][Requests]]
 - [[file:././coding-projects/counters.org][Counters]]
 - [[file:././coding-projects/mean_absolute_deviation.org][Mean Absolute Deviation]]
@@ -43,7 +43,7 @@ In her book _The Programmer's Brain_, Felienne Hermans speaks about the importan
 
 ## Coding Practice
 
-The websites below offer ~~short~~ interesting coding challenges for a range of abilities.
+The websites below offer +short+ interesting coding challenges for a range of abilities.
 
 - [[https://pybit.es/][Pybites]]:: Python specific. Great for new coders and really nicely organized. Paid.
 - [[https://www.codewars.com/][Codewars]]:: Language Agnostic. Slick interface, but can be difficult to find accessible challenges if students are brand new to coding. Free.

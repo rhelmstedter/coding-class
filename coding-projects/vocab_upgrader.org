@@ -1,6 +1,6 @@
-# Vocab Upgrader
+#+title: Vocab Upgrader
 
-## Canvas Assignment
+* Canvas Assignment
 
 <p>Your task is to submit both of your replits. One has a two word template and the second has a three word template.</p>
 <p>iframe Template:</p>

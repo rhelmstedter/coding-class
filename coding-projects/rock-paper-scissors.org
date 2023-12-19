@@ -1,4 +1,4 @@
-# Rock Paper Scissors
+#+title: Rock Paper Scissors
 
 The classic game has only three moves with a relatively simple sample space.
 
@@ -13,5 +13,5 @@ This is already a great place to start for beginner coders. But with just a few 
 Here is the sample space for 15 way rock paper scissors.
 ![rps15](rps15.jpg)
 
-- [Sample Python Code](rps_classes.py)
-- [15 way Sample Space as .csv file](battle-table.csv)
+- [[rps_classes.py][Sample Python Code]]
+- [[battle-table.csv][15 way Sample Space as .csv file]]

@@ -1,5 +1,3 @@
-# Spiralateral Doodles
+#+title: Spiralateral Doodles
 
-[Spiralaterals, complexity from simpilicity](./spirolaterals_paper.pdf)
-
-
+[[./spirolaterals_paper.pdf][Spiralaterals, complexity from simpilicity]]
