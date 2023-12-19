@@ -1,8 +1,8 @@
-# Coding
+#+TITLE: Coding Class
 
 This repository is a collection of coding projects for my middle school coding classes. The 2021-2022 school year will be my second year teaching coding. As I gain more experience coding I plan to piece together various coding projects aimed at beginners. Since my students are all on Chromebooks, all projects will use either [[https://trinket.io][trinket.io]], [[https://replit.com][replit]], or [[https://youtu.be/xoo4mTujM1U][Google Colabortory Colab (Colab)]].
 
-## Inspiration
+** Inspiration
 
 I recently stumbled across the excellent [[https://www.teachingpython.fm/][Teaching Python Podcast]]. I highly recommend it.
 
@@ -18,7 +18,7 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 | Machine Learning   | [[file:./coding-projects/machine-learning.org][Machine Learning 4 Kids]] |
 | Music              | [[file:./coding-projects/Earscketch.org][Earsketch]]               |
 
-## Other Projects
+** Other Projects
 
 - [[file:coding-projects/intro_to_datetime.org][Intro to datetime]]
 - [[file:coding-projects/countdown-timer.org][Countdown Timer]]
@@ -37,11 +37,11 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 - [[file:././coding-projects/vocab_upgrader.org][Vocab Upgrader]]
 - [[file:coding-projects/spirolateral_doodles.org][Spirolateral Doodles]]
 
-## Code Reading Exercises
+** Code Reading Exercises
 
 In her book _The Programmer's Brain_, Felienne Hermans speaks about the importance of reading code. I want to put together a series of code snippets that students can practice reading and determining the output. (Perhaps these can be sorted into categories?)
 
-## Coding Practice
+** Coding Practice
 
 The websites below offer +short+ interesting coding challenges for a range of abilities.
 
@@ -50,6 +50,6 @@ The websites below offer +short+ interesting coding challenges for a range of ab
 - [[https://picoctf.org/][picoCTF]]:: Not specific to coding. This is a capture the flag competition aimed at improving general computer hacking skills. Free
 - [[https://projecteuler.net/][Project Euler]]:: Language agnostic. Math centric problems designed to be solved with code. Free.
 
-# Non-coding Assignments
+** Non-coding Assignments
 
 - [[file:coding-projects/song_analysis.org][Song Analysis]]
