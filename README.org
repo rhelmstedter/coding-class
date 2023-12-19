@@ -1,6 +1,6 @@
 # Coding
 
-This repository is a collection of coding projects for my middle school coding classes. The 2021-2022 school year will be my second year teaching coding. As I gain more experience coding I plan to piece together various coding projects aimed at beginners. Since my students are all on Chromebooks, all projects will use either [[https://trinket.io][trinket.io]], [replit](https://replit.com/), or [Google Colabortory (Colab)](https://youtu.be/xoo4mTujM1U).
+This repository is a collection of coding projects for my middle school coding classes. The 2021-2022 school year will be my second year teaching coding. As I gain more experience coding I plan to piece together various coding projects aimed at beginners. Since my students are all on Chromebooks, all projects will use either [[https://trinket.io][trinket.io]], [[https://replit.com][replit]], or [Google Colabortory (Colab)](https://youtu.be/xoo4mTujM1U).
 
 ## Inspiration
 
@@ -20,8 +20,8 @@ Dylan Beattie has an amazing talk [The Art of Code](https://youtu.be/6avJHaC3C2U
 
 ## Other Projects
 
-- [Intro to datetime](coding-projects/intro_to_datetime.md)
-- [Countdown Timer](coding-projects/countdown-timer.md)
+- [[[file:coding-projects/intro_to_datetime.md][Intro to datetime]]](coding-projects/intro_to_datetime.md)
+- [[[file:coding-projects/countdown-timer.md][Countdown Timer]]](coding-projects/countdown-timer.md)
 - [Rock Paper Scissors](coding-projects/rock-paper-scissors.md)
 - [Text Analysis](coding-projects/text-analysis.md)
 - [Zigzag](coding-projects/zigzag.md)
