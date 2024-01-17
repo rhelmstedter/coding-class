@@ -13,8 +13,7 @@ def main():
 def get_mode():
     """Get the mode from the user."""
     while True:
-        print("Do you want to (e)ncrypt or (d)ecrypt?")
-        response = input("> ").lower()
+        response = input("Do you want to (e)ncrypt or (d)ecrypt?\n> ").lower()
         if response.startswith("e"):
             mode = "encrypt"
             break
@@ -51,12 +50,12 @@ def translate_message(mode, key, message):
     translated = ""
     for symbol in message:
         if symbol in LETTERS:
-            num = LETTERS.find(symbol)
+            idx = LETTERS.find(symbol)
             if mode == "encrypt":
-                num = (num + key) % len(LETTERS)
+                new_idx = (idx + key) % len(LETTERS)
             elif mode == "decrypt":
-                num = (num - key) % len(LETTERS)
-            translated += LETTERS[num]
+                new_idx = (idx - key) % len(LETTERS)
+            translated += LETTERS[new_idx]
         else:
             translated += symbol
     return translated

@@ -1,6 +1,7 @@
 """This module is a simple vigenere cipher"""
 
 from string import ascii_uppercase
+from itertools import cycle
 
 LETTERS = ascii_uppercase
 
@@ -51,19 +52,18 @@ def get_message(mode: str) -> str:
 def translate_message(mode: str, key: str, message: str) -> str:
     """Encrypt or decrypt the message using the key."""
     translated = []
-    key_index = 0
-    for symbol in message:
-        num = LETTERS.find(symbol)
-        if num != -1:
-            shift = key[key_index]
+    key_char = cycle(key)
+    for char in message:
+        if char in LETTERS:
+            idx = LETTERS.find(char)
+            shift = LETTERS.find(next(key_char))
             if mode == "encrypt":
-                num += LETTERS.find(shift)
+                new_idx = (idx + shift) % len(LETTERS)
             elif mode == "decrypt":
-                num -= LETTERS.find(shift)
-            translated.append(LETTERS[num % len(LETTERS)])
-            key_index = (key_index + 1) % len(key)
+                new_idx = (idx - shift) % len(LETTERS)
+            translated.append(LETTERS[new_idx])
         else:
-            translated.append(symbol)
+            translated.append(char)
     return "".join(translated)
 
 
