@@ -36,6 +36,7 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 - [[file:././coding-projects/mean_absolute_deviation.org][Mean Absolute Deviation]]
 - [[file:././coding-projects/vocab_upgrader.org][Vocab Upgrader]]
 - [[file:coding-projects/spirolateral_doodles.org][Spirolateral Doodles]]
+- Exercises
 
 ** Code Reading Exercises
 

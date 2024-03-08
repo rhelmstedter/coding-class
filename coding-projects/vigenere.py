@@ -1,4 +1,4 @@
-"""This module is a simple vigenere cipher"""
+"""This module is a simple vigenere cipher."""
 
 from string import ascii_uppercase
 from itertools import cycle
@@ -7,7 +7,7 @@ LETTERS = ascii_uppercase
 
 
 def main() -> None:
-    """Handles the main logic of the vigenere cipher."""
+    """Handle the main logic of the vigenere cipher."""
     mode = get_mode()
     key = get_key()
     message = get_message(mode)
