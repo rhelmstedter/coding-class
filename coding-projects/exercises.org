@@ -1,5 +1,6 @@
 #+title: Exercises
 #+date: <2024-03-08 Fri>
+#+exports: code
 
 * 100 Exercises For Practicing Python
 ** Beginner-level exercises
