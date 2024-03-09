@@ -7,7 +7,7 @@
 *** Exercise 1
 Write a function that declares 3 variables, ~a~, ~b~, and ~c~, assigning them the values 1, "France", and 36.2 respectively. Then return all three variables.
 *** Exercise 2
-Write a function that declares a variable ~greeting~ and initialize it with the value ~​"hello"​~. Then modify this same variable to contain the value ​~"how are you"​~. Return the content of the variable after modification.
+Write a function that declares a variable ~greeting~ and initialize it with the value ~​"hello"​~. Then modify this same variable to contain the value ~​"how are you"​~. Return the content of the variable after modification.
 *** Exercise 3
 Write a function that declares 2 variables ~x~ and ~y~. Assign them the values ~3~ and ~8.5~ respectively, then convert the type or these variables to strings. Return these variables after modification.
 *** Exercise 4
@@ -15,8 +15,14 @@ Write a function that asks the user for their weight in kilograms, then stores i
 *** Exercise 5
 Write a function that has a parameter called ~param~. Inside the function, check whether ~param~ is an integer or a string. If it's an integer, the function should return ~​"Integer"​~, otherwise it should return ~​"String"​~.
 *** Exercise 6
+Write a function that has a parameter called ~number~. Inside the function, check whether ~number~ is greater or less than zero. If it's greater, the function should return ~​"Positive"​~. If it is less than zero should return ~​"Negative"​~. Otherwise it should return ~​"Zero"​~.
 *** Exercise 7
+Write a function that asks the user for their age and assigns it to the object ~age~. Inside the function, check if the user is older or younger than 18. If the user's age is greater than or equal to 18, return ~​"The user is an adult."​~. Otherwise, return ~​"The user is a minor."​~.
 *** Exercise 8
+Write a function that returns the numbers from 1 to 20 inclusive. Create one version that uses a ~for~ loop, and another that uses a ~while~ loop.
 *** Exercise 9
+Write a function that returns the odd numbers from 10 to 20 inclusive. Create one version that uses a ~for~ loop, and another that uses a ~while~ loop.
 *** Exercise 10
+Write a function that uses a *list comprehension* to return the numbers from 1 to 10 inclusive.
 *** Exercise 11
+Write a function that uses a *list comprehension* to return the even numbers from 1 to 10 inclusive.
