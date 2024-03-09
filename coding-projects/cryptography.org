@@ -2,20 +2,122 @@
 
 This project is going to contain multiple parts. Why I first learned of these ciphers independently, the code is based on Al Sweigart's version. I updated the code to use f-strings. The first is the classic Caesar cipher. The second is a Caesar cipher hacker. And the third is the Vigenere cipher.
 
-** Caesar Cipher
+* Caesar Cipher
 
-The Caesar cipher was updated to use the python `if __name__ == "__main__"` idiom. Hopefully this will help students get more comfortable with it. It also provides opportunity for students to see the similarities between the Caesar cipher and the Vigenere cipher. When refactored in this manner we can reuse the `main()` and `get_mode()` functions.
+The Caesar cipher was updated to use the python =if __name__ == "__main__"= idiom. Hopefully this will help students get more comfortable with it. It also provides opportunity for students to see the similarities between the Caesar cipher and the Vigenere cipher. When refactored in this manner we can reuse the `main()` and `get_mode()` functions.
 
-- [[file:caesar_cipher.py][caesar_cipher.py]]
+** Code
+*** main
+
+#+begin_src python :results output :exports both :tangle caesar_cipher.py
+
+LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+def main():
+    """Main function that handles logic of the program."""
+    mode = get_mode()
+    key = get_key()
+    message = get_message(mode)
+    translated_message = translate_message(mode, key, message)
+    print_message(mode, translated_message)
+
+
+#+end_src
+
+*** get_mode
+#+begin_src python :results output :exports both :tangle caesar_cipher.py
+def get_mode():
+    """Get the mode from the user."""
+    while True:
+        print("Do you want to (e)ncrypt or (d)ecrypt?")
+        response = input("> ").lower()
+        if response.startswith("e"):
+            mode = "encrypt"
+            break
+        elif response.startswith("d"):
+            mode = "decrypt"
+            break
+        print("Please enter the letter e or d.")
+    return mode
+
+
+#+end_src
+
+*** get_key
+#+begin_src python :results output :exports both :tangle caesar_cipher.py
+def get_key():
+    """Get the key number from the user."""
+    while True:
+        max_key = len(LETTERS) - 1
+        print(f"Please enter the key (0 to {max_key}) to use.")
+        response = input("> ").upper()
+        if not response.isdecimal():
+            continue
+        if 0 <= int(response) < len(LETTERS):
+            key = int(response)
+            break
+    return key
+
+
+#+end_src
+
+*** get_message
+#+begin_src python :results output :exports both :tangle caesar_cipher.py
+def get_message(mode):
+    """Get the message from the user."""
+    print(f"Enter the message to {mode}.")
+    message = input("> ").upper()
+    return message
+
+
+#+end_src
+
+*** translate_message
+#+begin_src python :results output :exports both :tangle caesar_cipher.py
+def translate_message(mode, key, message):
+    """Translate the message based on the mode (encrypt/decrypt) and key."""
+    translated = ""
+    for symbol in message:
+        if symbol in LETTERS:
+            num = LETTERS.find(symbol)
+            if mode == "encrypt":
+                num = (num + key) % len(LETTERS)
+            elif mode == "decrypt":
+                num = (num - key) % len(LETTERS)
+            translated += LETTERS[num]
+        else:
+            translated += symbol
+    return translated
+
+
+#+end_src
+
+*** print_message
+#+begin_src python :results output :exports both :tangle caesar_cipher.py
+def print_message(mode, translated_message):
+    """Print the mode and translated message."""
+    print(f"{mode.title()}ed message:")
+    print(translated_message)
+
+
+#+end_src
+
+*** run
+#+begin_src python :results output :exports both :tangle caesar_cipher.py
+if __name__ == "__main__":
+    main()
+
+
+#+end_src
+
+*** Files
 - [[file:caesar_cipher_template.py][caesar_cipher_template.py]]
+*** Caesar Hacker
+- [[file:caesar_hacker.py][caesar_hacker.py]]
 
-** Caesar Hacker
 
-- [[file:caesar_hacker.py
-][caesar_hacker.py]]
-
-** Vigenere Cipher
-
+* Vigenere Cipher
 - [[file:vigenere.py][vigenere.py]]
 - [[file:./vigenere_template.py][vigenere_template.py]]
 - [[https://firewalledreplit.com/@MrHelmstedter/vigeneretemplate#main.py][replit template]]
