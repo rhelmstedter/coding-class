@@ -7,7 +7,7 @@
 *** Exercise 1
 Write a function that declares 3 variables, ~a~, ~b~, and ~c~, assigning them the values 1, "France", and 36.2 respectively. Then return all three variables.
 *** Exercise 2
-Write a function that declares a variable ~greeting~ and initialize it with the value src_python{"hello"}. Then modify this same variable to contain the value src_python{"how are you"}. Return the content of the variable after modification.
+Write a function that declares a variable ~greeting~ and initialize it with the value src_python{hello"}. Then modify this same variable to contain the value src_python{"how are you"}. Return the content of the variable after modification.
 *** Exercise 3
 Write a function that declares 2 variables ~x~ and ~y~. Assign them the values ~3~ and ~8.5~ respectively, then convert the type or these variables to strings. Return these variables after modification.
 *** Exercise 4
