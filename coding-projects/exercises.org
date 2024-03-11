@@ -26,3 +26,5 @@ Write a function that returns the odd numbers from 10 to 20 inclusive. Create on
 Write a function that uses a *list comprehension* to return the numbers from 1 to 10 inclusive.
 *** Exercise 11
 Write a function that uses a *list comprehension* to return the even numbers from 1 to 10 inclusive.
+*** Exercise 12
+Write a function that creates a list called L and assign it the value ~[6, 8, 3, 4, 1, 12, 2, 9.2]~. Then Sort the numbers in the list in ascending order. Return the sorted list.

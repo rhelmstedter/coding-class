@@ -1,4 +1,4 @@
-# Meme Generator
+#+title: Meme Generator
 
 This project was inspired by [Teaching Python's conversation with Mike Driscoll](https://www.teachingpython.fm/66). Mike just released a new book [Pillow: Image Processing with Python](https://leanpub.com/pillow). I believe at one point Mike says, "you can make a meme by adding text to the image." Between that and The Art of Code image manipulation, I thought that would be a perfect little project for my middle school coding students.
 
