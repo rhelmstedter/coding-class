@@ -28,3 +28,11 @@ Write a function that uses a *list comprehension* to return the numbers from 1 t
 Write a function that uses a *list comprehension* to return the even numbers from 1 to 10 inclusive.
 *** Exercise 12
 Write a function that creates a list called L and assign it the value ~[6, 8, 3, 4, 1, 12, 2, 9.2]~. Then Sort the numbers in the list in ascending order. Return the sorted list.
+*** Exercise 13
+Write a function that assigns the label ~L~ the value ~[3, 2, 2, 1, 9, 1, 2, 3, 7]~, the count the number of occurences of the number 1 in ~L~.
+*** Exercise 14
+Write a function that assigns the label ~L~ an empty list. Then use range to assign the numbers 20, 25, 30, 35 to the list. Next, add the strings ~​"ab"​~, ~​"cd"​~, ~​"ef"​~. Finally return the list.
+*** Exercise 15
+Write a function that assigns the label ~numbers~ the list ~[1,2,3,4,5,6,7,8,9,10]~. Then create a new list called ~every_third~ that takes every third element from the ~numbers~ list. You should end up with ~[1,4,7,10]~. Return ~every_third~.
+*** Exercise 16
+Write a function that takes a parameter ~string~. The function should return the string in ascending alphabetical order. For example, given ~string = "france"~ the function should return ~"acefnr"~.
