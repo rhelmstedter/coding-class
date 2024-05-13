@@ -75,3 +75,51 @@ Write a function that returns the values of the keys ~"Apple"~ and ~"Banana"~ fr
 #+begin_src python
 fruits = {"Apple": 3, "Banana": 7, "Kiwi": 1}
 #+end_src
+
+*** Exercise 21
+Write a function that returns the sum of the values from the dictionary below.
+
+#+begin_src python
+D = {"Apple": 15, "Banana": 8, "Strawberry": 12, "Kiwi": 9, "Peach": 2}
+#+end_src
+
+*** Exercise 22
+Write a function that truncates a decimal number to 2 digits after the decimal point. For testing, given the number ~187.637587~, your function should return ~187.64~.
+
+*** Exercise 23
+Write a function that formats the string "My name is ~my_name~ and I am ~age~ years old. I am learning the language ~language_name~." The function should format this string by assigning the following objects:
+
+#+begin_src python
+my_name = "Julien"
+age = 32
+language_name = "Python"
+#+end_src
+
+The function should return: "My name is Julien and I am 32 years old. I am learning the language Python."
+
+*** Exercise 24
+Write a function that returns the multiplication table for the number 8. Like so:
+#+begin_src python
+"""8 x  0 =  0
+8 x  1 =  8
+8 x  2 = 16
+8 x  3 = 24
+8 x  4 = 32
+8 x  5 = 40
+8 x  6 = 48
+8 x  7 = 56
+8 x  8 = 64
+8 x  9 = 72
+8 x 10 = 80
+8 x 11 = 88
+8 x 12 = 96"""
+#+end_src
+
+*** Exercise 25
+Write a function that returns the directory where the python script is located.
+
+*** Exercise 26
+Write a function that assigns the list ~[1, 2, 3, 4, 5]~ the label ~L~. Then remove the item ~1~. Return the list without the number 1.
+
+*** Exercise 27
+Write a function that has a parameter called ~text_to_write~ and use type hints to show it is a string. The function should then write the value of ~text_to_write~ to a file called ~monty_wrote_this.txt~.
