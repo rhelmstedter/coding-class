@@ -1,5 +1,5 @@
 """A countdown timer until the end of the school year."""
-from datetime import datetime, date
+from datetime import datetime
 import numpy as np
 import time
 
@@ -25,7 +25,7 @@ def school_days_left():
     today = datetime.now()
     total_minus_weekends = np.busday_count(today.date(), LAST_DAY_OF_SCHOOL.date())
     remaining_holidays = 0
-    for holiday in HOLIDAYS_2021:
+    for holiday in HOLIDAYS_2024:
         if holiday > today.date():
             remaining_holidays += 1
     print()
