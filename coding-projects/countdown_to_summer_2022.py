@@ -9,7 +9,7 @@ HOLIDAYS_2024 = [
 
 
 def countdown():
-    print("\tTime until school is out for summer 2022:", end="\n\n")
+    print("\tTime until school is out for summer 2024:", end="\n\n")
     event_delta = LAST_DAY_OF_SCHOOL - datetime.now()
     while (event_delta.days + event_delta.seconds) > 0:
         hours, remaining_delta = divmod(event_delta.seconds, 3600)
@@ -30,7 +30,7 @@ def school_days_left():
             remaining_holidays += 1
     print()
     print(
-        f"\tThere are {total_minus_weekends - remaining_holidays} school days left in the 2021-2022 school year.",
+        f"\tThere are {total_minus_weekends - remaining_holidays} school days left in the 2023-2020 school year.",
         end="\n\n",
     )
 

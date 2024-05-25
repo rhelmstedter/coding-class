@@ -6,23 +6,120 @@
 ** Beginner-level exercises
 *** Exercise 1
 Write a function that declares 3 variables, ~a~, ~b~, and ~c~, assigning them the values 1, "France", and 36.2 respectively. Then return all three variables.
+
 *** Exercise 2
 Write a function that declares a variable ~greeting~ and initialize it with the value ~​"hello"​~. Then modify this same variable to contain the value ~​"how are you"​~. Return the content of the variable after modification.
+
 *** Exercise 3
 Write a function that declares 2 variables ~x~ and ~y~. Assign them the values ~3~ and ~8.5~ respectively, then convert the type or these variables to strings. Return these variables after modification.
+
 *** Exercise 4
 Write a function that asks the user for their weight in kilograms, then stores it in a variable. Return the value entered by the user.
+
 *** Exercise 5
 Write a function that has a parameter called ~param~. Inside the function, check whether ~param~ is an integer or a string. If it's an integer, the function should return ~​"Integer"​~, otherwise it should return ~​"String"​~.
+
 *** Exercise 6
 Write a function that has a parameter called ~number~. Inside the function, check whether ~number~ is greater or less than zero. If it's greater, the function should return ~​"Positive"​~. If it is less than zero should return ~​"Negative"​~. Otherwise it should return ~​"Zero"​~.
+
 *** Exercise 7
 Write a function that asks the user for their age and assigns it to the object ~age~. Inside the function, check if the user is older or younger than 18. If the user's age is greater than or equal to 18, return ~​"The user is an adult."​~. Otherwise, return ~​"The user is a minor."​~.
+
 *** Exercise 8
 Write a function that returns the numbers from 1 to 20 inclusive. Create one version that uses a ~for~ loop, and another that uses a ~while~ loop.
+
 *** Exercise 9
 Write a function that returns the odd numbers from 10 to 20 inclusive. Create one version that uses a ~for~ loop, and another that uses a ~while~ loop.
+
 *** Exercise 10
 Write a function that uses a *list comprehension* to return the numbers from 1 to 10 inclusive.
+
 *** Exercise 11
 Write a function that uses a *list comprehension* to return the even numbers from 1 to 10 inclusive.
+
+*** Exercise 12
+Write a function that creates a list called L and assign it the value ~[6, 8, 3, 4, 1, 12, 2, 9.2]~. Then Sort the numbers in the list in ascending order. Return the sorted list.
+
+*** Exercise 13
+Write a function that assigns the label ~L~ the value ~[3, 2, 2, 1, 9, 1, 2, 3, 7]~, the count the number of occurences of the number 1 in ~L~.
+
+*** Exercise 14
+Write a function that assigns the label ~L~ an empty list. Then use range to assign the numbers 20, 25, 30, 35 to the list. Next, add the strings ~​"ab"​~, ~​"cd"​~, ~​"ef"​~. Finally return the list.
+
+*** Exercise 15
+Write a function that assigns the label ~numbers~ the list ~[1,2,3,4,5,6,7,8,9,10]~. Then create a new list called ~every_third~ that takes every third element from the ~numbers~ list. You should end up with ~[1,4,7,10]~. Return ~every_third~.
+
+*** Exercise 16
+Write a function that takes a parameter ~string~. The function should return the string in ascending alphabetical order. For example, given ~string = "france"~ the function should return ~"acefnr"~.
+
+*** Exercise 17
+Write a function that returns the common items from the following two lists.
+
+#+begin_src python
+L1 = [9, 8, 7, 14, 3, 2, "a", "p", "hello", "b"]
+L2 = ["b", 1, 9.2, 6, 3, 9, "p", 9]
+#+end_src
+*** Exercise 18
+Write a function that sorts the list below by the second item in each tuple.
+
+#+begin_src python
+L = [("Apple", 15), ("Banana", 8), ("Strawberry", 12), ("Kiwi", 9), ("Peach", 2),]
+#+end_src
+
+*** Exercise 19
+Write a function that allows you to reverse a string. Create an object ~ch~ assign it the value ~"Hello everyone"~. Then return the string reversed.
+
+*** Exercise 20
+Write a function that returns the values of the keys ~"Apple"~ and ~"Banana"~ from the dictionary below.
+
+#+begin_src python
+fruits = {"Apple": 3, "Banana": 7, "Kiwi": 1}
+#+end_src
+
+*** Exercise 21
+Write a function that returns the sum of the values from the dictionary below.
+
+#+begin_src python
+D = {"Apple": 15, "Banana": 8, "Strawberry": 12, "Kiwi": 9, "Peach": 2}
+#+end_src
+
+*** Exercise 22
+Write a function that truncates a decimal number to 2 digits after the decimal point. For testing, given the number ~187.637587~, your function should return ~187.64~.
+
+*** Exercise 23
+Write a function that formats the string "My name is ~my_name~ and I am ~age~ years old. I am learning the language ~language_name~." The function should format this string by assigning the following objects:
+
+#+begin_src python
+my_name = "Julien"
+age = 32
+language_name = "Python"
+#+end_src
+
+The function should return: "My name is Julien and I am 32 years old. I am learning the language Python."
+
+*** Exercise 24
+Write a function that returns the multiplication table for the number 8. Like so:
+#+begin_src python
+"""8 x  0 =  0
+8 x  1 =  8
+8 x  2 = 16
+8 x  3 = 24
+8 x  4 = 32
+8 x  5 = 40
+8 x  6 = 48
+8 x  7 = 56
+8 x  8 = 64
+8 x  9 = 72
+8 x 10 = 80
+8 x 11 = 88
+8 x 12 = 96"""
+#+end_src
+
+*** Exercise 25
+Write a function that returns the directory where the python script is located.
+
+*** Exercise 26
+Write a function that assigns the list ~[1, 2, 3, 4, 5]~ the label ~L~. Then remove the item ~1~. Return the list without the number 1.
+
+*** Exercise 27
+Write a function that has a parameter called ~text_to_write~ and use type hints to show it is a string. The function should then write the value of ~text_to_write~ to a file called ~monty_wrote_this.txt~.
