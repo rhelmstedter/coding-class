@@ -74,7 +74,7 @@ def get_guess() -> str:
     return guess
 
 
-def get_clues(guess, secret_num) -> str:
+def get_clues(guess, secret_num) -> str: parameters or arguments
     """Calculate the clues."""
     if guess == secret_num:
         return "You got it!"

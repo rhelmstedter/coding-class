@@ -1,5 +1,5 @@
 """A countdown timer until the end of the school year."""
-from datetime import datetime, date
+from datetime import datetime
 import numpy as np
 import time
 
