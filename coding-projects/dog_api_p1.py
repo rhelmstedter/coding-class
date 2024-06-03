@@ -7,10 +7,10 @@ import random
 from rich import print
 import requests
 
-WELCOME = "Welcome to the Dog API :dog:. We serve up images of cute dogs."
+WELCOME = "[blue]Welcome to the Dog API :dog:. We serve up images of cute dogs.[/blue]"
 
 
-def fetch_random_dog():
+def fetch_random_dog() -> str:
     """Return a random image of a dog across all breeds."""
     url = "https://dog.ceo/api/breeds/image/random"
     response = requests.get(url).json()
@@ -30,8 +30,8 @@ def get_all_breeds() -> list:
     return breeds
 
 
-def fetch_dog_by_breed():
-    """Return an image of a dog breed choosen by the user."""
+def get_user_choice() -> str:
+    """Get the user choice of dog breed."""
     breeds = get_all_breeds()
     while True:
         user_choice = input("Enter the dog breed you want to see:\n>")
@@ -45,13 +45,17 @@ def fetch_dog_by_breed():
                 f"{user_choice} does not exist. Did you mean '{suggestion}'?\n"
             )
             if confirm.lower().startswith("y"):
-                user_choice = suggestion
-                break
+                return suggestion
             else:
                 print("Ok, try again.")
                 continue
         else:
-            break
+            return user_choice
+
+
+def fetch_dog_by_breed() -> str:
+    """Return an image of a dog breed choosen by the user."""
+    user_choice = get_user_choice()
     if " " in user_choice:
         sub_breed, breed = user_choice.split()
         user_choice = f"{breed}/{sub_breed}"
@@ -60,7 +64,7 @@ def fetch_dog_by_breed():
     return random.choice(breed_response)
 
 
-def main():
+def main() -> None:
     """Run the main logic of the program."""
     print(WELCOME)
     while True:
