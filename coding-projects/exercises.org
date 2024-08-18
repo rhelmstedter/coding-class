@@ -123,3 +123,27 @@ Write a function that assigns the list ~[1, 2, 3, 4, 5]~ the label ~L~. Then rem
 
 *** Exercise 27
 Write a function that has a parameter called ~text_to_write~ and use type hints to show it is a string. The function should then write the value of ~text_to_write~ to a file called ~monty_wrote_this.txt~.
+
+*** Exercise 28
+Write a program that calculates the execution time of a function call. Call the multiplication table from exercise 24 and calculates how long it took to run.
+
+*** Exercise 29
+Write a function that randomly shuffles the elements of a list. For example, ~L = [3, 6, 8, 7, 2, "s", "ch", "d"]~.
+
+*** Exercise 30
+Write a function that returns the following numbers in a string:
+
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+*** Exercise 31
+Write a function that returns a random integer between 20 and 30.
+
+*** Exercise 32
+Write a function that create the variable L and assigns it the list ~[3, 6, 9, 12, 15, 18, 21, 24]~. Then use a list comprehension that contains all of the original numbers in the list divided by 3. Return the list comprehension version.
