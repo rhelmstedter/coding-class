@@ -1,4 +1,5 @@
 """A Python Version of Bagels."""
+
 import random
 
 
@@ -15,6 +16,7 @@ When I say:    That means:
 For example, if the secret number was 248 and your guess was 843, the
 clues would be Fermi Pico.\n"""
 
+
 def generate_secret_num() -> str:
     """Return a string made up of NUM_DIGITS unique random digits."""
     numbers = list("0123456789")  # Create a list of digits 0 to 9.
@@ -22,6 +24,7 @@ def generate_secret_num() -> str:
 
     # Get the first NUM_DIGITS digits in the list for the secret number:
     return "".join(numbers[:3])
+
 
 def get_guess() -> str:
     """Get the clue from the user."""
@@ -33,6 +36,7 @@ def get_guess() -> str:
         else:
             break
     return guess
+
 
 def get_clues(guess, secret_num) -> str:
     """Calculate the clues."""
@@ -51,6 +55,7 @@ def get_clues(guess, secret_num) -> str:
     else:
         clues.sort()
         return " ".join(clues)
+
 
 def main():
     """Store the logic of the game loop."""
@@ -85,6 +90,7 @@ def main():
         if not input("> ").lower().startswith("y"):
             break
     print("Thanks for playing!")
+
 
 # If the program is run (instead of imported), run the game:
 if __name__ == "__main__":

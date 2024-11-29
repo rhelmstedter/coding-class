@@ -239,12 +239,8 @@ while True:
     apply_force("gravity")
 
     # Translate mars lander
-    x = mars_lander.travel_speed * math.cos(
-        math.radians(mars_lander.travel_direction)
-    )
-    y = mars_lander.travel_speed * math.sin(
-        math.radians(mars_lander.travel_direction)
-    )
+    x = mars_lander.travel_speed * math.cos(math.radians(mars_lander.travel_direction))
+    y = mars_lander.travel_speed * math.sin(math.radians(mars_lander.travel_direction))
     mars_lander.setx(mars_lander.xcor() + x)
     mars_lander.sety(mars_lander.ycor() + y)
 

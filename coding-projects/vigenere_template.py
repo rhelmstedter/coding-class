@@ -38,6 +38,7 @@ def get_message(mode: str) -> str:
     """Get the message from the user."""
     pass
 
+
 def translate_message(mode: str, key: str, message: str) -> str:
     """Encrypt or decrypt the message using the key."""
     pass
