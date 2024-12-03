@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Dog api."""
+
 import difflib
 import os
 import random

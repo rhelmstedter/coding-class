@@ -1,7 +1,69 @@
-# Countdown Timer
+#+title: Countdown Timer
+#+auto_tangle: t
+#+PROPERTY: header-args :tangle ./countdown_to_summer.py
+
+
 
 I stumbled across the [[https://www.100daysofcode.com][#100DaysofCode]] challenge. I signed up for the [[https://talkpython.fm/home][Talk Python]] [[https://training.talkpython.fm/courses/details/100-days-of-code-in-python][#100DaysofCode in Python]] course which is a collaboration between the guys from [[https://twitter.com/pybites][Pybites]] and [[https://twitter.com/mkennedy][Michael Kennedy]]. The first set of lessons focused on the datetime module. In the course, we were supposed to use the datetime module to create a pomodoro timer. Instead, I decided to create a countdown to summer break timer. 
 
 I plan to make this one of the first projects for next school year. I might even team up with the makerspace teacher and create an LED sign that displays the countdown. To be real, I'm just trying to make it through this school year.
 
-- [[file:countdown_to_summer_2022.py][countdown_to_summer_2022.py]]
+- [[file:countdown_to_summer.py][countdown_to_summer.py]]
+
+
+** Imports and Constants
+#+begin_src python :exports both :results output
+"""A countdown timer until the end of the school year."""
+from datetime import datetime
+import numpy as np
+import time
+
+LAST_DAY_OF_SCHOOL = datetime(2025, 6, 13, 1, 35)
+HOLIDAYS = [
+]
+SCHOOL_YEAR = "2023-2024"
+
+#+end_src
+
+** Countdown Function
+#+begin_src python :exports both :results output
+def countdown():
+    print("\tTime until school is out for summer {SCHOOL_YEAR.split("-")[-1]}:", end="\n\n")
+    event_delta = LAST_DAY_OF_SCHOOL - datetime.now()
+    while (event_delta.days + event_delta.seconds) > 0:
+        hours, remaining_delta = divmod(event_delta.seconds, 3600)
+        mins, secs = divmod(remaining_delta, 60)
+        timer = f"\t{event_delta.days:02d} days {hours:02d} hours {mins:02d} minutes {secs:02d} seconds"
+        print(timer, end="\r")
+        time.sleep(1)
+        event_delta = LAST_DAY_OF_SCHOOL - datetime.now()
+    print("School's out for summer!")
+
+#+end_src
+
+** Remaining School Days Function
+#+begin_src python :exports both :results output
+def school_days_left():
+    today = datetime.now()
+    total_minus_weekends = np.busday_count(today.date(), LAST_DAY_OF_SCHOOL.date())
+    remaining_holidays = 0
+    for holiday in HOLIDAYS_2024:
+        if holiday > today.date():
+            remaining_holidays += 1
+    print()
+    print(
+        f"\tThere are {total_minus_weekends - remaining_holidays} school days left in the {SCHOOL_YEAR} school year.",
+        end="\n\n",
+    )
+
+
+#+end_src
+
+** Run it
+#+begin_src python :exports both :results output
+
+if __name__ == "__main__":
+    school_days_left()
+    countdown()
+
+#+end_src

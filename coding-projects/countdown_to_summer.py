@@ -1,15 +1,19 @@
 """A countdown timer until the end of the school year."""
+
 from datetime import datetime
 import numpy as np
 import time
 
-LAST_DAY_OF_SCHOOL = datetime(2024, 6, 13, 1, 35)
-HOLIDAYS_2024 = [
-]
+LAST_DAY_OF_SCHOOL = datetime(2025, 6, 13, 1, 35)
+HOLIDAYS = []
+SCHOOL_YEAR = "2023-2024"
 
 
 def countdown():
-    print("\tTime until school is out for summer 2024:", end="\n\n")
+    print(
+        "\tTime until school is out for summer {SCHOOL_YEAR.split(" - ")[-1]}:",
+        end="\n\n",
+    )
     event_delta = LAST_DAY_OF_SCHOOL - datetime.now()
     while (event_delta.days + event_delta.seconds) > 0:
         hours, remaining_delta = divmod(event_delta.seconds, 3600)
@@ -25,12 +29,12 @@ def school_days_left():
     today = datetime.now()
     total_minus_weekends = np.busday_count(today.date(), LAST_DAY_OF_SCHOOL.date())
     remaining_holidays = 0
-    for holiday in HOLIDAYS_2024:
+    for holiday in HOLIDAYS:
         if holiday > today.date():
             remaining_holidays += 1
     print()
     print(
-        f"\tThere are {total_minus_weekends - remaining_holidays} school days left in the 2023-2020 school year.",
+        f"\tThere are {total_minus_weekends - remaining_holidays} school days left in the {SCHOOL_YEAR} school year.",
         end="\n\n",
     )
 

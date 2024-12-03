@@ -133,7 +133,7 @@ def get_final_score(player1, player2, BEST_OF_NUM):
     print(f"\n{player1.name} won {player1.wins} times.")
     print(f"{player2.name} won {player2.wins} times.", end="\n\n")
     if player1.wins == BEST_OF_NUM - 1:
-        print(f"You won the match! Thanks for playing!")
+        print("You won the match! Thanks for playing!")
     if player2.wins == BEST_OF_NUM - 1:
         print("The Computer won the math! Better luck next time.")
 
