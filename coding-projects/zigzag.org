@@ -1,5 +1,32 @@
 #+title: Zigzag
+#+PROPERTY: header-args :tangle ./zigzag.py
+#+auto_tangle: t
+
+
 This script originally came from [[automatetheboringstuff.com][automatetheboringstuff.com]] by [[https://alsweigart.com][Al Sweigart]]. Some students found the [[https://pypi.org/project/colorama/][colorama]] module so we are going to use this script to explore how to change colors in the terminal output and modify the print function.
 
+#+begin_src python :exports code
+import time
+from rich import print
+
+indent = 0
+indent_increasing = True
+
+while True:
+    print(" " * indent, end=" ")
+    print(f"[red on white]*********\n\n")
+    time.sleep(0.1)
+
+    if indent_increasing:
+        indent = indent + 1
+        if indent == 15:
+            indent_increasing = False
+
+    else:
+        indent = indent - 1
+        if indent == 0:
+            indent_increasing = True
+#+end_src
+
+* Source Code
 - [[file:zigzag.py][zigzag.py]]
--

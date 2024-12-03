@@ -3,21 +3,21 @@
 #+PROPERTY: header-args :exports code
 
 * 100 Exercises For Practicing Python
-** Beginner-level exercises
+** Beginner Level Exercises
 *** Exercise 1
-Write a function that declares 3 variables, ~a~, ~b~, and ~c~, assigning them the values 1, "France", and 36.2 respectively. Then return all three variables.
+Write a function that declares 3 variables, ~integer~, ~country~, and ~decimal~, assigning them the values 1, "France", and 36.2 respectively. Then return all three variables.
 
 *** Exercise 2
 Write a function that declares a variable ~greeting~ and initialize it with the value ~​"hello"​~. Then modify this same variable to contain the value ~​"how are you"​~. Return the content of the variable after modification.
 
 *** Exercise 3
-Write a function that declares 2 variables ~x~ and ~y~. Assign them the values ~3~ and ~8.5~ respectively, then convert the type or these variables to strings. Return these variables after modification.
+Write a function that declares 2 variables ~x~ and ~y~. Assign them the values ~3~ and ~8.5~ respectively, then convert the type of these variables to strings. Return these variables after modification.
 
 *** Exercise 4
-Write a function that asks the user for their weight in kilograms, then stores it in a variable. Return the value entered by the user.
+Write a function that asks the user for their weight in kilograms, then stores it in a variable. Convert the input from kilograms to pounds. Return both the kilogram and pound values.
 
 *** Exercise 5
-Write a function that has a parameter called ~param~. Inside the function, check whether ~param~ is an integer or a string. If it's an integer, the function should return ~​"Integer"​~, otherwise it should return ~​"String"​~.
+Write a function that has a parameter called ~string_or_int~. Inside the function, check whether ~string_or_int~ is an integer or a string. If it's an integer, the function should return ~​"Integer"​~, otherwise it should return ~​"String"​~.
 
 *** Exercise 6
 Write a function that has a parameter called ~number~. Inside the function, check whether ~number~ is greater or less than zero. If it's greater, the function should return ~​"Positive"​~. If it is less than zero should return ~​"Negative"​~. Otherwise it should return ~​"Zero"​~.
@@ -32,19 +32,19 @@ Write a function that returns the numbers from 1 to 20 inclusive. Create one ver
 Write a function that returns the odd numbers from 10 to 20 inclusive. Create one version that uses a ~for~ loop, and another that uses a ~while~ loop.
 
 *** Exercise 10
-Write a function that uses a *list comprehension* to return the numbers from 1 to 10 inclusive.
+Write a function that assigns the label ~numbers~ the value ~[-6, 5, 0, -1, 2, 8, -3.5]~. Then return a new list that only contains values greater than zero.
 
 *** Exercise 11
-Write a function that uses a *list comprehension* to return the even numbers from 1 to 10 inclusive.
+Write a function that returns a random integer between 20 and 30.
 
 *** Exercise 12
-Write a function that creates a list called L and assign it the value ~[6, 8, 3, 4, 1, 12, 2, 9.2]~. Then Sort the numbers in the list in ascending order. Return the sorted list.
+Write a function that truncates a decimal number to 2 digits after the decimal point. This number should be a parameter of the function. For testing, given the number ~187.637587~, your function should return ~187.64~.
 
 *** Exercise 13
-Write a function that assigns the label ~L~ the value ~[3, 2, 2, 1, 9, 1, 2, 3, 7]~, the count the number of occurences of the number 1 in ~L~.
+Write a function that assigns the label ~numbers~ the value ~[3, 2, 2, 1, 9, 1, 2, 3, 7]~, the count the number of occurences of the number 1 in ~L~.
 
 *** Exercise 14
-Write a function that assigns the label ~L~ an empty list. Then use range to assign the numbers 20, 25, 30, 35 to the list. Next, add the strings ~​"ab"​~, ~​"cd"​~, ~​"ef"​~. Finally return the list.
+Write a function that assigns the label ~my_list~ an empty list. Then use range to assign the numbers 20, 25, 30, 35 to the list. Next, add the strings ~​"ab"​~, ~​"cd"​~, ~​"ef"​~. Finally return the list.
 
 *** Exercise 15
 Write a function that assigns the label ~numbers~ the list ~[1,2,3,4,5,6,7,8,9,10]~. Then create a new list called ~every_third~ that takes every third element from the ~numbers~ list. You should end up with ~[1,4,7,10]~. Return ~every_third~.
@@ -84,7 +84,7 @@ D = {"Apple": 15, "Banana": 8, "Strawberry": 12, "Kiwi": 9, "Peach": 2}
 #+end_src
 
 *** Exercise 22
-Write a function that truncates a decimal number to 2 digits after the decimal point. For testing, given the number ~187.637587~, your function should return ~187.64~.
+Write a function that creates a list called L and assign it the value ~[6, 8, 3, 4, 1, 12, 2, 9.2]~. Then Sort the numbers in the list in ascending order. Return the sorted list.
 
 *** Exercise 23
 Write a function that formats the string "My name is ~my_name~ and I am ~age~ years old. I am learning the language ~language_name~." The function should format this string by assigning the following objects:
@@ -143,7 +143,14 @@ Write a function that returns the following numbers in a string:
 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 
 *** Exercise 31
-Write a function that returns a random integer between 20 and 30.
+Write a function that uses a *list comprehension* to return the even numbers from 1 to 10 inclusive.
 
 *** Exercise 32
 Write a function that create the variable L and assigns it the list ~[3, 6, 9, 12, 15, 18, 21, 24]~. Then use a list comprehension that contains all of the original numbers in the list divided by 3. Return the list comprehension version.
+
+*** Exercise 33
+Write a function that uses a *list comprehension* to return the numbers from 1 to 10 inclusive.
+
+** Intermediate Level Exercises
+*** Exercise 34
+Write a function with parameters ~a~, ~b~, and ~x~ that returns the value of this mathematical funcion:  $a(x^3)+2a(x^2)+b$.
