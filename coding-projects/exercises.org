@@ -59,26 +59,26 @@ Write a function that returns the common items from the following two lists.
 L1 = [9, 8, 7, 14, 3, 2, "a", "p", "hello", "b"]
 L2 = ["b", 1, 9.2, 6, 3, 9, "p", 9]
 #+end_src
+
 *** Exercise 18
-Write a function that sorts the list below by the second item in each tuple.
-
-#+begin_src python
-L = [("Apple", 15), ("Banana", 8), ("Strawberry", 12), ("Kiwi", 9), ("Peach", 2),]
-#+end_src
-
-*** Exercise 19
 Write a function that allows you to reverse a string. Create an object ~ch~ assign it the value ~"Hello everyone"~. Then return the string reversed.
 
-*** Exercise 20
+*** Exercise 19
 Write a function that returns the values of the keys ~"Apple"~ and ~"Banana"~ from the dictionary below.
 
 #+begin_src python
 fruits = {"Apple": 3, "Banana": 7, "Kiwi": 1}
 #+end_src
 
+*** Exercise 20
+Write a function that sorts the list below by the second item in each tuple.
+
+#+begin_src python
+L = [("Apple", 15), ("Banana", 8), ("Strawberry", 12), ("Kiwi", 9), ("Peach", 2),]
+#+end_src
+
 *** Exercise 21
 Write a function that returns the sum of the values from the dictionary below.
-
 #+begin_src python
 D = {"Apple": 15, "Banana": 8, "Strawberry": 12, "Kiwi": 9, "Peach": 2}
 #+end_src
