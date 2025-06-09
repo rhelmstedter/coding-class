@@ -11,7 +11,7 @@ from rich.status import Status
 API_KEY = os.environ["NASA_API"]
 API_URL = f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}"
 IMAGE_DIR = Path() / "images"
-FIRST_DATE = datetime.date(1995, 6, 16)
+FIRST_DATE = datetime.datetime(1995, 6, 16)
 DATE_FORMAT = "%Y-%m-%d"
 
 
@@ -47,22 +47,23 @@ def get_date():
             "Enter a date in the form YYYY-MM-DD or just press enter for today:\n> "
         )
         if not date:
-            return datetime.now().strftime(DATE_FORMAT)
+            return datetime.datetime.now().strftime(DATE_FORMAT)
 
         year, month, day = date.split("-")
 
         try:
-            entered_date = datetime.strptime(date, DATE_FORMAT)
+            entered_date = datetime.datetime.strptime(date, DATE_FORMAT)
         except ValueError:
             print("Please enter a valid date.")
         if entered_date < FIRST_DATE:
             print("There are no pictures available before 1995-06-16")
-        elif entered_date > datetime.now():
+        elif entered_date > datetime.datetime.now():
             print("There are no pictures available from the future.")
         else:
             break
     return date
 
 
-date = get_date()
-fetch_image(date)
+if __name__ == "__main__":
+    date = get_date()
+    fetch_image(date)
