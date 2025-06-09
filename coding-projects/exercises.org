@@ -41,16 +41,16 @@ Write a function that returns a random integer between 20 and 30.
 Write a function that truncates a decimal number to 2 digits after the decimal point. This number should be a parameter of the function. For testing, given the number ~187.637587~, your function should return ~187.64~.
 
 *** Exercise 13
-Write a function that assigns the label ~numbers~ the value ~[3, 2, 2, 1, 9, 1, 2, 3, 7]~, the count the number of occurences of the number 1 in ~L~.
+Write a function that assigns the label ~numbers~ the value ~[3, 2, 2, 1, 9, 1, 2, 3, 7]~, then return the number of occurences of the number 1 in ~numbers~.
 
 *** Exercise 14
-Write a function that assigns the label ~my_list~ an empty list. Then use range to assign the numbers 20, 25, 30, 35 to the list. Next, add the strings ~​"ab"​~, ~​"cd"​~, ~​"ef"​~. Finally return the list.
+Write a function that assigns the label ~my_list~ to an empty list. Then use range to assign the numbers 20, 25, 30, 35 to the list. Next, add the strings "ab"​, ​"cd"​, "ef"​. Finally return the list.
 
 *** Exercise 15
 Write a function that assigns the label ~numbers~ the list ~[1,2,3,4,5,6,7,8,9,10]~. Then create a new list called ~every_third~ that takes every third element from the ~numbers~ list. You should end up with ~[1,4,7,10]~. Return ~every_third~.
 
 *** Exercise 16
-Write a function that takes a parameter ~string~. The function should return the string in ascending alphabetical order. For example, given ~string = "france"~ the function should return ~"acefnr"~.
+Write a function that takes a parameter ~string~. The function should return the string sorted in ascending alphabetical order. For example, given ~string = "france"~ the function should return ~"acefnr"~.
 
 *** Exercise 17
 Write a function that returns the common items from the following two lists.
@@ -61,14 +61,10 @@ L2 = ["b", 1, 9.2, 6, 3, 9, "p", 9]
 #+end_src
 
 *** Exercise 18
-Write a function that allows you to reverse a string. Create an object ~ch~ assign it the value ~"Hello everyone"~. Then return the string reversed.
+Write a function that creates a list called ~numbers~ and assign it the value ~[6, 8, 3, 4, 1, 12, 2, 9.2]~. Then sort the numbers in the list in ascending order. Return the sorted list.
 
 *** Exercise 19
-Write a function that returns the values of the keys ~"Apple"~ and ~"Banana"~ from the dictionary below.
-
-#+begin_src python
-fruits = {"Apple": 3, "Banana": 7, "Kiwi": 1}
-#+end_src
+Write a function that allows you to reverse a string. Create an object labeled ~greeting~ and assign it the value ~"Hello everyone"~. Then return the string reversed.
 
 *** Exercise 20
 Write a function that sorts the list below by the second item in each tuple.
@@ -80,13 +76,10 @@ L = [("Apple", 15), ("Banana", 8), ("Strawberry", 12), ("Kiwi", 9), ("Peach", 2)
 *** Exercise 21
 Write a function that returns the sum of the values from the dictionary below.
 #+begin_src python
-D = {"Apple": 15, "Banana": 8, "Strawberry": 12, "Kiwi": 9, "Peach": 2}
+fruits = {"Apple": 15, "Banana": 8, "Strawberry": 12, "Kiwi": 9, "Peach": 2}
 #+end_src
 
 *** Exercise 22
-Write a function that creates a list called L and assign it the value ~[6, 8, 3, 4, 1, 12, 2, 9.2]~. Then Sort the numbers in the list in ascending order. Return the sorted list.
-
-*** Exercise 23
 Write a function that formats the string "My name is ~my_name~ and I am ~age~ years old. I am learning the language ~language_name~." The function should format this string by assigning the following objects:
 
 #+begin_src python
@@ -96,6 +89,13 @@ language_name = "Python"
 #+end_src
 
 The function should return: "My name is Julien and I am 32 years old. I am learning the language Python."
+
+*** Exercise 23
+Write a function that sorts the list below by the second item in each tuple.
+
+#+begin_src python
+L = [("Apple", 15), ("Banana", 8), ("Strawberry", 12), ("Kiwi", 9), ("Peach", 2),]
+#+end_src
 
 *** Exercise 24
 Write a function that returns the multiplication table for the number 8. Like so:
