@@ -5,4 +5,3 @@ At the end of episode 75 of the [[https://www.teachingpython.fm/75][Teaching Pyt
 I created a little script that charts my class sizes by period. The whole script can be written in less than 10 lines of code. Just run `pip install rich` and you should be good to go.
 
 - .py file: [[file:textual_bar_chart.py][textual_bar_chart.py]]
-- replit: [[https://replit.com/@MrHelmstedter/textualbarchart][textual_bar_chart]]

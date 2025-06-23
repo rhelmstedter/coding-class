@@ -12,5 +12,4 @@ Instead, we used user input to get a date. Then we used the datetime module to v
 ## Sample Code
 
 - [[https://replit.com/@MrHelmstedter/NASA-APOD-template][Replit Template]]
-- [[https://replit.com/@MrHelmstedter/NASA-APOD-Period-1#main.py][Replit Complete]]
 - [[file:nasa_image_fetcher.py][local version]]
