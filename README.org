@@ -1,7 +1,6 @@
 #+TITLE: Coding Class
 
-
-This repository is a collection of coding projects for my middle school coding classes. The 2021-2022 school year will be my second year teaching coding. As I gain more experience coding I plan to piece together various coding projects aimed at beginners. Since my students are all on Chromebooks, all projects will use either [[https://replit.com][replit]] or [[https://youtu.be/xoo4mTujM1U][Google Colabortory (Colab)]].
+This repository is a collection of coding projects for my middle school coding classes. The 2021-2022 school year will be my second year teaching coding. As I gain more experience coding I plan to piece together various coding projects aimed at beginners. Since my students are all on Chromebooks, all projects will use either [[https://codehs.com][codehs]] or [[https://youtu.be/xoo4mTujM1U][Google Colabortory (Colab)]].
 
 ** Inspiration
 I recently stumbled across the excellent [[https://www.teachingpython.fm/][Teaching Python Podcast]]. I highly recommend it.
