@@ -19,7 +19,9 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 
 ** Other Projects
 
+- Introduction Paragraph
 - Madlibs
+- Number guessing game
 - Angry Goblin Hunt
 - GPA Calculator
 - [[file:coding-projects/intro_to_datetime.org][Intro to datetime]]
@@ -32,7 +34,7 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 - [[file:coding-projects/cryptography.org][Cryptography]]
 - [[file:./coding-projects/nasa_image_fetcher.org][NASA Image Fetcher]]
 - [[file:./coding-projects/qr_code_generator.org][QR Code Generator]]
-- [[file:coding-projects/lunar_landing.org][+Lunar+Mars Landing]]
+- [[file:coding-projects/lunar_landing.org][Mars Landing]]
 - [[file:coding-projects/requests.org][Requests]]
 - [[file:././coding-projects/counters.org][Counters]]
 - [[file:././coding-projects/mean_absolute_deviation.org][Mean Absolute Deviation]]
@@ -51,7 +53,7 @@ The websites below offer +short+ interesting coding challenges for a range of ab
 - [[https://pybit.es/][Pybites]]:: Python specific. Great for new coders and really nicely organized. Paid.
 - [[https://www.codewars.com/][Codewars]]:: Language Agnostic. Slick interface, but can be difficult to find accessible challenges if students are brand new to coding. Free.
 - [[https://picoctf.org/][picoCTF]]:: Not specific to coding. This is a capture the flag competition aimed at improving general computer hacking skills. Free
-- [[https://projecteuler.net/][Project Euler]]:: Language agnostic. Math centric problems designed to be solved with code. Free.
+- [[https://projecteuler.net/][Project Euler]]:: Language agnostic. Math related problems designed to be solved with code. Free.
 
 ** Non-coding Assignments
 - [[file:coding-projects/song_analysis.org][Song Analysis]]

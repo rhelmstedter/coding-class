@@ -8,7 +8,7 @@ window = turtle.Screen()
 window.tracer(0)
 window.setup(0.6, 0.6)
 window.title("The Python Mars Landing Game")
-window.bgcolor("black")
+window.bgcolor('black')
 width = window.window_width()
 height = window.window_height()
 
@@ -17,7 +17,7 @@ n_of_stars = 100
 stars = turtle.Turtle()
 stars.hideturtle()
 stars.penup()
-stars.color("white")
+stars.color('white')
 for _ in range(n_of_stars):
     x_pos = random.randint(-width // 2, width // 2)
     y_pos = random.randint(-height // 2, height // 2)
@@ -27,14 +27,14 @@ for _ in range(n_of_stars):
 # TODO Create Mars
 mars = turtle.Turtle()
 mars.penup()
-mars.color("#A1241B")
+mars.color("#A1251B")
 mars.sety(-height * 2.8)
 mars.dot(height * 5)
 
-# TODO mars lander design parameters
+# TODO Mars lander design parameters
 branch_size = width / 16
 n_of_discs = 5
-disc_color = "light gray"
+disc_color = "gray"
 center_color = "white"
 landing_gear_color = "white"
 
@@ -49,12 +49,12 @@ mars_lander.anticlockwise_thruster = False
 mars_lander.travel_speed = random.randint(1, 3)
 mars_lander.travel_direction = random.randint(-45, 0)
 
-# TODO mars lander movement parameters
+# TODO Mars lander movement parameters
 rotation_step = 0.2
 speed_step = 0.1
 gravity = 0.03
 
-# TODO Landing parameters
+# TODO Set landing parameters
 landing_pad_position = 0, -height / 2.1
 module_landing_position = (
     landing_pad_position[0],
@@ -62,7 +62,7 @@ module_landing_position = (
 )
 landing_pos_tolerance_x = 20
 landing_pos_tolerance_y = 5
-landing_orientation = 270  # vertically downwards
+landing_orientation = 270 # never change
 landing_orientation_tolerance = 15
 
 # TODO Create landing pad
@@ -138,14 +138,14 @@ def draw_burning_fuel(thruster):
     burning_fuel.pendown()
     burning_fuel.pensize(8)
     burning_fuel.color("yellow")
-    burning_fuel.forward(branch_size + 5)
-    burning_fuel.backward(branch_size + 5)
+    burning_fuel.forward(branch_size)
+    burning_fuel.backward(branch_size)
     burning_fuel.left(5)
     burning_fuel.color("red")
     burning_fuel.pensize(5)
     for _ in range(2):
-        burning_fuel.forward(branch_size + 5)
-        burning_fuel.backward(branch_size + 5)
+        burning_fuel.forward(branch_size)
+        burning_fuel.backward(branch_size)
         burning_fuel.right(10)
 
 
@@ -239,8 +239,12 @@ while True:
     apply_force("gravity")
 
     # Translate mars lander
-    x = mars_lander.travel_speed * math.cos(math.radians(mars_lander.travel_direction))
-    y = mars_lander.travel_speed * math.sin(math.radians(mars_lander.travel_direction))
+    x = mars_lander.travel_speed * math.cos(
+        math.radians(mars_lander.travel_direction)
+    )
+    y = mars_lander.travel_speed * math.sin(
+        math.radians(mars_lander.travel_direction)
+    )
     mars_lander.setx(mars_lander.xcor() + x)
     mars_lander.sety(mars_lander.ycor() + y)
 
