@@ -12,6 +12,13 @@ High School Students with at least one year of American History.
 - reading from and writing to files
 - looping
 - 3rd party modules
+** Standard Alignment
+*** CSTA Student Standards
+3A-AP-17 (Grades 9-10): Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects.
+
+*** CSTA Teacher Standards
+Standard 4 Instructional Design d. Build connections between CS and other disciplines — Design learning experiences that make connections to other disciplines and real-world contexts.
+
   
 * The Project
 First, access the federalist papers from the [[https://guides.loc.gov/federalist-papers/full-text][library of congress]]. Students must recognize that the URLs have a consistent patter. Scraping the full text of all 85 papers and storing in a text file is achieved with the following.
@@ -88,7 +95,32 @@ def word_cloud_generator(filename):
     plt.savefig(f"{filename[:-4]}_word_cloud.png", format="png")
 #+end_src
 
-
 This generates the following word cloud.
+
 [[./Text-Analysis/federalist_papers_word_cloud.png]]
 
+
+*What did you create and why?*
+I created a coding project. When I was first learning out to webscrape, I became very excited. I thought about how I could use it in the classroom and see if I could connect it to other disciplines. Part of the vision of the program we ran at my previous school was to incorporate computer science into all core classes. This is one possible way to do that. 
+
+*How does your project connect to concepts from this course?*
+This project fits nicely into module 5, coding and programming. It is written in python and can be achieved with beginner to intermediate coders. The teacher can adjust the level of difficulty depending on the skill level of the students. For more beginners, this project can be done together leveraging screen casts. For more advanced students, outlining the project and agreeing upon an end product can be done together, but then students can code it on their own.
+
+*How could this project support student learning?*
+This supports student learning by providing a context for students to utilize their coding skills. To do this by hand would be painstakingly tedious. This motivates the need to use code. Instead of running isolated exercises on web scraping, reading from and writing to files, looping, and 3rd party modules, students are putting those into action with a concrete end goal in mind. It helps increase retention for the individual skills.
+
+Second, it offers practice with abstraction and pattern recognition. In particular, identifying that the Federalist papers URLs are stored in a consistent pattern helps save a lot of work.
+
+Finally, it offers cross-curricular reinforcement. The use of primary-source documents supports what they should be doing in their English language arts and social studies courses.
+
+*How has your understanding of computer science evolved during this course?*
+The biggest change in understanding was module 3. It is the content I am the least familiar with. As I mentioned in one of the discussions, I am sure that I have seen this content before, but I have not retained it. As I begin teaching the computer science course at the high school level, I will continue to engage in my own learning so that I can support students. I did appreciate the information in module one. Problem-solving and critical thinking skills are going to be increasingly important as we move forward in the era of artificial intelligence.
+
+*How standards connect.*
+
+The student standard identified is, 3A-AP-17 (Grades 9-10): Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects. This is connected as evidenced by the use of functions. Each function name helps to identify the discreet sub-problems that make up the project.
+
+The teacher standard identified is, 4d: Build connections between CS and other disciplines — Design learning experiences that make connections to other disciplines and real-world contexts. I believe that this is self evident because we are taking a computer science coding project and incorporating content from social studies. Students are utilizing primary source documents and identifying themes within them however, we are using computer science as the tool to do that analysis.
+
+
+📚
