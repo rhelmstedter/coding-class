@@ -1,10 +1,11 @@
+import requests
+
 from collections import Counter
 from pprint import pprint as pp
+
+from bs4 import BeautifulSoup
 from matplotlib import pyplot as plt
 from wordcloud import STOPWORDS, WordCloud
-
-import requests
-from bs4 import BeautifulSoup
 
 FED_PAPERS = "federalist_papers_test.txt"
 
