@@ -1,5 +1,94 @@
-#+title: Text Analysis
+#+title: Text Analysis of Federalist Papers
 
-I was learning webscraping awhile back and decided to scrape the federalist papers from the [[https://guides.loc.gov/federalist-papers/full-text][library of congress]]. I wrote a script that stores the full text of all 85 papers in a `.txt` file. then I created a word counter that filters out stop words.Then I added a word cloud feature. I definitely see some potential for language arts social studies.
+This coding project is designed to help students learn about webscraping and frequency analysis of text. It is designed to be cross curricular and to be used in conjunction with an American History class. The code examples below have been modified to make this document easier to read and will not run. The full [[./Text-Analysis][source code]] is available in GitHub. 
 
-[[./Text-Analysis][code directory]]
+* A Brief Overview
+Students will scan through the text of the federalist papers and count the frequency of words. The goal is to analyze the most common to words to identify themes throughout papers.
+
+** Grade Level
+High School Students with at least one year of American History.
+** Programming Skills Addressed
+- web scraping
+- reading from and writing to files
+- looping
+- 3rd party modules
+  
+* The Project
+First, access the federalist papers from the [[https://guides.loc.gov/federalist-papers/full-text][library of congress]]. Students must recognize that the URLs have a consistent patter. Scraping the full text of all 85 papers and storing in a text file is achieved with the following.
+
+#+begin_src python
+import requests
+from bs4 import BeautifulSoup
+
+sources = [
+    "https://guides.loc.gov/federalist-papers/text-1-10",
+    ...
+    "https://guides.loc.gov/federalist-papers/text-81-85",
+]
+
+for s in sources:
+    source = requests.get(s).text
+    soup = BeautifulSoup(source, "lxml")
+
+    with open("federalist_papers.txt", "a") as f:
+        for paper in soup.find_all("div", class_="s-lib-box s-lib-box-std"):
+            title = paper.h2.text
+            if title != "Table of Contents ":
+                f.write(title)
+                for para in paper.find_all("p"):
+                    f.write(para.text + "\n\n")
+                f.write("-" * len(title) + "\n\n")
+#+end_src
+
+
+Now that we have the full text, we need to Then I created a word counter that filters out [[file:Text-Analysis/wordlist.txt][stop words]] such as "the" or "a". These types of words are the most common, but do not add value for our context.
+
+#+begin_src python :results True exports: output
+from collections import Counter
+from pprint import pprint as pp
+
+
+def get_stopwords(stopwords="./Text-Analysis/wordlist.txt"):
+    with open(stopwords) as f:
+        return [word.strip() for word in f.readlines()]
+
+
+def word_counter(filename):
+    stopwords = get_stopwords()
+    with open(filename) as f:
+        word_counts = Counter()
+        for line in f.readlines():
+            word_counts.update(
+                word.strip(".,()")
+                for word in line.lower().split()
+                if word.strip("().,") not in stopwords)
+
+    print(f"The most common words found in {filename} are:")
+    pp(word_counts.most_common(30))
+
+word_counter("./Text-Analysis/federalist_papers.txt")
+#+end_src
+
+
+Then create a word cloud. A third party module makes this incredible simple.
+
+#+begin_src python
+from matplotlib import pyplot as plt
+from wordcloud import STOPWORDS, WordCloud
+
+
+def word_cloud_generator(filename):
+    with open(filename, "r") as text:
+        text_string = " ".join(line for line in text)
+
+    wordcloud = WordCloud(width=1200, height=800, stopwords=STOPWORDS).generate(
+        text_string
+    )
+    plt.axis("off")
+    plt.savefig(f"{filename[:-4]}_word_cloud.png", format="png")
+#+end_src
+
+
+This generates the following word cloud.
+[[./Text-Analysis/federalist_papers_word_cloud.png]]
+

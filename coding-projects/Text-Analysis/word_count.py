@@ -2,12 +2,13 @@ from collections import Counter
 from pprint import pprint as pp
 
 
-def word_counter(filename, stopwords="wordlist.txt"):
-    stopwords_list = []
+def get_stopwords(stopwords="wordlist.txt"):
+    with open(stopwords) as f:
+        return [word.strip() for word in f.readlines()]
 
-    with open(stopwords) as w:
-        for line in w:
-            stopwords_list.append(line.strip("\n"))
+
+def word_counter(filename):
+    stopwords = get_stopwords()
 
     with open(filename) as f:
         word_counts = Counter()
@@ -15,7 +16,7 @@ def word_counter(filename, stopwords="wordlist.txt"):
             word_counts.update(
                 word.strip(".,()")
                 for word in line.lower().split()
-                if word.strip("().,") not in stopwords_list
+                if word.strip("().,") not in stopwords
             )
 
     print(f"The most common words found in {filename} are:")
