@@ -99,14 +99,17 @@ This generates the following word cloud.
 
 [[./Text-Analysis/federalist_papers_word_cloud.png]]
 
-
+* Reflection
 *What did you create and why?*
+
 I created a coding project. When I was first learning out to webscrape, I became very excited. I thought about how I could use it in the classroom and see if I could connect it to other disciplines. Part of the vision of the program we ran at my previous school was to incorporate computer science into all core classes. This is one possible way to do that. 
 
 *How does your project connect to concepts from this course?*
+
 This project fits nicely into module 5, coding and programming. It is written in python and can be achieved with beginner to intermediate coders. The teacher can adjust the level of difficulty depending on the skill level of the students. For more beginners, this project can be done together leveraging screen casts. For more advanced students, outlining the project and agreeing upon an end product can be done together, but then students can code it on their own.
 
 *How could this project support student learning?*
+
 This supports student learning by providing a context for students to utilize their coding skills. To do this by hand would be painstakingly tedious. This motivates the need to use code. Instead of running isolated exercises on web scraping, reading from and writing to files, looping, and 3rd party modules, students are putting those into action with a concrete end goal in mind. It helps increase retention for the individual skills.
 
 Second, it offers practice with abstraction and pattern recognition. In particular, identifying that the Federalist papers URLs are stored in a consistent pattern helps save a lot of work.
@@ -114,6 +117,7 @@ Second, it offers practice with abstraction and pattern recognition. In particul
 Finally, it offers cross-curricular reinforcement. The use of primary-source documents supports what they should be doing in their English language arts and social studies courses.
 
 *How has your understanding of computer science evolved during this course?*
+
 The biggest change in understanding was module 3. It is the content I am the least familiar with. As I mentioned in one of the discussions, I am sure that I have seen this content before, but I have not retained it. As I begin teaching the computer science course at the high school level, I will continue to engage in my own learning so that I can support students. I did appreciate the information in module one. Problem-solving and critical thinking skills are going to be increasingly important as we move forward in the era of artificial intelligence.
 
 *How standards connect.*
