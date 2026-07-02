@@ -128,3 +128,4 @@ The student standard identified is, 3A-AP-17 (Grades 9-10): Decompose problems i
 The teacher standard identified is, 4d: Build connections between CS and other disciplines — Design learning experiences that make connections to other disciplines and real-world contexts. I believe that this is self-evident because we are taking a computer science coding project and incorporating content from social studies. Students are utilizing primary source documents and identifying themes within them; however, we are using computer science as the tool to do that analysis.
 
 📚
+✍️
