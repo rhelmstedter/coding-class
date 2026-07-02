@@ -100,13 +100,14 @@ This generates the following word cloud.
 [[./Text-Analysis/federalist_papers_word_cloud.png]]
 
 * Reflection
+
 *What did you create and why?*
 
-I created a coding project. When I was first learning out to webscrape, I became very excited. I thought about how I could use it in the classroom and see if I could connect it to other disciplines. Part of the vision of the program we ran at my previous school was to incorporate computer science into all core classes. This is one possible way to do that. 
+I created a coding project. When I was first learning to webscrape, I became very excited. I thought about how I could use it in the classroom and see if I could connect it to other disciplines. Part of the vision of the program we ran at my previous school was to incorporate computer science into all core classes. This is one possible way to do that.
 
-*How does your project connect to concepts from this course?*
+How does your project connect to concepts from this course?
 
-This project fits nicely into module 5, coding and programming. It is written in python and can be achieved with beginner to intermediate coders. The teacher can adjust the level of difficulty depending on the skill level of the students. For more beginners, this project can be done together leveraging screen casts. For more advanced students, outlining the project and agreeing upon an end product can be done together, but then students can code it on their own.
+This project fits nicely into module 5, coding and programming. It is written in Python and can be achieved with beginner to intermediate coders. The teacher can adjust the level of difficulty depending on the skill level of the students. For more beginners, this project can be done together leveraging screen casts. For more advanced students, outlining the project and agreeing upon an end product can be done together, but then students can code it on their own.
 
 *How could this project support student learning?*
 
@@ -122,9 +123,8 @@ The biggest change in understanding was module 3. It is the content I am the lea
 
 *How standards connect.*
 
-The student standard identified is, 3A-AP-17 (Grades 9-10): Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects. This is connected as evidenced by the use of functions. Each function name helps to identify the discreet sub-problems that make up the project.
+The student standard identified is, 3A-AP-17 (Grades 9-10): Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects. This is connected as evidenced by the use of functions. Each function name helps to identify the discrete sub-problems that make up the project.
 
-The teacher standard identified is, 4d: Build connections between CS and other disciplines — Design learning experiences that make connections to other disciplines and real-world contexts. I believe that this is self evident because we are taking a computer science coding project and incorporating content from social studies. Students are utilizing primary source documents and identifying themes within them however, we are using computer science as the tool to do that analysis.
-
+The teacher standard identified is, 4d: Build connections between CS and other disciplines — Design learning experiences that make connections to other disciplines and real-world contexts. I believe that this is self-evident because we are taking a computer science coding project and incorporating content from social studies. Students are utilizing primary source documents and identifying themes within them; however, we are using computer science as the tool to do that analysis.
 
 📚
