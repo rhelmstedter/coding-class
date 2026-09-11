@@ -19,8 +19,8 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 
 ** Other Projects
 
-- Introduction Paragraph
-- Madlibs
+- [[file:coding-projects/introduction_paragraph.org][Introduction Paragraph]]
+- [[file:coding-projects/madlibs.org][Madlibs]]
 - Number guessing game
 - Angry Goblin Hunt
 - [[file:./coding-projects/gpa-calculator/gpa-calculator.org][GPA Calculator]]

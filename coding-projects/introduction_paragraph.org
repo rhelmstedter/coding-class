@@ -1,0 +1,42 @@
+#+title: Introduction Paragraph
+
+This is the first real program my students write. It interviews a person and then introduces them: five questions, a little bit of arithmetic, and a paragraph built out of the answers. Everything in it is =input()=, variables, and f-strings, so it is a reasonable first thing to hand a class that has just finished those notebooks.
+
+The reason I like it as a opener is the IPO prompts at the end. The program is small enough that students can actually point at the lines and say which ones are input, which are process, and which are output. That vocabulary comes back all year.
+
+Students work in Colab since they are all on Chromebooks.
+
+- [[file:Introduction_Paragraph.ipynb][Introduction_Paragraph.ipynb]]
+- [[https://colab.research.google.com/drive/1g8rHds7Hm7xDj5ot0QnBPMLfIsvHOGEH][Open in Colab]]
+
+** Prerequisite Notebooks
+
+- [[https://colab.research.google.com/drive/1WCXz-BRIh_iDigZ9zjnIcb0HRjZw2vrL][Python - Expressions, Data Types, & Variables]]
+- [[https://colab.research.google.com/drive/1bX0gOv4ws4ips_Biny7ZmJtQECIHJwxO][Python - print(), f-strings, input()]]
+
+** Success Criteria
+
+- [ ] Use =input()= for the 5 questions:
+  - [ ] name
+  - [ ] age
+  - [ ] favorite color
+  - [ ] hobby
+  - [ ] favorite food
+- [ ] Calculates the approximate days the person has been alive.
+- [ ] Displays the answers to the 5 questions embedded in f-strings.
+- [ ] Answers the IPO prompts.
+
+** Starter Cell
+
+The notebook opens with a docstring and nothing else. The requirements live in the markdown above it, so there is nothing to copy.
+
+#+begin_src python
+"""Introduction Paragraph."""
+
+#+end_src
+
+** Input, Process, Output
+
+After the program runs, students identify which lines correspond to input, process, and output, and describe each stage in 2-5 sentences. They write the answers in markdown cells, which is also their first real use of markdown.
+
+The days-alive calculation is the whole reason the process stage exists here. Without it this program would be input straight to output, which is exactly the observation I want them to make later in Madlibs.
