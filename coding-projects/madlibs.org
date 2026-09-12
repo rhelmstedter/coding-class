@@ -1,0 +1,37 @@
+#+title: Madlibs
+
+Madlibs is the follow-up to the [[file:introduction_paragraph.org][Introduction Paragraph]]. It is deliberately the same programming problem wearing a different hat: collect some words with =input()=, drop them into a string with f-strings, print the result. No new syntax at all.
+
+That is the point. Students get a second pass at the same mechanics while their attention is on writing a silly story rather than on remembering how =input()= works. Repetition at the same difficulty level, not a step up.
+
+I have students play an [[https://www.glowwordbooks.com/blog/category/kids-online-mad-libs/][online madlib]] first so they know what they are building.
+
+- [[file:Madlibs.ipynb][Madlibs.ipynb]]
+- [[https://colab.research.google.com/drive/12t3O-W1AcRV2AkngzEXBzcMmZRZk1WMU][Open in Colab]]
+
+** Resources for Students
+
+- [[https://owl.purdue.edu/owl/general_writing/mechanics/parts_of_speech_overview.html][Purdue OWL: Parts of Speech Overview]] -- nouns, verbs, adjectives, adverbs and the rest, with examples.
+- [[https://colab.research.google.com/drive/1Zt-VvdLdjH4NbGD-wuEkhxdEkqjXuxiB][Python - Multiline Strings]] -- for printing the story as a paragraph instead of one long line.
+
+** Requirements
+
+1. Ask for *5 to 8 words* using =input()=, storing each one in its own variable.
+2. Use *at least three different parts of speech* -- for example a noun, a verb, and an adjective. Do not ask for six nouns.
+3. *Label every prompt with its part of speech.* =input("A plural noun: ")= tells the user what to type. =input("Word: ")= does not.
+4. Print the story using *f-strings*.
+5. Every word collected has to show up in the story.
+6. Run it at least twice with different words.
+
+The story itself is the student's. Graded on structure -- variable count, parts of speech represented, f-string use -- not on how funny it is.
+
+** Starter Cell
+
+#+begin_src python
+"""Madlibs by <YOUR NAME HERE>."""
+
+#+end_src
+
+** If You Finish Early
+
+Not collected, just something to notice. The Introduction Paragraph had three stages: input, process, and output. Madlibs has a big input stage, a big output stage, and almost nothing in between. Why not? What would you have to add to give it a real process stage?
