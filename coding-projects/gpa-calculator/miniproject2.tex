@@ -1,0 +1,431 @@
+% Created 2026-09-07 Mon 11:36
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\makeatletter \@ifpackageloaded{geometry}{\geometry{margin=0.75in}}{\usepackage[margin=0.75in]{geometry}}
+\makeatother\hypersetup{colorlinks, allcolors=., urlcolor=blue,}\bigskip
+\usepackage[inline]{enumitem}
+\setlist{nosep}
+\usepackage{lscape}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{xcolor}
+\author{Russell Helmstedter}
+\date{\textit{09/07/2026}}
+\title{Mini-Project 2: Choose Your Own Adventure Programming}
+\hypersetup{
+ pdfauthor={Russell Helmstedter},
+ pdftitle={Mini-Project 2: Choose Your Own Adventure Programming},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={},
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Propose a Student Programming Assignment}
+\label{sec:orgba8adb4}
+\subsection{Build a GPA Calculator}
+\label{sec:org07d9bf0}
+
+Every quarter you find out your GPA, and every quarter somebody asks how it was calculated. It is not complicated. Each letter grade is worth a number of points, you add up the points from all of your classes, and you divide by how many classes you took. Your job is to write the program that does it: ask for the grade points earned in each of six classes, add them, divide, and report the GPA rounded to two decimal places.\\
+
+The goal is to build a program that takes in several numbers, combines them with arithmetic, and reports a result you could not have worked out at a glance. Along the way you will find out why a number typed on a keyboard is not yet a number the computer can add.\\
+\subsection{Success Criteria}
+\label{sec:org099166a}
+
+\begin{itemize}
+\item[{$\square$}] It asks for grade points for all six classes and waits for each answer.\\
+\item[{$\square$}] Every answer is converted from text to a whole number with \texttt{int()}.\\
+\item[{$\square$}] \texttt{NUMBER\_OF\_CLASSES} is defined at the top as a constant, named in capital letters.\\
+\item[{$\square$}] The total is calculated by adding the six values, not typed in by hand.\\
+\item[{$\square$}] The GPA is calculated by dividing, and is rounded to two decimal places.\\
+\item[{$\square$}] Changing \texttt{NUMBER\_OF\_CLASSES} at the top changes the arithmetic wherever it is used.\\
+\item[{$\square$}] Comments mark the input, process, and output sections.\\
+\item[{$\square$}] Both output lines are built with f-strings.\\
+\item[{$\square$}] It runs top to bottom without errors after \textbf{Runtime -> Restart and run all}.\\
+\end{itemize}
+\subsection{Optional Extensions}
+\label{sec:org04ab082}
+
+Pick one. Each uses something we have not covered yet.\\
+
+\begin{enumerate}
+\item \textbf{Let the user type letter grades.} Typing \texttt{4} when you mean an A is backwards. People have letter grades, not point values. Make the program accept \texttt{A} through \texttt{F} and work out the points itself. You will need somewhere to store what each letter is worth. Ask about \emph{dictionaries}.\\
+\item \textbf{Honor roll.} Add a constant \texttt{HONOR\_ROLL\_GPA} set to 3.5. Use an \texttt{if} statement so a student who made honor roll is congratulated, and a student who did not is told how many more grade points it would have taken.\\
+\item \textbf{Any number of classes.} Use a \texttt{while} loop and a list so the user can enter as many grades as they want and press enter on a blank line to finish. Divide by how many were actually entered.\\
+\end{enumerate}
+\section{Write a Detailed Specification}
+\label{sec:org87e54b1}
+
+\subsection{Overview}
+\label{sec:orgc9cc402}
+
+\begin{center}
+\begin{tabular}{ll}
+Grade band & 9-12\\
+Platform & Python on Google Colaboratory\\
+Assignment & GPA Calculator\\
+Concepts & Variables, assignments, arithmetic expressions, type conversion, data types, constants\\
+\end{tabular}
+\end{center}
+\subsection{Program Requirements}
+\label{sec:org47b491e}
+
+\begin{enumerate}
+\item Define a constant \texttt{NUMBER\_OF\_CLASSES} with the value 6.\\
+\item Print a welcome line and two lines explaining the grading scale.\\
+\item Prompt the user six times, once per class, and store each answer.\\
+\item Convert each of the six stored answers from a string to an integer.\\
+\item Calculate \texttt{total\_points} as the sum of the six converted values.\\
+\item Calculate \texttt{gpa} as \texttt{total\_points / NUMBER\_OF\_CLASSES}.\\
+\item Round \texttt{gpa} to two decimal places.\\
+\item Print the total grade points and the number of classes.\\
+\item Print the GPA.\\
+\end{enumerate}
+\subsection{Example Input and Output}
+\label{sec:orge724471}
+
+A typical case. The student earned A, B, A, B, C, A.\\
+
+\begin{verbatim}
+Welcome to the GPA Calculator.
+Enter the grade points you earned in each class.
+A is 4, B is 3, C is 2, D is 1, F is 0.
+Grade points for class 1: 4
+Grade points for class 2: 3
+Grade points for class 3: 4
+Grade points for class 4: 3
+Grade points for class 5: 2
+Grade points for class 6: 4
+
+You earned 20 grade points in 6 classes.
+Your GPA is 3.33.
+\end{verbatim}
+
+A boundary case. Straight A's, the highest result the program can produce.\\
+
+\begin{verbatim}
+Grade points for class 1: 4
+Grade points for class 2: 4
+Grade points for class 3: 4
+Grade points for class 4: 4
+Grade points for class 5: 4
+Grade points for class 6: 4
+
+You earned 24 grade points in 6 classes.
+Your GPA is 4.0.
+\end{verbatim}
+
+An error case, included because students will hit it in the first five minutes. Typing the letter grade instead of its point value stops the program.\\
+
+\begin{verbatim}
+Grade points for class 1: A
+
+ValueError: invalid literal for int() with base 10: 'A'
+\end{verbatim}
+
+The student's instinct is right and the program is the limited one. Extension 1 exists to fix it.\\
+\subsection{IPO Description}
+\label{sec:org5f1f227}
+
+\textbf{Inputs.} Six strings entered by the user, one per class, each expected to be a digit from 0 to 4.\\
+
+\textbf{Processing.} Six type conversions from string to integer. One addition producing the total. One division producing the GPA. One call to \texttt{round()}.\\
+
+\textbf{Outputs.} Two printed lines, both built with f-strings. The first reports the total grade points and how many classes they came from; the second reports the GPA.\\
+\subsection{Variables and Data}
+\label{sec:org6e9f82e}
+
+\begin{center}
+\begin{tabular}{llll}
+Name & Stores & Type & Kind\\
+\hline
+\texttt{NUMBER\_OF\_CLASSES} & How many classes are on the schedule & int & Constant\\
+\texttt{points\_1} \ldots{} \texttt{points\_6} & One class's grade points & str then int & Variable\\
+\texttt{total\_points} & The six values added together & int & Variable\\
+\texttt{gpa} & Total divided by the number of classes & float & Variable\\
+\end{tabular}
+\end{center}
+
+\texttt{points\_1} through \texttt{points\_6} change type partway through the program, which is the clearest illustration of type conversion the assignment offers. \texttt{gpa} is a float even though nobody typed a decimal point, because dividing an int by an int in Python produces one.\\
+\subsection{Algorithm}
+\label{sec:orgf6e9c86}
+
+\begin{verbatim}
+BEGIN
+  SET NUMBER_OF_CLASSES to 6
+
+  DISPLAY welcome message
+  DISPLAY the grading scale
+
+  FOR each of the six classes (written out, not looped):
+    PROMPT for grade points
+    STORE the answer
+
+  FOR each of the six answers (written out, not looped):
+    CONVERT the answer to an integer
+
+  SET total_points to the sum of the six answers
+  SET gpa to total_points / NUMBER_OF_CLASSES
+  SET gpa to gpa rounded to 2 decimal places
+
+  DISPLAY total_points and NUMBER_OF_CLASSES
+  DISPLAY gpa
+END
+\end{verbatim}
+\subsection{Constraints}
+\label{sec:orge578dee}
+
+Students must define \texttt{NUMBER\_OF\_CLASSES} as a constant at the top, convert every input with \texttt{int()} before using it in arithmetic, mark the input, process, and output sections with comments, and build both printed lines with f-strings.\\
+
+Students do not need conditional statements, loops, or functions. None have been covered, and the required program is designed so that none are needed.\\
+
+Students may not use lists, dictionaries, or imported libraries. Twelve near-identical lines is deliberately repetitive, and that repetition is the argument for the extensions.\\
+\section{Create the Solution}
+\label{sec:orgac6dbbe}
+
+\subsection{Source Code}
+\label{sec:orge21867a}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small,keywordstyle=\color{blue!70!black}\bfseries,stringstyle=\color{green!45!black},commentstyle=\itshape\color{gray!130},showstringspaces=false,breaklines=true,frame=lines,framesep=6pt,language=Python,numbers=none]
+"""GPA Calculator."""
+
+# CONSTANTS
+NUMBER_OF_CLASSES = 6
+
+# INPUT
+print("Welcome to the GPA Calculator.")
+print("Enter the grade points you earned in each class.")
+print("A is 4, B is 3, C is 2, D is 1, F is 0.")
+
+points_1 = input("Grade points for class 1: ")
+points_2 = input("Grade points for class 2: ")
+points_3 = input("Grade points for class 3: ")
+points_4 = input("Grade points for class 4: ")
+points_5 = input("Grade points for class 5: ")
+points_6 = input("Grade points for class 6: ")
+
+# PROCESS
+# input() always hands back a string, so every answer needs converting first.
+points_1 = int(points_1)
+points_2 = int(points_2)
+points_3 = int(points_3)
+points_4 = int(points_4)
+points_5 = int(points_5)
+points_6 = int(points_6)
+
+total_points = points_1 + points_2 + points_3 + points_4 + points_5 + points_6
+
+# Dividing an int by an int gives a float, which is what a GPA needs.
+gpa = total_points / NUMBER_OF_CLASSES
+gpa = round(gpa, 2)
+
+# OUTPUT
+print(f"You earned {total_points} grade points in {NUMBER_OF_CLASSES} classes.")
+print(f"Your GPA is {gpa}.")
+\end{lstlisting}
+\subsection{Sample Run}
+\label{sec:orga572440}
+
+The program as it actually runs, with no blank line between the last prompt and the first result.\\
+
+\begin{verbatim}
+Welcome to the GPA Calculator.
+Enter the grade points you earned in each class.
+A is 4, B is 3, C is 2, D is 1, F is 0.
+Grade points for class 1: 4
+Grade points for class 2: 3
+Grade points for class 3: 4
+Grade points for class 4: 3
+Grade points for class 5: 2
+Grade points for class 6: 4
+You earned 20 grade points in 6 classes.
+Your GPA is 3.33.
+\end{verbatim}
+\subsection{Testing Evidence}
+\label{sec:org47d01fb}
+
+Rather than retype output by hand, I wrote a harness that feeds each specification test case to the real program through standard input and compares the output against what the specification promises. The file is \texttt{test\_gpa\_calculator.py}. Its actual output follows.\\
+
+\begin{verbatim}
+[PASS] Typical case: A, B, A, B, C, A
+       input: 4, 3, 4, 3, 2, 4
+       You earned 20 grade points in 6 classes.
+       Your GPA is 3.33.
+
+[PASS] Every point value used: 3, 2, 4, 1, 0, 3
+       input: 3, 2, 4, 1, 0, 3
+       You earned 13 grade points in 6 classes.
+       Your GPA is 2.17.
+
+[PASS] Boundary case: straight A's (highest possible)
+       input: 4, 4, 4, 4, 4, 4
+       You earned 24 grade points in 6 classes.
+       Your GPA is 4.0.
+
+[PASS] Boundary case: straight F's (lowest possible)
+       input: 0, 0, 0, 0, 0, 0
+       You earned 0 grade points in 6 classes.
+       Your GPA is 0.0.
+
+[PASS] Error case: a letter is not a number
+       input: A, 3, 4, 3, 2, 4
+       ValueError: invalid literal for int() with base 10: 'A'
+
+5 of 5 test cases passed.
+\end{verbatim}
+\subsection{Extension Solutions}
+\label{sec:org037277a}
+
+Not part of the required assignment. I wrote and ran all three so the teacher notes describe code that works.\\
+
+\textbf{Extension 1} replaces the input and processing sections with a lookup table.\\
+
+\begin{lstlisting}[basicstyle=\ttfamily\small,keywordstyle=\color{blue!70!black}\bfseries,stringstyle=\color{green!45!black},commentstyle=\itshape\color{gray!130},showstringspaces=false,breaklines=true,frame=lines,framesep=6pt,language=Python,numbers=none]
+LETTERS_TO_POINTS = {"A": 4, "B": 3, "C": 2, "D": 1, "F": 0}
+
+grade_1 = input("Letter grade for class 1: ")
+# ... five more
+
+points_1 = LETTERS_TO_POINTS[grade_1]
+# ... five more
+\end{lstlisting}
+
+Grades of A, B, A, B, C, A produce the same 20 points and the same 3.33, which is the point: the arithmetic did not change, only what the user is allowed to type. A lowercase \texttt{a} now fails with \texttt{KeyError: 'a'} rather than \texttt{ValueError}.\\
+
+\textbf{Extension 2} replaces the output section.\\
+
+\begin{lstlisting}[basicstyle=\ttfamily\small,keywordstyle=\color{blue!70!black}\bfseries,stringstyle=\color{green!45!black},commentstyle=\itshape\color{gray!130},showstringspaces=false,breaklines=true,frame=lines,framesep=6pt,language=Python,numbers=none]
+HONOR_ROLL_GPA = 3.5
+
+print(f"Your GPA is {gpa}.")
+if gpa >= HONOR_ROLL_GPA:
+    print("Congratulations, you made honor roll.")
+else:
+    points_needed = HONOR_ROLL_GPA * NUMBER_OF_CLASSES - total_points
+    print(f"You need {points_needed} more grade points to make honor roll.")
+\end{lstlisting}
+
+A GPA of exactly 3.5 congratulates, since the comparison uses \texttt{>=}. The typical case reports \texttt{You need 1.0 more grade points to make honor roll.}\\
+
+\textbf{Extension 3} replaces the input and processing sections with a loop.\\
+
+\begin{lstlisting}[basicstyle=\ttfamily\small,keywordstyle=\color{blue!70!black}\bfseries,stringstyle=\color{green!45!black},commentstyle=\itshape\color{gray!130},showstringspaces=false,breaklines=true,frame=lines,framesep=6pt,language=Python,numbers=none]
+points = []
+print("Enter grade points one at a time. Press enter on a blank line to finish.")
+while True:
+    answer = input("Grade points: ")
+    if answer == "":
+        break
+    points.append(int(answer))
+
+total_points = sum(points)
+gpa = round(total_points / len(points), 2)
+\end{lstlisting}
+
+Four grades of 4, 3, 4, 2 give \texttt{You earned 13 grade points in 4 classes.} and \texttt{Your GPA is 3.25.} Seven grades work equally well. \texttt{NUMBER\_OF\_CLASSES} is no longer needed at all, which is worth asking students about.\\
+\section{Teacher Notes}
+\label{sec:org4f92bad}
+
+\subsection{Estimated Work Time}
+\label{sec:org2b858dd}
+One 55-minute period. Most of it is typing. The conceptual work is concentrated in about four minutes, which is why I would run this as a whole-class build rather than silent independent work.\\
+\subsection{Prerequisite Knowledge}
+\label{sec:org2ad3eb1}
+Chapter 5 and Chapter 6 through section 6.14, plus one prior program using \texttt{input()}, \texttt{print()}, variables, and f-strings.\\
+\subsection{Vocabulary}
+\label{sec:org2aa954f}
+Constant, variable, identifier, assignment, expression, data type, string, integer, float, type conversion, rounding.\\
+\subsection{A Likely Misconception}
+\label{sec:orgb461ef0}
+Students believe that because they typed a number, they have a number. They have a string that looks like one. This surfaces two ways.\\
+
+The louder way: a student types \texttt{A} instead of \texttt{4} and gets \texttt{ValueError: invalid literal for int() with base 10: 'A'}. Python names the exact value it could not convert, which makes it one of the friendlier errors to read.\\
+
+The quieter way: a student skips the conversions entirely. The six inputs are joined end to end rather than added, \texttt{total\_points} becomes the string \texttt{"434324"}, and the program stops at the division with \texttt{TypeError: unsupported operand type(s) for /: 'str' and 'int'}. The message is precise, but only if you already know what \texttt{'str'} means, which is the whole lesson. I would put both tracebacks on the board before anyone hits them.\\
+\subsection{Supporting Students Who Need Help}
+\label{sec:org139118f}
+Hand out a notebook with the constant and the six prompts already written, so the student supplies only the conversions and the arithmetic. This removes typing without removing thinking.\\
+
+For students stuck on type conversion specifically, put \texttt{"4" + "3"} and \texttt{4 + 3} in adjacent cells and run both. Seeing \texttt{43} and \texttt{7} side by side does more than an explanation.\\
+\subsection{Extending for Students Ready for a Challenge}
+\label{sec:orgeffbc22}
+The three extensions are ordered by how badly students want them rather than by chapter. Extension 1 is first because it is the one they ask for unprompted, within minutes, as soon as the program rejects an \texttt{A}. It needs a dictionary, which the book has not reached, so the honest answer to a student who asks is that they have found the reason dictionaries exist. Extensions 2 and 3 preview Chapters 7 and 8. Past all three, the natural question is weighted GPA.\\
+\subsection{Accessibility}
+\label{sec:orgb820001}
+Colab runs in any browser, works with a screen reader, and inherits browser font sizing. The pre-populated notebook cuts typing for students who need that.\\
+\section{Reflection}
+\label{sec:org8acf070}
+
+\subsection{Why is this appropriate for grades 9-12?}
+\label{sec:org600d315}
+
+The arithmetic is not the challenge, and that is deliberate. Every student already knows what a GPA is and roughly how it is computed, so nothing in the problem domain competes for attention with the programming. What is genuinely new is that a value has a type, that the type determines what can be done with it, and that \texttt{"4"} and \texttt{4} are different things that look identical on a screen. That is abstract, and it is within reach for a high schooler in a way it would not be for a sixth grader.\\
+
+The context also does work a temperature converter would not. Students care about their GPA. The first time the program prints a number they did not expect, the argument in the room is not about Python.\\
+\subsection{Which Chapter 5 and 6 concepts does it assess?}
+\label{sec:orgef69ca2}
+
+Alignment to the textbook is as follows:\\
+
+\begin{center}
+\begin{tabular}{ll}
+Section & Where it appears\\
+\hline
+5.1 Programming (general) & The input-process-output structure of the whole program\\
+5.3 Comments and whitespace & Required comment headers marking the three stages\\
+5.5 Code and pseudocode & The algorithm in the specification\\
+6.1 Variables and assignments & Eight assignment statements\\
+6.2 Variables (integer) & The six point values and the total\\
+6.3 Identifiers & Naming rules for variables and constants\\
+6.4, 6.5 Arithmetic expressions & The sum and the division\\
+6.7 Floating-point & \texttt{gpa}\\
+6.8 Math functions & \texttt{round()}\\
+6.11 Type conversions & Six \texttt{int()} calls\\
+6.13 Data types & Values that arrive as \texttt{str} and become \texttt{int} then \texttt{float}\\
+6.14 Constants & \texttt{NUMBER\_OF\_CLASSES}\\
+\end{tabular}
+\end{center}
+\subsection{How does it demonstrate input, processing, and output?}
+\label{sec:org05f26bb}
+
+The three stages are separated in the source by comment headers, which section 5.3 asks for, and they are also separated in time when the program runs. Six prompts appear and wait. Then nothing visible happens for the length of nine statements. Then two lines appear at once.\\
+
+That silent middle is the part worth naming. Students tend to believe a program is doing something only when the screen changes, and this program spends its most important moments doing nothing they can see. The six conversions in particular are invisible and load-bearing: remove them and the program does not produce a wrong answer, it stops running.\\
+\subsection{What did I discover while building and testing it?}
+\label{sec:org5cfbc61}
+
+First, the error case matters more than either boundary case. Straight A's and straight F's both work and tell me little. Typing \texttt{A} into a prompt that wants \texttt{4} stops the program cold, and it is what most students will actually experience.\\
+
+Second, \texttt{round()} and a format specifier are not the same tool, and I had conflated them in an early draft. \texttt{round(gpa, 2)} changes the value stored in \texttt{gpa}; \texttt{f"\{gpa:.2f\}"} changes only what is displayed. The visible consequence is that straight A's prints \texttt{4.0} rather than \texttt{4.00}. I kept \texttt{round()} because it matches how I would write this outside a classroom, and the inconsistent decimal width is a reasonable thing for a student to notice and ask about.\\
+
+Third, and most usefully: I originally wrote this with letter grades and a dictionary, because that is how my own version works. Checking the assignment against the zyBook's section list showed that dictionaries appear nowhere in Chapters 5 or 6, and arrays do not arrive until Chapter 9. The lookup table was three chapters further out of scope than the \texttt{if} statement I had already been careful to exclude. Reversing it, so that students type numbers and the dictionary becomes the extension they ask for, produced a better assignment than either version I had before. The frustration of being told \texttt{A} is not a number is now the motivation for the next chapter rather than a detail I had smoothed over.\\
+\subsection{What would I change before using it?}
+\label{sec:org083555c}
+
+The twelve near-identical lines are the weakest part. They are honest, since students have no loop yet, and the repetition is the argument for Extension 3. But twelve is enough to feel like busywork rather than a hint, and four classes would make the same point with a third less typing. I may cut it.\\
+
+I would also like to know whether Extension 1 lands as an invitation or as a wall. Telling a student that the fix for their complaint is a topic we have not reached is either motivating or deflating, and I cannot predict which from my desk. That is what I would watch for the first time I run this.\\
+\section{Files}
+\label{sec:orgc547462}
+
+\begin{itemize}
+\item \texttt{gpa\_calculator.py} — the complete solution, tangled from this document\\
+\item \texttt{test\_gpa\_calculator.py} — the test harness that produced the testing evidence\\
+\item \texttt{GPA\_Calculator\_Solution.ipynb} — the Colab notebook version\\
+\end{itemize}
+\end{document}
