@@ -24,6 +24,7 @@ Dylan Beattie has an amazing talk [[https://youtu.be/6avJHaC3C2U][The Art of Cod
 - Number guessing game
 - Angry Goblin Hunt
 - [[file:coding-projects/gpa-calculator/miniproject2.org][GPA Calculator]]
+- [[file:coding-projects/chatbot-2.0/miniproject3.org][Chatbot 2.0]]
 - [[file:coding-projects/intro_to_datetime.org][Intro to datetime]]
 - [[file:coding-projects/countdown-timer.org][Countdown Timer]]
 - [[file:./coding-projects/rock-paper-scissors.org][Rock Paper Scissors]]
