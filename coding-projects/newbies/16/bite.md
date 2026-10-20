@@ -29,24 +29,15 @@ The answer to a question like that is always a **boolean**: `True` or `False`. P
 
 ### Example
 
-> 🔮 **Predict first.** Guess whether each line prints `True` or `False`.
+> 🔮 **Predict first.** Guess whether each line prints `True` or `False`. Then run it.
 
-```
+```python
 age = 18
 
 print(age == 16)
 print(age != 16)
 print(age >= 18)
 print("Ada" == "ada")
-```
-
-Output:
-
-```
-False
-True
-True
-False
 ```
 
 Look closely at the last one. Strings are compared letter by letter, and to Python an uppercase `A` and a lowercase `a` are different characters.

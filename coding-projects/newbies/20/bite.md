@@ -24,7 +24,7 @@ Every time the body finishes, Python jumps back up to the `while` line and check
 
 > 🔍 **Investigate.** Read the code below line by line. What makes this loop stop?
 
-```
+```python
 count = 1
 
 while count <= 5:
@@ -48,9 +48,9 @@ Sometimes that's on purpose. Python gives you two keywords for working with loop
 - **`break`**: if you reach this keyword, exit the loop.
 - **`continue`**: if you reach this keyword, go back to the top of the loop.
 
-> 🔮 **Predict first.** Which numbers will print? Is `3` one of them?
+> 🔮 **Predict first.** Which numbers will print? Is `3` one of them? Then run it.
 
-```
+```python
 count = 0
 
 while True:

@@ -28,7 +28,7 @@ Since the order matters, think carefully about which check goes first.
 
 > 🔍 **Investigate.** Read the code below line by line. What would print for an age of `16`? `18`? `12`?
 
-```
+```python
 def check_age(age):
     if age >= 18:
         print("You can vote.")
@@ -36,6 +36,10 @@ def check_age(age):
         print("You can drive.")
     else:
         print("You're still a kid!")
+
+check_age(16)
+check_age(18)
+check_age(12)
 ```
 
 An 18 year old can drive too, but `check_age(18)` only prints `You can vote.` The first `True` branch wins.
@@ -54,6 +58,6 @@ Complete the `speed_check` function. It needs to take one parameter, `speed`. Yo
 | 80 up to and including 100  | `Thanks for driving safely!` |
 | more than 100               | `Please slow down.`          |
 
-Test your function with the edge cases, like `79`, `80`, `100`, and `101`, before you submit.
+Test your function with the edge cases, like `79`, `80`, `100`, and `101`, before you run the tests.
 
 Good luck, and happy coding! 🐍

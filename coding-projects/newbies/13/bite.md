@@ -21,17 +21,12 @@ Just like strings and lists, dictionaries have methods too. In this Bite, you'll
 
 > 🔍 **Investigate.** Read the code below line by line. How does `.items()` show each pair?
 
-```
+```python
 prices = {"taco": 3, "burrito": 9, "quesadilla": 7, "horchata": 4}
 
 print(prices.keys())
-# Output: dict_keys(['taco', 'burrito', 'quesadilla', 'horchata'])
-
 print(prices.values())
-# Output: dict_values([3, 9, 7, 4])
-
 print(prices.items())
-# Output: dict_items([('taco', 3), ('burrito', 9), ('quesadilla', 7), ('horchata', 4)])
 ```
 
 `.items()` hands back each pair wrapped in parentheses: the key first, then the value. Hang on to that idea. It will come back when we start looping over dictionaries.

@@ -28,7 +28,7 @@ Only **one** branch ever runs. If the conditional is `True`, Python runs the `if
 
 ### Example
 
-```
+```python
 def check_weather(weather):
     if weather == "rainy":
         print("Bring an umbrella.")
@@ -36,13 +36,10 @@ def check_weather(weather):
         print("Leave the umbrella at home.")
 
 check_weather("rainy")
-# Output: Bring an umbrella.
-
 check_weather("sunny")
-# Output: Leave the umbrella at home.
 ```
 
-> 🔧 **Modify.** What would `check_weather("Rainy")` print? Why?
+> 🔧 **Modify.** Change the first call to `check_weather("Rainy")` and run it again. What prints? Why?
 
 ### Your Task
 

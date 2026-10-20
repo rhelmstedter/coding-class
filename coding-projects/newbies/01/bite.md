@@ -7,7 +7,7 @@ Related Bites:
 
 # Bite Description
 
-Welcome to the Newbie Bites! Each Bite is a small exercise that focuses on one idea. Read the description, write a little code, and then submit it to see if it passes the tests.
+Welcome to the Newbie Bites! Each Bite is a small exercise that focuses on one idea. Read the description, write a little code, and then run the tests to see if it passes.
 
 In this Bite, you'll create your very first variable.
 
@@ -21,22 +21,19 @@ name = value
 
 We refer to this thing as an **object**.
 
-A useful analogy (borrowed from Stephen Gruppetta's [Monty and the White Room](https://thepythoncodingbook.com/2021/08/12/learn-python-coding-with-monty-and-the-white-room/)) is to think of a box. The name of the object is written on a label on the outside of the box, and the value is stored inside the box. Once the box is made, Python puts it on a shelf somewhere in memory. Whenever you write the name later on, Python finds the box with that label and hands you back whatever is inside.
+A useful analogy comes from Stephen Gruppetta's [Monty and the White Room](https://thepythoncodingbook.com/2021/08/12/learn-python-coding-with-monty-and-the-white-room/). Picture your program as a White Room, with Monty inside following your instructions. Every object is a box. Monty writes the name on a label on the outside of the box, puts the value inside, and sets the box on a shelf. Whenever you write the name later on, Monty finds the box with that label and hands you back whatever is inside.
 
 ### Example
 
-```
+```python
 food = "Pizza"
 score = 35
 
 print(food)
-# Output: Pizza
-
 print(score)
-# Output: 35
 ```
 
-After these two lines run, there are two boxes on the shelf. One is labeled `food` and holds `"Pizza"`. The other is labeled `score` and holds `35`.
+After the first two lines run, there are two boxes on the shelf. One is labeled `food` and holds `"Pizza"`. The other is labeled `score` and holds `35`.
 
 Notice that the name never has quotes around it.
 

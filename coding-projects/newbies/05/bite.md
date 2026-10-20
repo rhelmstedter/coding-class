@@ -17,18 +17,17 @@ When you assign an expression to a name, Python evaluates the right hand side of
 
 ### Example
 
-```
+```python
 apples = 4
 oranges = 6
 fruit = apples + oranges
 
 print(fruit)
-# Output: 10
 ```
 
 `fruit` doesn't hold the words `apples + oranges`. Python looks inside the `apples` box, looks inside the `oranges` box, adds the values, and puts `10` in the `fruit` box.
 
-Why bother using the names instead of just typing `4 + 6`? Because if `apples` changes later, `fruit` will still be correct.
+Why bother using the names instead of just typing `4 + 6`? Because if you change the value of `apples` and run the code again, `fruit` will still be correct.
 
 ### A Note on Style
 

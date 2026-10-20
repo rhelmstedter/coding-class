@@ -17,17 +17,14 @@ Whatever you want to see on the screen goes inside the parentheses.
 
 ### Example
 
-```
+```python
 print("Tacos are better than burritos.")
-# Output: Tacos are better than burritos.
-
 print(42)
-# Output: 42
 ```
 
-Text goes inside quotation marks, because it is a string. Remember from the last Bite: if you leave the quotation marks off, Python thinks you are giving it the name of an object, and you will probably get a `NameError`.
+Text goes inside quotation marks, because it is a string. Remember from Newbie Bite 1 that names never have quotes around them. So if you leave the quotation marks off, Python thinks you are giving it the name of an object, and you will probably get a `NameError`.
 
-Remember, anytime you open quotation marks `""` or parentheses `()`, you need to close them. Every opening needs a matching closing.
+Also, anytime you open quotation marks `""` or parentheses `()`, you need to close them. Every opening needs a matching closing.
 
 ### Your Task
 

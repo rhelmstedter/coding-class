@@ -13,12 +13,11 @@ In this Bite, you'll print a sentence that mixes plain text with the values stor
 
 One way to combine text and objects is with the `+` sign. This is called **string concatenation**. A number has to be wrapped in `str()` before it can be joined with text.
 
-```
+```python
 name = "Mr. Helmstedter"
 age = 35
 
 print("My name is " + name + " and I am " + str(age) + " years old.")
-# Output: My name is Mr. Helmstedter and I am 35 years old.
 ```
 
 It works, but look at all those quotes, plus signs, and spaces you have to keep track of.
@@ -27,12 +26,11 @@ It works, but look at all those quotes, plus signs, and spaces you have to keep 
 
 **f-string** stands for *formatted string*. Put an `f` right before the opening quote, and you can drop objects straight into `{ }` placeholders. No `+` or `str()` needed.
 
-```
+```python
 name = "Mr. Helmstedter"
 age = 35
 
 print(f"My name is {name} and I am {age} years old.")
-# Output: My name is Mr. Helmstedter and I am 35 years old.
 ```
 
 > 🔍 **Investigate.** Compare the two `print()` lines above. What is the same? What is different? Which is easier to read?

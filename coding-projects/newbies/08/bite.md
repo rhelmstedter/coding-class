@@ -27,9 +27,9 @@ Strings come with a lot of methods. Three of the most useful change the casing o
 
 ### Example
 
-> 🔮 **Predict first.** Read the code below and guess what each line will print before you look at the output.
+> 🔮 **Predict first.** Read the code below and guess what each line will print. Then run it.
 
-```
+```python
 shout = "WHY ARE YOU YELLING"
 whisper = "please be quiet"
 book = "the lord of the rings"
@@ -37,14 +37,6 @@ book = "the lord of the rings"
 print(shout.lower())
 print(whisper.upper())
 print(book.title())
-```
-
-Output:
-
-```
-why are you yelling
-PLEASE BE QUIET
-The Lord Of The Rings
 ```
 
 String methods don't change the original box. `shout` still holds `"WHY ARE YOU YELLING"`. The method gives you back a **new** string. If you want to keep it, you have to put it in a box of its own.

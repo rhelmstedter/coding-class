@@ -13,9 +13,12 @@ In this Bite, you'll meet the dictionary, one of the most useful data structures
 
 > 🔍 **Investigate.** Read the code below. Whose score is `94`? How do you know?
 
-```
+```python
 names = ["Ada", "Grace", "Alan"]
 scores = [88, 94, 71]
+
+print(names[1])
+print(scores[1])
 ```
 
 Two lists can work, but only if you keep them in the same order. Nothing inside the `scores` box says whose score is whose. If someone adds a name and forgets the score, every score after that lines up with the wrong person.
@@ -34,14 +37,11 @@ label = {key: value, key: value, key: value}
 
 ### Example
 
-```
+```python
 scores = {"Ada": 88, "Grace": 94, "Alan": 71}
 
 print(scores)
-# Output: {'Ada': 88, 'Grace': 94, 'Alan': 71}
-
 print(type(scores))
-# Output: <class 'dict'>
 ```
 
 |                                  | List                  | Dictionary                     |

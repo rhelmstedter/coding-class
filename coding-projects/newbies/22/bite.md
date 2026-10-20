@@ -31,7 +31,7 @@ Each time through the loop, the next item gets put in the box named on the `for`
 
 ### Example
 
-```
+```python
 foods = ["tacos", "pizza", "hamburgers"]
 
 for food in foods:

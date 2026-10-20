@@ -14,7 +14,7 @@ In the last Bite you put a value in a box. In this Bite we are going to look at 
 | Data Type | Common Name             | Python Name              |
 |-----------|-------------------------|--------------------------|
 | Text      | string                  | `str`                    |
-| Numeric   | integer, float, complex | `int`, `float`, `complex`|
+| Numeric   | integer, float, complex | `int`, `float`, `complex` |
 | Sequence  | list, tuple, range      | `list`, `tuple`, `range` |
 | Mapping   | dictionary              | `dict`                   |
 | Set       | set, frozenset          | `set`, `frozenset`       |
@@ -24,7 +24,7 @@ For now we only care about three of them:
 
 - **Integers** (`int`) are whole numbers, like `7`, `-12`, or `2024`.
 - **Floats** (`float`) are numbers with a decimal point, like `3.14` or `9.99`.
-- **Strings** (`str`) store text. Strings always go inside quotation marks, like `"hello"`.
+- **Strings** (`str`) are text. Strings always go inside quotation marks, like `"hello"`.
 
 Strings store text. Numbers store, you guessed it, numbers.
 
@@ -32,9 +32,9 @@ You can check the type of any object with the `type()` function.
 
 ### Example
 
-> 🔮 **Predict first.** Read the code below and guess what each line will print. Then check the output.
+> 🔮 **Predict first.** Read the code below and guess what each line will print. Then run it.
 
-```
+```python
 price = 9.99
 players = 11
 team = "Galaxy"
@@ -44,15 +44,6 @@ print(type(price))
 print(type(players))
 print(type(team))
 print(type(jersey))
-```
-
-Output:
-
-```
-<class 'float'>
-<class 'int'>
-<class 'str'>
-<class 'str'>
 ```
 
 Look closely at `players` and `jersey`. They look like the same number, but the quotation marks turn `"11"` into a string. To Python, `11` and `"11"` are two different things.

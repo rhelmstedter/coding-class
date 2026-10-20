@@ -25,19 +25,16 @@ Pretty much everything else is truthy. For truthy values, just existing is enoug
 
 If you're ever not sure, the `bool()` function will tell you whether an object is truthy or falsy.
 
-```
+```python
 print(bool("pizza"))
-# Output: True
-
 print(bool([]))
-# Output: False
 ```
 
 ### Example
 
-> 🔮 **Predict first.** Which of these lines will print?
+> 🔮 **Predict first.** Which of these lines will print? Then run it.
 
-```
+```python
 if "pizza":
     print("one")
 
@@ -51,26 +48,17 @@ if []:
     print("four")
 ```
 
-Output:
-
-```
-one
-three
-```
-
 An empty string and an empty list are falsy, so their `print()` lines never run.
 
 This is really handy for checking whether something is there at all. Instead of checking whether a list has a length of zero, you can just put the list after `if`.
 
-```
+```python
 movies = []
 
 if movies:
     print(f"There are {len(movies)} movies to choose from.")
 else:
     print("So sad, there is nothing to watch.")
-
-# Output: So sad, there is nothing to watch.
 ```
 
 > 🔧 **Modify.** Put a few movies in the list and run it again.

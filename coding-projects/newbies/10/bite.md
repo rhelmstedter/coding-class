@@ -15,7 +15,7 @@ Each item in a list has a position called its **index**. Put the index in square
 
 **Python starts counting at 0.**
 
-```
+```python
 movies = ["Rush Hour", "Blues Brothers", "Ocean's Eleven", "Shaft", "Back to the Future"]
 ```
 
@@ -29,16 +29,15 @@ movies = ["Rush Hour", "Blues Brothers", "Ocean's Eleven", "Shaft", "Back to the
 
 A list of 5 items has indexes 0 through 4. There is no index 5. If you ask for it, you'll get `IndexError: list index out of range`. That's Python telling you that you counted past the end of the list. It is one of the most common errors you will see.
 
-```
+```python
 movies[1]
-# 'Blues Brothers'
 ```
 
 ### Counting From the End
 
 > 🔮 **Predict first.** Based on the error above, what do you think will happen here?
 
-```
+```python
 movies[-1]
 ```
 

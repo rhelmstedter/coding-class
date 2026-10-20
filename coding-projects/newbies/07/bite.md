@@ -30,16 +30,9 @@ You usually want to save that string in a box so you can use it later.
 
 ### Example
 
-```
+```python
 user_name = input("What is your name? ")
 print(f"Hello, {user_name}!")
-```
-
-If the user types `Ada`, the output is:
-
-```
-What is your name? Ada
-Hello, Ada!
 ```
 
 Notice the space after the question mark in the prompt. Without it, whatever the user types would be squished right up against the `?`.

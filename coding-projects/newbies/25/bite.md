@@ -17,9 +17,9 @@ When Monty is inside a function room, he leaves the door **open** behind him. Th
 
 ### Example
 
-> 🔍 **Investigate.** Read the code below line by line. Which function does the math? Which one does the printing?
+> 🔍 **Investigate.** Read the code below line by line. Which function works out the grade? Which one does the printing?
 
-```
+```python
 def convert_to_letter_grade(score):
     if score >= 90:
         return "A"
@@ -37,7 +37,6 @@ def print_report(name, score):
 
 
 print_report("Ada", 95)
-# Output: Ada's grade is A.
 ```
 
 Notice that `convert_to_letter_grade` doesn't print anything. Working out the answer is that function's job. Deciding what to *do* with the answer belongs to whoever called it.

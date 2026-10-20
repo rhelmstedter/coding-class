@@ -31,18 +31,15 @@ Unlike string methods, list methods change the list **in place**. You don't need
 
 > 🔍 **Investigate.** Read the code below line by line. What changed between each `print()`?
 
-```
+```python
 movies = ["star wars", "the batman", "shaft"]
 print(movies)
-# Output: ['star wars', 'the batman', 'shaft']
 
 movies.remove("the batman")
 print(movies)
-# Output: ['star wars', 'shaft']
 
 movies.append("batman")
 print(movies)
-# Output: ['star wars', 'shaft', 'batman']
 ```
 
 ### Your Task

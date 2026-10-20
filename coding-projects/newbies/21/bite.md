@@ -30,9 +30,9 @@ Everything to the **left** of the `#` still runs. Everything to the **right** is
 
 ### Commenting Out Code
 
-Comments aren't just for notes. Putting a `#` in front of a line of code is called **commenting it out**. The line stays in your file, but Python won't run it. It's a great way to test what happens without a line, without deleting it.
+Comments aren't just for notes. Putting a `#` in front of a line of code is called **commenting it out**. The line stays in your file, but Python won't run it. It's a great way to see what your program does without that line, and you don't have to delete it.
 
-```
+```python
 print("This line runs.")
 # print("This line doesn't.")
 ```

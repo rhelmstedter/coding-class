@@ -21,27 +21,27 @@ A list is still just one box on the shelf, with one label on the outside. Inside
 
 ### Example
 
-```
+```python
 scores = [88, 94, 71, 100, 65]
 names = ["Ada", "Grace", "Alan"]
 
 print(names)
-# Output: ['Ada', 'Grace', 'Alan']
-
 print(type(names))
-# Output: <class 'list'>
 ```
 
 A list can hold any data type, and it doesn't have to hold just one kind:
 
-```
+```python
 mixed = ["Ada", 36, True, 3.14]
 empty = []
+
+print(mixed)
+print(empty)
 ```
 
 ### Your Task
 
-The people who created these Bites handed out ninja belts as you completed them. The belts, in order, were:
+The people who created these Bites handed out ninja belts as you worked through them. The belts, in order, were:
 
 **white, yellow, orange, green, blue, brown, black**
 
