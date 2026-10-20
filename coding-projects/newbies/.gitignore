@@ -1,0 +1,4 @@
+# Keep solutions local; publish only instructions, templates, and tests.
+*/*.py
+!*/test_*.py
+!*/*template*.py
