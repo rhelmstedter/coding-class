@@ -1,0 +1,60 @@
+#+title: GPA Calculator: For vs. While
+
+This is the first assignment after the Loops and Dictionaries notebooks. Students build the same GPA calculator twice, once with a =for= loop and once with a =while= loop, and then write about what changed. The two programs are supposed to print the same GPA for the same six grades, so the only thing that differs between them is the loop. That is what makes the comparison worth writing about.
+
+The reflection is weighted more heavily than the code. Writing the calculator is reps: =input()=, string methods, a dictionary lookup, and a running total, none of it new. The questions ask students to find the line that stops each loop, predict what breaks when the counter goes missing, and finally write their own rule for when to reach for each loop. The =done= question sets up the version where a =while= loop is actually the better tool, without making them build it.
+
+This is not the COMP 605 GPA calculator in [[file:gpa-calculator/miniproject2.org][gpa-calculator/]]. That one assumes students have never seen a loop and is much more involved.
+
+- [[file:GPA_Calculator.ipynb][GPA_Calculator.ipynb]]
+- [[https://colab.research.google.com/drive/1ll8nvSiesMn_qJ2Nyf51ejsntUhLS74M][Open in Colab]]
+
+** Prerequisite Notebooks
+
+- [[https://colab.research.google.com/drive/1ohpIF4w5bPLLLZVncgruaq_8UZVJ3539][Python - Loops]]
+- [[https://colab.research.google.com/drive/1xPIa5zyBUVzGdQ9Dd4U-n6lqGQ_0rVth][Python - Dictionaries]]
+- [[https://colab.research.google.com/drive/1dyKsqGGLNpcF93vxGzEOkWNMiTy1kKWO][Python - String Methods]]
+- [[https://thepythoncodingbook.com/2021/08/12/learn-python-coding-with-monty-and-the-white-room/][Monty and the White Room]] -- read before the Dictionaries notebook
+
+** Requirements
+
+*** Code
+
+Both versions must:
+
+1. Store the grade points in a dictionary.
+2. Use a loop to ask for a letter grade for each of *6* classes with =input()=. Every prompt says which period it is asking about.
+3. Clean up every grade with string methods.
+4. Look up each letter grade's point value in the dictionary.
+5. Calculate the GPA and print it in an f-string.
+6. Given the same six grades, print the same GPA.
+7. Run without errors.
+
+*** Written Reflection
+
+Everything is about comparing the loops.
+
+- *Comparing the Loops (1-5):* what the =while= does by hand, the stopping line in each, the missing-counter bug, the =done= thought experiment, and a personal rule with one example for each loop.
+- *AP CSP Connection (6-7):* which AP loop matches each version, and how =REPEAT UNTIL= differs from a Python =while= loop.
+
+** Starter Cells
+
+Two docstrings, one per version, under their own headings, plus an empty Reflection heading.
+
+#+begin_src python
+"""GPA Calculator (for loop)"""
+#+end_src
+
+#+begin_src python
+"""GPA Calculator (while loop)"""
+#+end_src
+
+** Rubric
+
+[[https://docs.google.com/spreadsheets/d/1a6gZ9JQmYwwmBkRoGUVM4qv_AH5nZgkhef_4WVv3haE][GPA Calculator Rubric]] -- in the Classroom import format, same layout as the Chatbot rubric.
+
+24 points. Code is 8 (requirements 4, code craftsmanship 4). Reflection is 16 (comparing the loops 8, AP CSP connection 4, writing craftsmanship 4). The code requirements are one criterion across both versions: 4 if both versions meet all 7, 3 if at least one does, 2 if most are met, 1 if few are.
+
+** Extensions
+
+Optional. Allow a different number of classes, round the GPA to two places, catch grades that are not in the dictionary with =in=, and build the =done= version.
