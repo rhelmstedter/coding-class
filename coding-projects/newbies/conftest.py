@@ -2,7 +2,7 @@
 
 The Run Tests cell downloads this file next to the test file, so pytest loads it
 automatically. After the tests finish it sends one row (student email, bite,
-passed, failed, total) to a Google Form. Reporting never changes the test
+passed, failed, total, notebook ID) to a Google Form. Reporting never changes the test
 outcome: if it fails for any reason, students still see their normal results.
 """
 import os
@@ -17,12 +17,13 @@ ENTRY = {
     "passed": "entry.1564096096",
     "failed": "entry.2104151103",
     "total": "entry.323146220",
+    "notebook": "entry.1212619380",
 }
 
 
 def _student_email():
     # Typed in the Run Tests cell when Google sign-in is blocked or fails.
-    typed = os.environ.get("STUDENT_EMAIL", "").strip()
+    typed = os.environ.get("STUDENT_EMAIL", "").strip().lower()
     if "@" in typed:
         return typed
     try:
@@ -51,6 +52,9 @@ def pytest_sessionfinish(session, exitstatus):
         ENTRY["passed"]: passed,
         ENTRY["failed"]: failed,
         ENTRY["total"]: total,
+        # The Drive file ID of the notebook that ran the tests. The results Sheet
+        # looks up who owns that copy, so a typo or someone else's email can't misfile a result.
+        ENTRY["notebook"]: os.environ.get("COLAB_NOTEBOOK_ID", ""),
     }).encode()
     try:
         urllib.request.urlopen(FORM_URL, data=data, timeout=15)
