@@ -33,6 +33,13 @@ if defines_functions:
 else:
     run_note = "The cell above only *saves* your code. Run the cell below to actually run it and see the output."
 url = f"https://raw.githubusercontent.com/rhelmstedter/coding-class/{BRANCH}/coding-projects/newbies/{bite}/{test}"
+conftest_url = f"https://raw.githubusercontent.com/rhelmstedter/coding-class/{BRANCH}/coding-projects/newbies/conftest.py"
+# Signing in lets conftest.py report the student's school email with their results.
+RUN_TESTS = """from google.colab import auth
+auth.authenticate_user()
+!curl -sO {conftest}
+!curl -sO {url}
+!BITE={bite} python -m pytest {test}"""
 
 
 def cell(kind, src, title=None):
@@ -52,13 +59,26 @@ for i, part in enumerate(re.split(r"^```python\n(.*?)^```\n?", md, flags=re.S | 
     if part.strip():
         cells.append(cell("code" if i % 2 else "markdown", part))
 
+# "### Your Task" gets its own "## Your Task" cell, apart from the instructional material.
+for k, c in enumerate(cells):
+    src = "".join(c["source"])
+    m = re.search(r"^### Your Task\n", src, flags=re.M)
+    if c["cell_type"] == "markdown" and m:
+        before, task = src[:m.start()], "## Your Task\n" + src[m.end():]
+        cells[k:k + 1] = ([cell("markdown", before)] if before.strip() else []) + [cell("markdown", task)]
+        break
+
+# Students start from a bare code cell: drop comment-only lines from the template.
+template = "\n".join(l for l in template.splitlines() if not l.lstrip().startswith("#")).strip("\n")
+template = template + "\n" if template else ""
+
 cells += [
-    cell("markdown", "## Your Code\n\nWrite your solution in the cell below. Run the cell to save your code.\n\n**Keep the `%%writefile` line at the top!** It saves your code to a file so the tests can find it."),
+    cell("markdown", "### Your Code\n\nWrite your solution in the cell below. Run the cell to save your code.\n\n**Keep the `%%writefile` line at the top!** It saves your code to a file so the tests can find it."),
     cell("code", f"%%writefile {module}\n{template}"),
     cell("markdown", run_note),
     cell("code", f"%run {module}", title="Run your code"),
     cell("markdown", "Run the cell below to check your code against the tests. If a test fails, read the output carefully. It tells you what was expected and what your code actually did."),
-    cell("code", f"!curl -sO {url}\n!python -m pytest {test}", title="Run Tests"),
+    cell("code", RUN_TESTS.format(conftest=conftest_url, url=url, bite=bite, test=test), title="Run Tests"),
 ]
 nb = {
     "cells": cells,
