@@ -1,15 +1,19 @@
+import runpy
 from unittest.mock import patch
-import inspect
-import re
+
+QUESTION = "What's the name of the 12th month of the calendar year?"
 
 
-@patch('builtins.input')
-def test_user_input(input_mock):
-    import user_input
-    src_lines = [line.replace("? ", "?").strip() for line in
-                 inspect.getsourcelines(user_input)[0]]
+def test_asks_the_question_and_stores_the_answer():
+    prompts = []
 
-    pattern = re.compile(r'month\s*=\s*input\("What\'s the name of the 12th month '
-                         r'of the calendar year\? ?"\)')
+    def fake_input(prompt=""):
+        prompts.append(prompt)
+        return "December"
 
-    assert any(pattern.match(line) for line in src_lines)
+    with patch("builtins.input", fake_input):
+        result = runpy.run_path("user_input.py")
+
+    assert len(prompts) == 1, "Call input() exactly once."
+    assert prompts[0].rstrip() == QUESTION, "Check the question for typos."
+    assert result.get("month") == "December", "Store the answer in an object called month."

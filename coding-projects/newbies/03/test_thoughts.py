@@ -1,18 +1,16 @@
-import inspect
-import re
+import ast
+import runpy
 
-import thoughts
+SENTENCE = "I find it unbearable that there are people out there who think DC is better than Marvel!"
 
 
-def test_print_my_thoughts():
-    expected = 'print("I find it unbearable that there are people out there who think DC is better than Marvel!")'
+def test_prints_the_sentence(capsys):
+    runpy.run_path("thoughts.py")
+    assert capsys.readouterr().out.strip() == SENTENCE
 
-    # normalize the imported submitted code
-    actual_code = inspect.getsource(thoughts).strip()
 
-    # remove 2+ spaces and newlines, and replace single quotes with double quotes
-    normalized_code = re.sub(r" {2,}", "", actual_code.replace("\n", "").replace("'", '"'))
-
-    # check if the expected string is in the normalized code
-    assert expected in normalized_code
-
+def test_uses_print():
+    tree = ast.parse(open("thoughts.py").read())
+    calls = [node.func.id for node in ast.walk(tree)
+             if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)]
+    assert "print" in calls

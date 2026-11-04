@@ -31,11 +31,11 @@ Why bother using the names instead of just typing `4 + 6`? Because if you change
 
 ### A Note on Style
 
-Python doesn't care if you write `x=5` or `x = 5`. People do. The Python style guide says to put one space on each side of `=` and `+`, because it is easier to read. The tests for this Bite expect that style, so give your code some room to breathe.
+Python doesn't care if you write `x=5` or `x = 5`. People do. The Python style guide says to put one space on each side of `=` and `+`, because it is easier to read. The tests won't fail you over spacing, but get in the habit now and give your code some room to breathe.
 
 ### Your Task
 
-The template has three objects: `a`, `b`, and `answer`.
+Create three objects: `a`, `b`, and `answer`.
 
 1. Assign the integer `7` to `a`.
 2. Assign the integer `3` to `b`.
