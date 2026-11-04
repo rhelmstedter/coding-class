@@ -1,12 +1,17 @@
-import inspect
+import ast
 
-import dict_items
+import pytest
+
+import dict_items  # runs the student's code, so an error fails here
 
 
-def test_dict_items():
-    src = inspect.getsourcelines(dict_items)
-    src = [line.strip() for line in src[0]]
+def _methods_called():
+    tree = ast.parse(open("dict_items.py").read())
+    return {node.func.attr for node in ast.walk(tree)
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+            and getattr(node.func.value, "id", None) == "ninjabelt_scores"}
 
-    assert 'ninjabelt_scores.items()' in src
-    assert 'ninjabelt_scores.keys()' in src
-    assert 'ninjabelt_scores.values()' in src
+
+@pytest.mark.parametrize("method", ["keys", "values", "items"])
+def test_calls_method(method):
+    assert method in _methods_called(), f"Call ninjabelt_scores.{method}()"
