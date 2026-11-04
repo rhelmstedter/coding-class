@@ -21,6 +21,10 @@ ENTRY = {
 
 
 def _student_email():
+    # Typed in the Run Tests cell when Google sign-in is blocked or fails.
+    typed = os.environ.get("STUDENT_EMAIL", "").strip()
+    if "@" in typed:
+        return typed
     try:
         out = subprocess.run(
             ["gcloud", "config", "get-value", "account"],

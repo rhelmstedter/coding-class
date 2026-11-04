@@ -35,8 +35,14 @@ else:
 url = f"https://raw.githubusercontent.com/rhelmstedter/coding-class/{BRANCH}/coding-projects/newbies/{bite}/{test}"
 conftest_url = f"https://raw.githubusercontent.com/rhelmstedter/coding-class/{BRANCH}/coding-projects/newbies/conftest.py"
 # Signing in lets conftest.py report the student's school email with their results.
-RUN_TESTS = """from google.colab import auth
-auth.authenticate_user()
+# If sign-in fails or hangs (Stop pressed), the student types their email instead.
+RUN_TESTS = """import os
+try:
+    from google.colab import auth
+    auth.authenticate_user()
+except BaseException:
+    while "@" not in os.environ.get("STUDENT_EMAIL", ""):
+        os.environ["STUDENT_EMAIL"] = input("Sign-in didn't work. Type your school email: ").strip()
 !curl -sO {conftest}
 !curl -sO {url}
 !BITE={bite} python -m pytest {test}"""
