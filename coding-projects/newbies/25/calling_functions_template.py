@@ -1,10 +1,14 @@
-car_brands = ['Mazda', 'McLaren', 'Opel', 'Toyota', 'Honda']
+def get_letter_grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    else:
+        return "F"
 
 
-def convert_to_tuple(car_brands):
-    static_cars = tuple(car_brands)
-    return static_cars
-
-
-# Complete this function such that it prints the return value from the convert_to_tuple function
-def print_tuples():
+def print_report_card():

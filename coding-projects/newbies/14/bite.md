@@ -1,65 +1,82 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): functions, return
+Tags (2-5): comments
 Path:
-Related Bites: newbie 3
+Related Bites: newbie 4
 ---
 
 # Bite Description
 
-Every time you write `print()` or `input()`, you are **calling** a function that somebody else wrote. In this Bite, you'll write a function of your own.
+Code is read by computers, but it is also read by people, including you a week from now. In this Bite, you'll learn how to leave notes in your code that Python ignores.
 
-### Defining a Function
+### Comments
+
+Anything after a `#` on a line is a **comment**. Python skips right over it.
+
+A comment can take up a whole line:
 
 ```
-def function_name():
-    indented body of function
+# Calculate the area of the rectangle
+area = width * height
 ```
 
-`def` is short for *define*. The line ends with a colon `:`, and everything that belongs to the function is indented 4 spaces underneath it.
+Or it can come at the end of a line of code. This is called an **inline comment**:
 
-> 🔮 **Predict first.** What do you think this code will display? Then run it.
+```
+area = width * height  # square units
+```
+
+Everything to the **left** of the `#` still runs. Everything to the **right** is ignored.
+
+### Writing Good Comments
+
+> 🔍 **Investigate.** Both comments below are about the same line. Which one tells you something the code doesn't already say?
+
+```
+tip = total * 0.2  # multiply total by 0.2
+tip = total * 0.2  # 20% tip
+```
+
+The first comment just reads the code out loud. The second one explains *why* the number is there. A good comment answers a question a reader might have.
+
+### Commenting Out Code
+
+Comments aren't just for notes. Putting a `#` in front of a line of code is called **commenting it out**. The line stays in your file, but Python won't run it. It's a great way to see what your program does without that line, and you don't have to delete it.
 
 ```python
-def say_hello():
-    print("Hello!")
+print("This line runs.")
+# print("This line doesn't.")
 ```
 
-Nothing! And that is correct. Defining a function with `def` does not run it. Remember Monty from Newbie Bite 1? `def` tells him to **build a room**. He puts up a new room next to the White Room (the main room of your program), hangs a door between the two, and writes `say_hello` on the door so he can find it again. The instructions go up on the wall inside. Then he comes back out and carries on.
+> 🔧 **Modify.** Comment out the first line and uncomment the second. Run it again.
 
-To make Monty go in and follow the instructions, you **call** the function: write its name, with parentheses.
+Most editors have a shortcut that comments or uncomments every line you have highlighted. In Colab, it's `Ctrl + /` (`Cmd + /` on a Mac).
 
-```python
-say_hello()
-say_hello()
+### Triple Quotes (Sort Of)
+
+You'll sometimes see text wrapped in triple quotes used like a comment:
+
+```
+"""This
+is a
+multi-line
+comment (sort of)"""
 ```
 
-Defining is building the room. Calling is walking in and doing whatever the instructions say. You use `def` once and call it as many times as you like.
-
-### Returning Objects
-
-Printing puts something on the screen, but the rest of your program can't use it. To hand a value **back** to whoever called the function, use `return`. Think of it as Monty carrying something out of the room with him.
-
-```python
-def get_favorite_food():
-    return "tacos"
-
-food = get_favorite_food()
-print(f"My favorite food is {food}.")
-```
-
-The moment Monty reaches a `return`, he walks out. Anything after it never runs.
-
-A function *does* something, so a good function name usually starts with a **verb**, like `get_favorite_food()` or `say_hello()`.
+Technically that's a string that never gets used, not a comment. You'll see these later, describing what a piece of code does. For commenting out code, stick with `#`.
 
 ### Your Task
 
-Write a function called `functions_rule` that **returns** this string:
+The code in the template has been filled with garbage. Some of it is on its own line, and some of it is at the end of a line of real code. Right now, the code won't run at all.
+
+1. Use comments to get the code running again. **Don't delete the garbage.** The tests check that it is still in your code, just commented out. And don't change the real code, either.
+2. Write at least **one** comment of your own that explains a line of the real code.
+
+When you're done, running your code should print:
 
 ```
-This is my first function! Woohoo!
+I ate 4 tacos for $12.
+['tacos', 'burritos', 'horchata']
 ```
-
-Make sure you `return` it. If you `print` it instead, the tests won't get anything back.
 
 Good luck, and happy coding! 🐍

@@ -9,9 +9,9 @@ expected = (['Please speed up.'] * 4 +
 
 
 @pytest.mark.parametrize(
-    "speed, res", zip(speeds, expected)
+    "speed, res", list(zip(speeds, expected))
 )
-def test_something(capfd, speed, res):
+def test_speed_check(capfd, speed, res):
     speed_check(speed)
     actual = capfd.readouterr()[0].strip()
     assert actual == res

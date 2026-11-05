@@ -1,77 +1,55 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): booleans, truthiness, conditionals
+Tags (2-5): conditionals, if/else
 Path:
-Related Bites: newbie 15, newbie 17
+Related Bites: newbie 17
 ---
 
 # Bite Description
 
-In the last Bite, the `if` statement checked a comparison like `date == "payday"`. But you don't always need a comparison. In this Bite, we'll look at how Python decides whether *any* object counts as `True` or `False`.
+In the last Bite, you saw that a comparison gives you back `True` or `False`. In this Bite, you'll use that answer to make your program choose what to do.
 
-### Truthy and Falsy
+### `if` and `else` Statements
 
-When you put an object right after `if`, Python asks: *does this count as true?* Objects that count as true are called **truthy**. Objects that count as false are called **falsy**.
-
-In Python, these values are all treated as `False` when used in a conditional:
-
-- `False`
-- `None`
-- Zero of any numeric type (`0`, `0.0`)
-- Any empty sequence (`""`, `[]`, `()`)
-- Any empty mapping (`{}`)
-
-Pretty much everything else is truthy. For truthy values, just existing is enough.
-
-If you're ever not sure, the `bool()` function will tell you whether an object is truthy or falsy.
-
-```python
-print(bool("pizza"))
-print(bool([]))
 ```
+if conditional:
+    # do something if the conditional is True
+else:
+    # do something if the conditional is False
+```
+
+A few things to notice:
+
+- Both the `if` line and the `else` line end with a colon `:`.
+- The code that belongs to each branch is indented 4 spaces underneath it.
+- `else` doesn't get a conditional. It catches everything the `if` didn't.
+
+Only **one** branch ever runs. If the conditional is `True`, Python runs the `if` branch and skips the `else`. If it is `False`, it skips the `if` and runs the `else`.
 
 ### Example
 
-> 🔮 **Predict first.** Which of these lines will print? Then run it.
-
 ```python
-if "pizza":
-    print("one")
+def check_weather(weather):
+    if weather == "rainy":
+        print("Bring an umbrella.")
+    else:
+        print("Leave the umbrella at home.")
 
-if "":
-    print("two")
-
-if [1, 2, 3]:
-    print("three")
-
-if []:
-    print("four")
+check_weather("rainy")
+check_weather("sunny")
 ```
 
-An empty string and an empty list are falsy, so their `print()` lines never run.
-
-This is really handy for checking whether something is there at all. Instead of checking whether a list has a length of zero, you can just put the list after `if`.
-
-```python
-movies = []
-
-if movies:
-    print(f"There are {len(movies)} movies to choose from.")
-else:
-    print("So sad, there is nothing to watch.")
-```
-
-> 🔧 **Modify.** Put a few movies in the list and run it again.
+> 🔧 **Modify.** Change the first call to `check_weather("Rainy")` and run it again. What prints? Why?
 
 ### Your Task
 
-The template has two functions for you to complete.
+Complete the `check_battery` function. It takes one parameter, `percent`, the amount of charge left on a phone.
 
-1. `get_username` should ask the user to enter their username and **return** what they type.
-2. `print_username` takes one parameter, `username`. Use truthiness to check it:
-   - If it is truthy, print `Your username is: USERNAME.` with the actual username in place of `USERNAME`.
-   - If it is falsy, print `Sorry, no username was defined.`
+- If `percent` is less than `20`, print `Plug in your phone.`
+- Otherwise, print `You're good to go.`
 
-Don't forget the period at the end of each sentence.
+The template already has the function line for you. Your code goes inside it, so don't forget your indents!
+
+Before you run the tests, call your function with a few values of your own. What should happen at exactly `20`?
 
 Good luck, and happy coding! 🐍

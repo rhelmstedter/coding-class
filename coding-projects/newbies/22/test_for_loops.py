@@ -1,16 +1,23 @@
+import ast
 import inspect
-import re
+import textwrap
 
-from for_loops import list_cars, car_brands
+import pytest
 
-
-def test_list_cars_src():
-    src = inspect.getsource(list_cars)
-    assert re.search('for .* in car_brands', src)
+from for_loops import list_cars
 
 
-def test_function_output(capfd):
-    list_cars(car_brands)
-    actual = capfd.readouterr()[0].strip()
-    expected = '\n'.join(car_brands)
-    assert actual == expected
+def test_uses_a_for_loop():
+    tree = ast.parse(textwrap.dedent(inspect.getsource(list_cars)))
+    assert any(isinstance(node, ast.For) for node in ast.walk(tree)), "Use a for loop."
+
+
+@pytest.mark.parametrize("brands", [
+    ["Mazda", "McLaren", "Opel", "Toyota", "Honda"],
+    ["Tesla", "Ford"],
+    ["Subaru"],
+])
+def test_prints_each_brand(capfd, brands):
+    list_cars(brands)
+    actual = [line.strip() for line in capfd.readouterr()[0].strip().splitlines()]
+    assert actual == brands

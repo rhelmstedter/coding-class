@@ -1,13 +1,13 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): functions, return
+Tags (2-5): functions, return, dictionaries
 Path:
-Related Bites: newbie 14, newbie 24
+Related Bites: newbie 15, newbie 23
 ---
 
 # Bite Description
 
-You've written plenty of functions by now. In this Bite, you'll write a function that **calls another function** you already wrote.
+You've written plenty of functions by now. In this Bite, you'll write a function that **calls another function**.
 
 ### Functions Calling Functions
 
@@ -17,43 +17,49 @@ When Monty is inside a function room, he leaves the door **open** behind him. Th
 
 ### Example
 
-> 🔍 **Investigate.** Read the code below line by line. Which function works out the grade? Which one does the printing?
+> 🔍 **Investigate.** Read the code below line by line. Which function decides how the weather feels? Which one does the printing?
 
 ```python
-def convert_to_letter_grade(score):
-    if score >= 90:
-        return "A"
-    elif score >= 80:
-        return "B"
-    elif score >= 70:
-        return "C"
+def describe_temperature(degrees):
+    if degrees >= 85:
+        return "hot"
+    elif degrees >= 60:
+        return "nice"
     else:
-        return "F"
+        return "cold"
 
 
-def print_report(name, score):
-    grade = convert_to_letter_grade(score)
-    print(f"{name}'s grade is {grade}.")
+def print_forecast(day, temperature):
+    feeling = describe_temperature(temperature)
+    print(f"{day} will be {feeling}.")
 
 
-print_report("Ada", 95)
+print_forecast("Monday", 91)
+print_forecast("Tuesday", 72)
 ```
 
-Notice that `convert_to_letter_grade` doesn't print anything. Working out the answer is that function's job. Deciding what to *do* with the answer belongs to whoever called it.
+Notice that `describe_temperature` doesn't print anything. Working out the answer is that function's job. Deciding what to *do* with the answer belongs to whoever called it.
 
-Splitting a program into small functions like this means you only have to write the grade logic once. Any other function that needs a letter grade can just call `convert_to_letter_grade()`.
+Also notice the names. Inside `print_forecast`, the number lives in a box labeled `temperature`. When it calls `describe_temperature(temperature)`, Monty carries that value into the other room and drops it in a box labeled `degrees`. The labels don't have to match. A parameter is just the name a function uses for whatever value gets handed to it.
+
+> 🔧 **Modify.** Add a call to `print_forecast` for Wednesday that comes out `cold`.
+
+Splitting a program into small functions like this means you only write the temperature logic once. Any other function that needs it can just call `describe_temperature()`.
 
 ### Your Task
 
-The template gives you the `convert_to_tuple` function from the last Bite. It's already finished, so don't change it.
+The template gives you a finished `get_letter_grade` function. It takes a score and returns a letter grade. Don't change it.
 
-Complete the `print_tuples` function so it **calls** `convert_to_tuple` with the `car_brands` list and prints what comes back.
+Complete the `print_report_card` function. It takes **one** parameter: a dictionary where each key is a student's name and each value is their score. Add the parameter yourself, and pick a name for it.
 
-Your output should look like this:
+For each student, `print_report_card` should **call** `get_letter_grade` to get their letter grade, then print the name and grade on its own line, like this:
 
 ```
-('Mazda', 'McLaren', 'Opel', 'Toyota', 'Honda')
+Ada: A
+Grace: C
 ```
+
+The tests will call your function with a few different dictionaries.
 
 ### Wrapping Up
 

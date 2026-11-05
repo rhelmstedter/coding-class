@@ -1,75 +1,75 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): comments, indentation
+Tags (2-5): loops, while, input
 Path:
-Related Bites: newbie 17
+Related Bites: newbie 7, newbie 18
 ---
 
 # Bite Description
 
-Code is read by computers, but it is also read by people, including you a week from now. In this Bite, you'll learn how to leave notes in your code that Python ignores.
+What if you need to keep asking the user something until they get it right? You can't know ahead of time how many tries it will take. In this Bite, you'll use a `while` loop.
 
-### Comments
+### `while` Loops
 
-Anything after a `#` on a line is a **comment**. Python skips right over it.
-
-A comment can take up a whole line:
+A `while` loop repeats the indented body underneath it for as long as its conditional is `True`.
 
 ```
-# Calculate the area of the rectangle
-area = width * height
+while conditional:
+    indented body of loop
 ```
 
-Or it can come at the end of a line of code. This is called an **inline comment**:
+Every time the body finishes, Python jumps back up to the `while` line and checks the conditional again. As soon as it is `False`, the loop is over and the program moves on.
 
-```
-area = width * height  # square units
-```
+### Example
 
-Everything to the **left** of the `#` still runs. Everything to the **right** is ignored.
-
-### Commenting Out Code
-
-Comments aren't just for notes. Putting a `#` in front of a line of code is called **commenting it out**. The line stays in your file, but Python won't run it. It's a great way to see what your program does without that line, and you don't have to delete it.
+> 🔍 **Investigate.** Read the code below line by line. What makes this loop stop?
 
 ```python
-print("This line runs.")
-# print("This line doesn't.")
+count = 1
+
+while count <= 5:
+    print(count)
+    count = count + 1
 ```
 
-Most editors have a shortcut that comments or uncomments every line you have highlighted:
+Pay close attention to the last line: `count = count + 1`. This is called **incrementing** a variable. The right hand side of the `=` is evaluated first, so the current value of `count` has one added to it and then gets put back in the `count` box. Read it as "count becomes count plus 1."
 
-| Editor  | Shortcut   |
-|---------|------------|
-| Replit  | `Ctrl + /` |
-| Colab   | `Ctrl + /` |
-| VS Code | `Ctrl + /` |
-| PyCharm | `Ctrl + /` |
-| Mu      | `Ctrl + K` |
+### Infinite Loops
 
-### Triple Quotes (Sort Of)
-
-You'll sometimes see text wrapped in triple quotes used like a comment:
+If the conditional never becomes `False`, the loop never stops.
 
 ```
-"""This
-is a
-multi-line
-comment (sort of)"""
+while True:
+    print("hello world")
 ```
 
-Technically that's a string that never gets used, not a comment. It's mostly used to describe what a function does. For commenting out code, stick with `#`.
+Sometimes that's on purpose. Python gives you two keywords for working with loops like this:
 
-### Indentation Matters
+- **`break`**: if you reach this keyword, exit the loop.
+- **`continue`**: if you reach this keyword, go back to the top of the loop.
 
-Remember that Python uses indentation to figure out which lines belong to a function, an `if`, or a loop. A line of junk that isn't indented properly will break the whole block, and you'll get an `IndentationError` or a `SyntaxError`. Once that junk is turned into a comment, Python ignores it, and the code around it can run again.
+> 🔮 **Predict first.** Which numbers will print? Is `3` one of them? Then run it.
+
+```python
+count = 0
+
+while True:
+    count = count + 1
+    if count == 3:
+        break
+    print(count)
+
+print("Out of the loop!")
+```
 
 ### Your Task
 
-The `time_printer` function in the template has been filled with garbage. Some of it is on its own line, and some of it is on the same line as real code.
+Complete the `get_username` function so that it:
 
-Use comments to get the function running again. **Don't delete the garbage.** The tests check that it is still in your code, just commented out. And don't change the real code, either.
+1. Asks the user to enter a username with this prompt: `Please type in the name PyBites: `
+2. If they type exactly `PyBites`, the loop stops. Nothing else is printed.
+3. If they type anything else, print `Invalid username.` and ask again.
 
-When you're done, `time_printer("12:11")` should print `The time is 12:11.`
+The user might get it wrong once, five times, or not at all. Your function has to handle all of those.
 
 Good luck, and happy coding! 🐍

@@ -1,51 +1,73 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): comparison, booleans, operators
+Tags (2-5): functions, parameters, arguments, input
 Path:
-Related Bites: newbie 1
+Related Bites: newbie 7, newbie 15
 ---
 
 # Bite Description
 
-In this Bite, we are going to look at the difference between `=` and `==`. They look almost the same, but they do very different things.
+In the last Bite, your function did the exact same thing every time. In this Bite, you'll write functions that can work with different values each time they are called.
 
-### Assigning vs Comparing
+### Parameters
 
-- `=` is the **assignment operator** from Newbie Bite 1. It puts a value in a box.
-- `==` is the **equality operator**. It asks a question: *are these two things equal?*
-
-The answer to a question like that is always a **boolean**: `True` or `False`. Python uses capital letters for `True` and `False`.
-
-### Comparison Operators
-
-| Operator | Definition               |
-|:--------:|:-------------------------|
-| `==`     | equal                    |
-| `!=`     | not equal                |
-| `>`      | greater than             |
-| `<`      | less than                |
-| `>=`     | greater than or equal to |
-| `<=`     | less than or equal to    |
-
-### Example
-
-> 🔮 **Predict first.** Guess whether each line prints `True` or `False`. Then run it.
+When Monty builds a function room, he can also set a table just inside the door and put an **empty labeled box** on it. That box is a **parameter**. The box stays empty until you put something inside the parentheses when you call the function.
 
 ```python
-age = 18
+def say_hello(name):
+    print(f"Hello, {name}!")
 
-print(age == 16)
-print(age != 16)
-print(age >= 18)
-print("Ada" == "ada")
+say_hello("Ada")
+say_hello("Mr. Helmstedter")
 ```
 
-Look closely at the last one. Strings are compared letter by letter, and to Python an uppercase `A` and a lowercase `a` are different characters.
+So there are two words for two different things:
+
+- `name` on the `def` line is the **parameter**: an empty box, labeled, waiting by the door.
+- `"Ada"` at the call is the **argument**: what Monty carries in and drops into that box.
+
+### More Than One Parameter
+
+If you need more than one parameter, separate them with commas. Monty sets out one labeled box for each.
+
+> 🔮 **Predict first.** What will the second call print? Then run it.
+
+```python
+def introduce(greeting, name):
+    print(f"{greeting}, {name}!")
+
+introduce("Hello", "Ada")
+introduce("Ada", "Hello")
+```
+
+Python doesn't match your arguments up by meaning. Monty fills the boxes **in order** from left to right. **The order of your arguments matters.**
+
+### Functions That Use `input()`
+
+A function doesn't need a parameter to get information. It can ask the user for it.
+
+```python
+def greet_user():
+    name = input("What is your name? ")
+    print(f"Hello, {name}!")
+
+greet_user()
+```
+
+This function prints the greeting on the screen, but the name stays locked inside the function room. When Monty walks out, nothing comes with him. Think back to the last Bite: how do you get Monty to carry something back out?
+
+### Why Write Functions?
+
+- **Reusability.** Write the code once, call it as many times as you like. Programmers call this **DRY**: Don't Repeat Yourself.
+- **Organization.** A function lets you name an idea so you can forget about the details. Once `say_hello()` works, you don't need to remember how it works. You just call it.
 
 ### Your Task
 
-Create two objects, `pybites1` and `pybites2`, that both hold the string `"PyBites"`.
+The template has two empty functions for you to complete.
 
-The tests will check `pybites1 == pybites2`, so think about what could make that comparison come out `False`.
+1. Complete `multiply_numbers` so it takes **two** parameters (you'll need to add them yourself) and **returns** the result of multiplying them together. The tests will call it with lots of different numbers.
+2. Complete `enter_name` so it asks the user to enter their name and **returns** whatever they type.
+
+Remember to indent the body of each function 4 spaces.
 
 Good luck, and happy coding! 🐍

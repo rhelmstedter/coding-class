@@ -62,6 +62,10 @@ print(type(number))
 
 ### Your Task
 
-Complete the `convert_to_tuple` function. It takes the `car_brands` list as a parameter. Convert the list to a tuple and **return** it.
+Complete the `convert_to_tuple` function. It takes **one** parameter: a list. Add the parameter yourself, and pick a name for it.
+
+Convert the list to a tuple and **return** it.
+
+The tests will call your function with a few different lists. To try it out yourself, call it with a list of your own and print what comes back.
 
 Good luck, and happy coding! 🐍

@@ -1,63 +1,77 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): conditionals, comparison, elif
+Tags (2-5): booleans, truthiness, conditionals
 Path:
-Related Bites: newbie 16, newbie 17
+Related Bites: newbie 16, newbie 18
 ---
 
 # Bite Description
 
-Sometimes there are more than two choices. In this Bite, you'll use `elif` and the less than / greater than operators to pick between three.
+In the last Bite, the `if` statement checked a comparison like `date == "payday"`. But you don't always need a comparison. In this Bite, we'll look at how Python decides whether *any* object counts as `True` or `False`.
 
-### `if`, `elif`, and `else` Statements
+### Truthy and Falsy
 
+When you put an object right after `if`, Python asks: *does this count as true?* Objects that count as true are called **truthy**. Objects that count as false are called **falsy**.
+
+In Python, these values are all treated as `False` when used in a conditional:
+
+- `False`
+- `None`
+- Zero of any numeric type (`0`, `0.0`)
+- Any empty sequence (`""`, `[]`, `()`)
+- Any empty mapping (`{}`)
+
+Pretty much everything else is truthy. For truthy values, just existing is enough.
+
+If you're ever not sure, the `bool()` function will tell you whether an object is truthy or falsy.
+
+```python
+print(bool("pizza"))
+print(bool([]))
 ```
-if conditional:
-    # do something if the conditional is True
-elif another_conditional:
-    # do something if the other conditional is True
-else:
-    # do something if all the conditionals were False
-```
-
-`elif` is short for *else if*. You can have as many `elif` branches as you need. Python checks each conditional from the top down, and runs the **first** branch that is `True`. Once a branch runs, the rest are skipped.
-
-Since the order matters, think carefully about which check goes first.
 
 ### Example
 
-> 🔍 **Investigate.** Read the code below line by line. What would print for an age of `16`? `18`? `12`?
+> 🔮 **Predict first.** Which of these lines will print? Then run it.
 
 ```python
-def check_age(age):
-    if age >= 18:
-        print("You can vote.")
-    elif age >= 16:
-        print("You can drive.")
-    else:
-        print("You're still a kid!")
+if "pizza":
+    print("one")
 
-check_age(16)
-check_age(18)
-check_age(12)
+if "":
+    print("two")
+
+if [1, 2, 3]:
+    print("three")
+
+if []:
+    print("four")
 ```
 
-An 18 year old can drive too, but `check_age(18)` only prints `You can vote.` The first `True` branch wins.
+An empty string and an empty list are falsy, so their `print()` lines never run.
 
-> 🔧 **Modify.** What happens if you swap the `if` and `elif` conditionals? Try `check_age(20)` and see.
+This is really handy for checking whether something is there at all. Instead of checking whether a list has a length of zero, you can just put the list after `if`.
 
-Watch out for the edges. `age > 18` and `age >= 18` give different answers when `age` is exactly `18`.
+```python
+movies = []
+
+if movies:
+    print(f"There are {len(movies)} movies to choose from.")
+else:
+    print("So sad, there is nothing to watch.")
+```
+
+> 🔧 **Modify.** Put a few movies in the list and run it again.
 
 ### Your Task
 
-Complete the `speed_check` function. It needs to take one parameter, `speed`. You'll need to add it yourself.
+The template has two functions for you to complete.
 
-| Speed                       | Print                        |
-|-----------------------------|------------------------------|
-| less than 80                | `Please speed up.`           |
-| 80 up to and including 100  | `Thanks for driving safely!` |
-| more than 100               | `Please slow down.`          |
+1. `get_username` should ask the user to enter their username and **return** what they type.
+2. `print_username` takes one parameter, `username`. Use truthiness to check it:
+   - If it is truthy, print `Your username is: USERNAME.` with the actual username in place of `USERNAME`.
+   - If it is falsy, print `Sorry, no username was defined.`
 
-Test your function with the edge cases, like `79`, `80`, `100`, and `101`, before you run the tests.
+Don't forget the period at the end of each sentence.
 
 Good luck, and happy coding! 🐍

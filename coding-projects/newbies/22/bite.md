@@ -2,7 +2,7 @@
 Level (beginner, intermediate, advanced): newbie
 Tags (2-5): loops, for, lists
 Path:
-Related Bites: newbie 9, newbie 20
+Related Bites: newbie 9, newbie 21
 ---
 
 # Bite Description
@@ -67,6 +67,10 @@ Notice that we never had to count, check a conditional, or increment anything. T
 
 ### Your Task
 
-Complete the `list_cars` function. It takes the `car_brands` list as a parameter. Use a `for` loop to print each car brand on its own line.
+Complete the `list_cars` function. It takes **one** parameter: a list of car brands. You'll need to add the parameter yourself, and you get to pick its name.
+
+Use a `for` loop to print each car brand on its own line, in order.
+
+The tests will call your function with a few different lists, so it has to work for any list of car brands. To try it out yourself, call it with a list of your own, like `list_cars(["Mazda", "Honda", "Toyota"])`.
 
 Good luck, and happy coding! 🐍

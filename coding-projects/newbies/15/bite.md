@@ -1,73 +1,65 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): functions, parameters, arguments, input
+Tags (2-5): functions, return
 Path:
-Related Bites: newbie 7, newbie 14
+Related Bites: newbie 3
 ---
 
 # Bite Description
 
-In the last Bite, your function did the exact same thing every time. In this Bite, you'll write functions that can work with different values each time they are called.
+Every time you write `print()` or `input()`, you are **calling** a function that somebody else wrote. In this Bite, you'll write a function of your own.
 
-### Parameters
+### Defining a Function
 
-When Monty builds a function room, he can also set a table just inside the door and put an **empty labeled box** on it. That box is a **parameter**. The box stays empty until you put something inside the parentheses when you call the function.
-
-```python
-def say_hello(name):
-    print(f"Hello, {name}!")
-
-say_hello("Ada")
-say_hello("Mr. Helmstedter")
+```
+def function_name():
+    indented body of function
 ```
 
-So there are two words for two different things:
+`def` is short for *define*. The line ends with a colon `:`, and everything that belongs to the function is indented 4 spaces underneath it.
 
-- `name` on the `def` line is the **parameter**: an empty box, labeled, waiting by the door.
-- `"Ada"` at the call is the **argument**: what Monty carries in and drops into that box.
-
-### More Than One Parameter
-
-If you need more than one parameter, separate them with commas. Monty sets out one labeled box for each.
-
-> 🔮 **Predict first.** What will the second call print? Then run it.
+> 🔮 **Predict first.** What do you think this code will display? Then run it.
 
 ```python
-def introduce(greeting, name):
-    print(f"{greeting}, {name}!")
-
-introduce("Hello", "Ada")
-introduce("Ada", "Hello")
+def say_hello():
+    print("Hello!")
 ```
 
-Python doesn't match your arguments up by meaning. Monty fills the boxes **in order** from left to right. **The order of your arguments matters.**
+Nothing! And that is correct. Defining a function with `def` does not run it. Remember Monty from Newbie Bite 1? `def` tells him to **build a room**. He puts up a new room next to the White Room (the main room of your program), hangs a door between the two, and writes `say_hello` on the door so he can find it again. The instructions go up on the wall inside. Then he comes back out and carries on.
 
-### Functions That Use `input()`
-
-A function doesn't need a parameter to get information. It can ask the user for it.
+To make Monty go in and follow the instructions, you **call** the function: write its name, with parentheses.
 
 ```python
-def greet_user():
-    name = input("What is your name? ")
-    print(f"Hello, {name}!")
-
-greet_user()
+say_hello()
+say_hello()
 ```
 
-This function prints the greeting on the screen, but the name stays locked inside the function room. When Monty walks out, nothing comes with him. Think back to the last Bite: how do you get Monty to carry something back out?
+Defining is building the room. Calling is walking in and doing whatever the instructions say. You use `def` once and call it as many times as you like.
 
-### Why Write Functions?
+### Returning Objects
 
-- **Reusability.** Write the code once, call it as many times as you like. Programmers call this **DRY**: Don't Repeat Yourself.
-- **Organization.** A function lets you name an idea so you can forget about the details. Once `say_hello()` works, you don't need to remember how it works. You just call it.
+Printing puts something on the screen, but the rest of your program can't use it. To hand a value **back** to whoever called the function, use `return`. Think of it as Monty carrying something out of the room with him.
+
+```python
+def get_favorite_food():
+    return "tacos"
+
+food = get_favorite_food()
+print(f"My favorite food is {food}.")
+```
+
+The moment Monty reaches a `return`, he walks out. Anything after it never runs.
+
+A function *does* something, so a good function name usually starts with a **verb**, like `get_favorite_food()` or `say_hello()`.
 
 ### Your Task
 
-The template gives you two objects, `a` and `b`, and two empty functions.
+Write a function called `functions_rule` that **returns** this string:
 
-1. Complete `multiply_numbers` so it takes **two** parameters (you'll need to add them yourself) and **returns** the result of multiplying them together. It should work for any two numbers, not just `a` and `b`.
-2. Complete `enter_name` so it asks the user to enter their name and **returns** whatever they type.
+```
+This is my first function! Woohoo!
+```
 
-Remember to indent the body of each function 4 spaces.
+Make sure you `return` it. If you `print` it instead, the tests won't get anything back.
 
 Good luck, and happy coding! 🐍

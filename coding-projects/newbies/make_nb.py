@@ -5,7 +5,7 @@ Usage: python make_nb.py <newbies dir> <bite number, e.g. 07> <output .ipynb>
 ```python fences in bite.md become runnable code cells; other fences stay markdown.
 The Run Tests cell downloads the test from BRANCH on GitHub.
 """
-import json, re, sys
+import json, random, re, string, sys
 from pathlib import Path
 
 BRANCH = "newbie-bites"
@@ -35,23 +35,31 @@ else:
 url = f"https://raw.githubusercontent.com/rhelmstedter/coding-class/{BRANCH}/coding-projects/newbies/{bite}/{test}"
 conftest_url = f"https://raw.githubusercontent.com/rhelmstedter/coding-class/{BRANCH}/coding-projects/newbies/conftest.py"
 # Signing in lets conftest.py report the student's school email with their results.
-# If sign-in fails or hangs (Stop pressed), the student types their email instead.
-RUN_TESTS = """import os
-try:
-    from google.colab import auth
-    auth.authenticate_user()
-except BaseException:
-    while "@" not in os.environ.get("STUDENT_EMAIL", ""):
-        os.environ["STUDENT_EMAIL"] = input("Sign-in didn't work. Type your school email: ").strip()
-!curl -sO {conftest}
-!curl -sO {url}
-!BITE={bite} python -m pytest {test}"""
+# The district blocks Colab sign-in for student accounts, so students type their
+# school email in a form field instead. conftest.py reports it with their results.
+RUN_TESTS = """# @markdown Type your school email in the box, then run this cell.
+school_email = "" # @param {{type:"string"}}
+import os
+school_email = school_email.strip().lower()
+if not school_email.endswith("@oxnardunion.org"):
+    print("Type your school email in the box above, then run this cell again.")
+else:
+    os.environ["STUDENT_EMAIL"] = school_email
+    !curl -sO {conftest}
+    !curl -sO {url}
+    !BITE={bite} python -m pytest {test}"""
+
+
+def cell_id():
+    # Colab gives every cell a 12-character id in its metadata.
+    alphabet = string.ascii_letters + string.digits + "_-"
+    return "".join(random.choice(alphabet) for _ in range(12))
 
 
 def cell(kind, src, title=None):
     if title:
         src = f"# @title {title}\n{src}"
-    c = {"cell_type": kind, "metadata": {}, "source": src.strip("\n").splitlines(keepends=True)}
+    c = {"cell_type": kind, "metadata": {"id": cell_id()}, "source": src.strip("\n").splitlines(keepends=True)}
     if kind == "code":
         c.update(execution_count=None, outputs=[])
         if title:

@@ -1,75 +1,63 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): loops, while, input
+Tags (2-5): conditionals, comparison, elif
 Path:
-Related Bites: newbie 7, newbie 17
+Related Bites: newbie 17, newbie 18
 ---
 
 # Bite Description
 
-What if you need to keep asking the user something until they get it right? You can't know ahead of time how many tries it will take. In this Bite, you'll use a `while` loop.
+Sometimes there are more than two choices. In this Bite, you'll use `elif` and the less than / greater than operators to pick between three.
 
-### `while` Loops
-
-A `while` loop repeats the indented body underneath it for as long as its conditional is `True`.
+### `if`, `elif`, and `else` Statements
 
 ```
-while conditional:
-    indented body of loop
+if conditional:
+    # do something if the conditional is True
+elif another_conditional:
+    # do something if the other conditional is True
+else:
+    # do something if all the conditionals were False
 ```
 
-Every time the body finishes, Python jumps back up to the `while` line and checks the conditional again. As soon as it is `False`, the loop is over and the program moves on.
+`elif` is short for *else if*. You can have as many `elif` branches as you need. Python checks each conditional from the top down, and runs the **first** branch that is `True`. Once a branch runs, the rest are skipped.
+
+Since the order matters, think carefully about which check goes first.
 
 ### Example
 
-> 🔍 **Investigate.** Read the code below line by line. What makes this loop stop?
+> 🔍 **Investigate.** Read the code below line by line. What would print for an age of `16`? `18`? `12`?
 
 ```python
-count = 1
+def check_age(age):
+    if age >= 18:
+        print("You can vote.")
+    elif age >= 16:
+        print("You can drive.")
+    else:
+        print("You're still a kid!")
 
-while count <= 5:
-    print(count)
-    count = count + 1
+check_age(16)
+check_age(18)
+check_age(12)
 ```
 
-Pay close attention to the last line: `count = count + 1`. This is called **incrementing** a variable. The right hand side of the `=` is evaluated first, so the current value of `count` has one added to it and then gets put back in the `count` box. Read it as "count becomes count plus 1."
+An 18 year old can drive too, but `check_age(18)` only prints `You can vote.` The first `True` branch wins.
 
-### Infinite Loops
+> 🔧 **Modify.** What happens if you swap the `if` and `elif` conditionals? Try `check_age(20)` and see.
 
-If the conditional never becomes `False`, the loop never stops.
-
-```
-while True:
-    print("hello world")
-```
-
-Sometimes that's on purpose. Python gives you two keywords for working with loops like this:
-
-- **`break`**: if you reach this keyword, exit the loop.
-- **`continue`**: if you reach this keyword, go back to the top of the loop.
-
-> 🔮 **Predict first.** Which numbers will print? Is `3` one of them? Then run it.
-
-```python
-count = 0
-
-while True:
-    count = count + 1
-    if count == 3:
-        break
-    print(count)
-
-print("Out of the loop!")
-```
+Watch out for the edges. `age > 18` and `age >= 18` give different answers when `age` is exactly `18`.
 
 ### Your Task
 
-Complete the `get_username` function so that it:
+Complete the `speed_check` function. It needs to take one parameter, `speed`. You'll need to add it yourself.
 
-1. Asks the user to enter a username with this prompt: `Please type in the name PyBites: `
-2. If they type exactly `PyBites`, the loop stops. Nothing else is printed.
-3. If they type anything else, print `Invalid username.` and ask again.
+| Speed                       | Print                        |
+|-----------------------------|------------------------------|
+| less than 80                | `Please speed up.`           |
+| 80 up to and including 100  | `Thanks for driving safely!` |
+| more than 100               | `Please slow down.`          |
 
-The user might get it wrong once, five times, or not at all. Your function has to handle all of those.
+Test your function with the edge cases, like `79`, `80`, `100`, and `101`, before you run the tests.
 
 Good luck, and happy coding! 🐍

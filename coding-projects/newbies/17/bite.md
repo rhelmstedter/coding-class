@@ -1,53 +1,51 @@
 ---
 Level (beginner, intermediate, advanced): newbie
-Tags (2-5): conditionals, if/else
+Tags (2-5): comparison, booleans, operators
 Path:
-Related Bites: newbie 16
+Related Bites: newbie 1
 ---
 
 # Bite Description
 
-In the last Bite, you saw that a comparison gives you back `True` or `False`. In this Bite, you'll use that answer to make your program choose what to do.
+In this Bite, we are going to look at the difference between `=` and `==`. They look almost the same, but they do very different things.
 
-### `if` and `else` Statements
+### Assigning vs Comparing
 
-```
-if conditional:
-    # do something if the conditional is True
-else:
-    # do something if the conditional is False
-```
+- `=` is the **assignment operator** from Newbie Bite 1. It puts a value in a box.
+- `==` is the **equality operator**. It asks a question: *are these two things equal?*
 
-A few things to notice:
+The answer to a question like that is always a **boolean**: `True` or `False`. Python uses capital letters for `True` and `False`.
 
-- Both the `if` line and the `else` line end with a colon `:`.
-- The code that belongs to each branch is indented 4 spaces underneath it.
-- `else` doesn't get a conditional. It catches everything the `if` didn't.
+### Comparison Operators
 
-Only **one** branch ever runs. If the conditional is `True`, Python runs the `if` branch and skips the `else`. If it is `False`, it skips the `if` and runs the `else`.
+| Operator | Definition               |
+|:--------:|:-------------------------|
+| `==`     | equal                    |
+| `!=`     | not equal                |
+| `>`      | greater than             |
+| `<`      | less than                |
+| `>=`     | greater than or equal to |
+| `<=`     | less than or equal to    |
 
 ### Example
 
-```python
-def check_weather(weather):
-    if weather == "rainy":
-        print("Bring an umbrella.")
-    else:
-        print("Leave the umbrella at home.")
+> 🔮 **Predict first.** Guess whether each line prints `True` or `False`. Then run it.
 
-check_weather("rainy")
-check_weather("sunny")
+```python
+age = 18
+
+print(age == 16)
+print(age != 16)
+print(age >= 18)
+print("Ada" == "ada")
 ```
 
-> 🔧 **Modify.** Change the first call to `check_weather("Rainy")` and run it again. What prints? Why?
+Look closely at the last one. Strings are compared letter by letter, and to Python an uppercase `A` and a lowercase `a` are different characters.
 
 ### Your Task
 
-Complete the `check_payday` function. It takes one parameter, `date`.
+Create two objects, `pybites1` and `pybites2`, that both hold the string `"PyBites"`.
 
-- If `date` is equal to the string `"payday"`, print `Time to pay the rent.`
-- Otherwise, print `Keep calm and eat two minute noodles.`
-
-The template already has the function line for you. Your code goes inside it, so don't forget your indents!
+The tests will check `pybites1 == pybites2`, so think about what could make that comparison come out `False`.
 
 Good luck, and happy coding! 🐍

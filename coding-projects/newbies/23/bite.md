@@ -51,12 +51,14 @@ for movie, rating in movie_ratings.items():
 
 ### Your Task
 
-Complete the `print_cars` function. It takes the `my_cars` dictionary as a parameter, where each key is a car brand and each value is the year.
+Complete the `print_cars` function. It takes **one** parameter: a dictionary where each key is a car brand and each value is the year it was made. Add the parameter yourself, and pick a name for it.
 
 Use a `for` loop with `.items()` to print each car and its year on its own line, in this format:
 
 ```
 Nissan: 2004
 ```
+
+The tests will call your function with a few different dictionaries. To try it out yourself, call it with one of your own, like `print_cars({"Nissan": 2004, "Jeep": 2013})`.
 
 Good luck, and happy coding! 🐍
