@@ -7,7 +7,7 @@ Related Bites: newbie 16, newbie 18
 
 # Bite Description
 
-In the last Bite, the `if` statement checked a comparison like `date == "payday"`. But you don't always need a comparison. In this Bite, we'll look at how Python decides whether *any* object counts as `True` or `False`.
+In the last Bite, the `if` statement checked a comparison like `percent < 20`. But you don't always need a comparison. In this Bite, we'll look at how Python decides whether *any* object counts as `True` or `False`.
 
 ### Truthy and Falsy
 
