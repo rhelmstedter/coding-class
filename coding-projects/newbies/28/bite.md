@@ -14,7 +14,7 @@ Type hints do not change how your code runs but provide additional information t
 
 Here's a simple example of how to use type hints:
 
-```
+```python
 def greet(name: str) -> str:
     return f"Hello, {name}!"
 ```

@@ -26,7 +26,7 @@ Here are some common types of errors and what they mean:
 
 1. **SyntaxError**: This error occurs when the code is not syntactically correct. Syntax is the set of rules that python follows in order for your code to run correctly. For example, anytime you have quotations `""`, parentheses `()`, brackets `[]`, or braces `{}` they must come in pairs. Another example would be that you need a colon at the end of each function definition, if/else statement, or for/while loops. If you are missing these things, you will get a `SyntaxError`.
 
-```
+```python
 print("Hello, world!)
 # Output: SyntaxError: unterminated string literal
 ```
@@ -35,7 +35,7 @@ Here the quotation marks are never closed. Python reached the end of the line be
 
 2. **TypeError**: This error occurs when an operation or function is applied to an object of an inappropriate type.
 
-```
+```python
 print(5 + "five")
 # Output: TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
@@ -44,7 +44,7 @@ Here the `TypeError` is saying that we can't add integers and strings. If we put
 
 3. **NameError**: This error occurs when a local or global name is not found.
 
-```
+```python
 print(welcome)
 # Output: NameError: name 'welcome' is not defined
 ```
@@ -53,7 +53,7 @@ Here the `NameError` is telling us we never created an object named `welcome`. I
 
 4. **IndexError**: This error occurs when you try to access an index that is out of range for a list.
 
-```
+```python
 nums = [1, 2, 3]
 print(nums[5])
 # Output: IndexError: list index out of range
@@ -63,7 +63,7 @@ Here the `IndexError` is saying that the index `5` is out of range for the list 
 
 5. **KeyError**: This error occurs when you try to access a key that is not present in a dictionary.
 
-```
+```python
 person = {"name": "Alice"}
 print(person["age"])
 # Output: KeyError: 'age'

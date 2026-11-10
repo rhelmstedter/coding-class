@@ -15,7 +15,7 @@ The `.split()` method is used to split a string into a list of words. By default
 
 For example:
 
-```
+```python
 text = "Hello, world!"
 words = text.split()
 print(words)  # Output: ['Hello,', 'world!']
@@ -29,7 +29,7 @@ The `.splitlines()` method is used to split a string into a list of lines. This 
 
 For example:
 
-```
+```python
 text = "Line one.\nLine two.\nLine three."
 lines = text.splitlines()
 print(lines)  # Output: ['Line one.', 'Line two.', 'Line three.']

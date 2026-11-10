@@ -21,7 +21,7 @@ How to Use a Module
 
 To use a module, you must first import it into your Python script. This is done at the beginning of your file with the `import` statement. For example, to use the `randint` function from the `random` module, which generates a random integer between two specified values, you would start by importing the module:
 
-```
+```python
 import random
 ```
 

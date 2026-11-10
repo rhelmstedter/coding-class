@@ -13,7 +13,7 @@ Normally, you retrieve a value from a dictionary using the key by placing the ke
 
 To address this issue, Python dictionaries offer the `.get()` method. This method provides a more forgiving way to retrieve values. When you use `.get()` and the key does not exist, it returns `None` instead of raising an error.
 
-```
+```python
 cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
 print(cars.get('Mazda'))
 # Output: 2019
@@ -24,7 +24,7 @@ print(cars.get('mazda'))
 
 Combining `.get()` with `if` statements lets you handle missing keys with ease. First, check if the return value from `.get()` is None and print out or return a message saying it doesn't exist. Otherwise, print or return your intended message with the information from the dictionary. Below is an example of a function that does just that.
 
-```
+```python
 cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
 
 def get_car_info(car: str) -> str:
@@ -46,7 +46,7 @@ Note, when comparing objects with `None` you should use the `is` keyword instead
 
 Or, you can specify a default return value as a second argument, which is returned if the key is not found.
 
-```
+```python
 cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
 
 print(cars.get("Ford", "Car does not exist."))

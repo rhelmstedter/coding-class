@@ -20,7 +20,7 @@ These special characters help in creating formatted text output, which is partic
 
 Consider the following example to understand how `\n` and `\t` work:
 
-```
+```python
 text = "Hello,\n\tWelcome to Python programming!"
 print(text)
 ```

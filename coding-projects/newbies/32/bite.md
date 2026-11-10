@@ -13,9 +13,14 @@ In a Python dictionary, if you look up the key, it will return the value. You do
 
 Let's see how a look up works:
 
+```python
+cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
+print(cars['Mazda'])
 ```
->>> cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
->>> cars['Mazda']
+
+Output:
+
+```
 2019
 ```
 
@@ -25,11 +30,16 @@ Now, what if you try to look up a `key` that doesn't exist? Well, the default be
 
 Let's see what that looks like:
 
+```python
+cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
+print(cars['mazda'])
 ```
->>> cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
->>> cars['mazda']
+
+Output:
+
+```
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in <module>
 KeyError: 'mazda'
 ```
 

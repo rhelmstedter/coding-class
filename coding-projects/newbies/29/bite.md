@@ -17,7 +17,7 @@ This can be particularly useful for functions that have parameters with common d
 
 Here is a basic example:
 
-```
+```python
 def greet(name="World"):
     return f"Hello, {name}!"
 
