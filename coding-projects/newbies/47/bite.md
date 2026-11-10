@@ -11,7 +11,7 @@ In this Bite, you'll learn how to use the `in` operator to check for the presenc
 
 ### Understanding the `in` Operator
 
-`in` is a Python keyword.  We are already been using the `in` keyword in `for` loops, but we can use it as a stand alone operator as well. The `in` operator is used to check if an item exists within an object. The `in` operator works on all iterables such as lists, tuples, and strings. (It also works on a few other objects that we haven't learned about yet.)
+`in` is a Python keyword.  We have already been using the `in` keyword in `for` loops, but we can use it as a stand alone operator as well. The `in` operator is used to check if an item exists within an object. The `in` operator works on all iterables such as lists, tuples, and strings. (It also works on a few other objects that we haven't learned about yet.)
 
 The general syntax for using the `in` operator is `item in iterable`. It returns `True` if the item is found, and `False` otherwise. Below is list of strings. We can check if a given string is in the list.
 
@@ -38,9 +38,9 @@ Output:
 False
 ```
 
-Did that surprise you? Let's think about what's happening here. There are three items in the list `fruits`: `"apple"`, `"banana"`, and `"cherry"`. In the second code snippet, we are essentially asking if the string `"a"` is an item in the list. Even though the character `"a"` exists in one of the items, it is not it's own item in the list. So, the `in` operator returns `False`.
+Did that surprise you? Let's think about what's happening here. There are three items in the list `fruits`: `"apple"`, `"banana"`, and `"cherry"`. In the second code snippet, we are essentially asking if the string `"a"` is an item in the list. Even though the character `"a"` exists in one of the items, it is not its own item in the list. So, the `in` operator returns `False`.
 
-If you want to check if certain characters as in a string, then you would need to use the string with the `in` operator.
+If you want to check if certain characters are in a string, then you would need to use the string with the `in` operator.
  
 ```python
 print("a" in "apple")
@@ -51,7 +51,7 @@ Output:
 True
 ```
 
-We can all check other types of items such as numbers.
+We can also check other types of items such as numbers.
 
 ```python
 scores = [75, 99, 60, 82, 79, 84, 87, 74, 71, 60]
@@ -93,7 +93,7 @@ The goal is to count how many items from the `items` list are present in the `co
 ### Steps to Complete
 
 1. Use a variable to store the count of matching items.
-2. Use a `for` loop to iterate over each item in the `items` list pass into the function.
+2. Use a `for` loop to iterate over each item in the `items` list passed into the function.
 3. In the loop check if the `item` is in the `collection` (also passed into the function) using the `in` operator. In that case, increment the count.
 4. Return the count of matching items.
 
@@ -102,7 +102,7 @@ Although there are other, more efficient, methods to solve this problem, we want
 
 ### Example Usage
 
-```python
+```
 collection = [1, 2, 3, 4, 5]
 items = [3, 4]
 print(count_matching_items(collection, items))
@@ -114,7 +114,7 @@ Output:
 2
 ```
 
-```python
+```
 collection = ['apple', 'banana', 'cherry']
 items = ['banana', 'cherry']
 print(count_matching_items(collection, items))
@@ -126,7 +126,7 @@ Output:
 2
 ```
 
-```python
+```
 collection = ['apple', 'banana', 'cherry']
 items = ['date', 'fig']
 print(count_matching_items(collection, items))

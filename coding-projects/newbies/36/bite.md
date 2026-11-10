@@ -39,7 +39,7 @@ This is new. Notice that when we want to create a `datetime.date` object, we don
 
 #### Importing the Entire Module
 
-This is useful when you need to use multiple objects from the module. It helps to avoid potential naming conflicts in your code. Imagine you have an object `date = "May 24, 2023"` in you code already. Well, if you import the entire module you can still use the `datetime.date` object no problem.
+This is useful when you need to use multiple objects from the module. It helps to avoid potential naming conflicts in your code. Imagine you have an object `date = "May 24, 2023"` in your code already. Well, if you import the entire module you can still use the `datetime.date` object no problem.
 
 For example:
 
@@ -58,7 +58,7 @@ May 24, 2023
 2023-05-24
 ```
 
-Because we imported the entire module, in order to get to the `date` object we have to use `datetime.date`. That lets us use the label `date` as the name for another object. This approach is called keeps your namespace clean. Here's what it looks like if you just import the `date` object.
+Because we imported the entire module, in order to get to the `date` object we have to use `datetime.date`. That lets us use the label `date` as the name for another object. This approach keeps your namespace clean. Here's what it looks like if you just import the `date` object.
 
 ```python
 from datetime import date
@@ -76,10 +76,10 @@ Traceback (most recent call last):
 TypeError: 'str' object is not callable
 ```
 
-Using the `from module import object` style of importing lets us access `datetime.date` object using just the label `date`. So then two lines latter when we have `date = "May 24, 2024"`, the label `date` no longer refers to the `datetime.date` object, it is just a string so we get a TypeError.
+Using the `from module import object` style of importing lets us access `datetime.date` object using just the label `date`. So then a line later when we have `date = "May 24, 2023"`, the label `date` no longer refers to the `datetime.date` object, it is just a string so we get a TypeError.
 
 #### Importing a Specific Object
-This is useful when you only need one or a few objects from the module. It can make your code more readable. It can also mean less typing overall since you don't have to write the name of the moudle every time. However, you must ensure that the names of the imported objects do not conflict with existing names in your code.
+This is useful when you only need one or a few objects from the module. It can make your code more readable. It can also mean less typing overall since you don't have to write the name of the module every time. However, you must ensure that the names of the imported objects do not conflict with existing names in your code.
 
 ### A refresher from last exercise: `datetime.date` and `.weekday()`
 
@@ -97,12 +97,12 @@ Output:
 2
 ```
  
-# Your Task
+### Your Task
 This bite should produce the same exact result as the previous. The goal here is to change the code to use the `from module import object` styling of imports.
 
 1. Import only the `date` class from `datetime`.
 2. Create a `date` object for December 19, 2016, the day Pybites was founded. 🎉 Assign this object to a variable called `start_date`.
 3. Use the `.weekday()` method on `start_date` to get the day of the week (integer) and store it in a new variable called `day_of_the_week`.
-4. Lastly use the `weekdays` dictionary, the we defined for you at the top of the module, to look up the `day_of_the_week` integer variable you just defined and retrieve its corresponding value. Return this retrieved value from the function.
+4. Lastly use the `weekdays` dictionary, that we defined for you at the top of the module, to look up the `day_of_the_week` integer variable you just defined and retrieve its corresponding value. Return this retrieved value from the function.
 
 Good luck, and happy coding!

@@ -22,17 +22,17 @@ print(cars.get('mazda'))
 # Output: None
 ```
 
-Combining `.get()` with `if` statements let's you handle missing keys with ease. First, check if the return value from `.get()` is None and print out or return a message saying it doesn't exists. Otherwise, print or return your intended message with the information from the dictionary. Below is an example of a function that does just that.
+Combining `.get()` with `if` statements lets you handle missing keys with ease. First, check if the return value from `.get()` is None and print out or return a message saying it doesn't exist. Otherwise, print or return your intended message with the information from the dictionary. Below is an example of a function that does just that.
 
 ```
 cars = {'Mazda': 2019, 'Nissan': 1997, 'Holden': 2005, 'McLaren': 2011}
 
 def get_car_info(car: str) -> str:
-	year = cars.get(car)
-	if year is None:
-	    return f"You don't own a {car}"
-	else:
-		return f"Your {car} is a {year} model"
+    year = cars.get(car)
+    if year is None:
+        return f"You don't own a {car}."
+    else:
+        return f"Your {car} is a {year} model."
 
 
 print(get_car_info("Mazda"))
@@ -59,7 +59,7 @@ This method is particularly useful in data processing and handling user input, w
 
 In this exercise, you'll apply what you've learned so far by implementing a function that uses it to safely retrieve scores for ninja belts. You'll handle both cases where the belt exists and where it does not, providing appropriate feedback for each situation.
 
-# Your Task
+### Your Task
 
 Complete the `look_up_score_advanced` function that receives a `belt_key` string.
 
@@ -75,4 +75,4 @@ In computer programming, string interpolation (or variable interpolation, variab
 
 So here you'll "interpolate" or "replace" the belt and score _placeholders_ with the belt and score _variables_ into the given string.
 
-For example, if `belt_key` is "yellow" the retrieved `score` is 20, then `"Your {belt_key} belt has a score of {score}."` will become: `"Your yellow belt has a score of 20."`.
+For example, if `belt_key` is "yellow", the retrieved `score` is 20, then `"Your {belt_key} belt has a score of {score}."` will become: `"Your yellow belt has a score of 20."`.

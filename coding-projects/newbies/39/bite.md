@@ -15,7 +15,7 @@ If you are working with simple objects, dataclasses might be a good option becau
 
 ### Why Use Dataclasses?
 
-Dataclasses reduce [boilerplate](https://en.wikipedia.org/wiki/Boilerplate_code) code in class definitions. In computer programming, boilerplate code, or simply boilerplate, are sections of code that are repeated in multiple places with little to no variation. In the context of classes we consider `__init__`, and some other methods that start with double underscore (`__`) boilerplace. When you create a `dataclass`, it automatically generates these methods based on the class attributes you define.
+Dataclasses reduce [boilerplate](https://en.wikipedia.org/wiki/Boilerplate_code) code in class definitions. In computer programming, boilerplate code, or simply boilerplate, are sections of code that are repeated in multiple places with little to no variation. In the context of classes we consider `__init__`, and some other methods that start with double underscore (`__`) boilerplate. When you create a `dataclass`, it automatically generates these methods based on the class attributes you define.
 
 ### Revisiting the `Circle` Class
 
@@ -31,13 +31,14 @@ class Circle:
 
     def calc_circumference(self):
         return 2 * 3.14159 * self.radius  # Circumference calculation for the circle.
-    
+
     def __str__(self):
         return f"A circle with a radius of {self.radius}."
-	   
+
     def __repr__(self):
         return f"Circle(radius={self.radius})"
-	   
+
+
 my_circle = Circle(3)
 print(my_circle.__repr__())
 ```
@@ -51,11 +52,11 @@ When we call the `__repr__` method on an object we get the representation that w
 
 ### Creating a dataclass
 
-When creating a dataclass, you would first import the `dataclasses` module and then use the `dataclass` object. Technically speaking, the `dataclass` object is a decorator. A decorator in Python is a special type of function that can modify the behavior of another function or class. We won't go into detail on how decorators work because that is beyond the scope of the newbies, but just know that you use it by placing at `@` symbol in front of the decorator name. When you see a decorator, such as `@dataclass`, it means that the `dataclass` function is being applied to the class that follows it.
+When creating a dataclass, you would first import the `dataclasses` module and then use the `dataclass` object. Technically speaking, the `dataclass` object is a decorator. A decorator in Python is a special type of function that can modify the behavior of another function or class. We won't go into detail on how decorators work because that is beyond the scope of the newbies, but just know that you use it by placing an `@` symbol in front of the decorator name. When you see a decorator, such as `@dataclass`, it means that the `dataclass` function is being applied to the class that follows it.
 
 ### Converting `Circle` to a dataclass
 
-Just for a moment, let's forget about all of the methods we coded in the previous bites. We are going to refactor the `Cicle` class. Refactoring just means that we are going to change the code, but the output will remain the same. The most simple version of refactoring the `Circle` class to a `dataclass` looks like this:
+Just for a moment, let's forget about all of the methods we coded in the previous bites. We are going to refactor the `Circle` class. Refactoring just means that we are going to change the code, but the output will remain the same. The most simple version of refactoring the `Circle` class to a `dataclass` looks like this:
 
 ```python
 from dataclasses import dataclass
@@ -77,7 +78,7 @@ Circle(radius=3)
 
 Look at that! No more `__init__` and it printed out the object nicely without having to define `__str__` or `__repr__`. The attributes are created using type hints in place of writing the `__init__` method.
 
-We can still add methods to dataclasses just like before. So our final refactoring would like the following:
+We can still add methods to dataclasses just like before. So our final refactoring would look like the following:
 
 ```python
 from dataclasses import dataclass
@@ -85,13 +86,13 @@ from dataclasses import dataclass
 @dataclass
 class Circle:
     radius: float
-    
+
     def calc_area(self):
         return 3.14159 * self.radius**2  # Area calculation for the circle.
 
     def calc_circumference(self):
         return 2 * 3.14159 * self.radius  # Circumference calculation for the circle.
-    
+
     def __str__(self):
         return f"A circle with a radius of {self.radius}."
 
@@ -119,7 +120,8 @@ class Point:
 
     def __repr__(self):
         return f"Point(x={self.x}, y={self.y})"
-	   
+
+
 my_point = Point(2, 4)
 print(my_point)
 ```

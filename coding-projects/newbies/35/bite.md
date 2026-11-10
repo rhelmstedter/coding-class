@@ -46,7 +46,7 @@ Output:
 2023
 ```
 
-You can think of an attribute like a character trait for an object. Each `datetime.date` object has attributes of `year`, `month`, and `day`. You access them by writing the name of the object, followed by a dot and then the attribute you are interested in. It looks the same as calling a method, but without the trailing parenthesis.
+You can think of an attribute like a character trait for an object. Each `datetime.date` object has attributes of `year`, `month`, and `day`. You access them by writing the name of the object, followed by a dot and then the attribute you are interested in. It looks the same as calling a method, but without the trailing parentheses.
 
 ### Understanding the `.weekday()` Method
 
@@ -72,11 +72,11 @@ Output:
 
 Now, let's use these tools to determine the day of the week for a specific date. We will create a function that returns the name of the day that Pybites was founded: December 19, 2016.
 
-# Your Task
+### Your Task
 
 1. Import the `datetime` module at the top of the module (imports should almost always go at the top of the module).
 2. Create a `datetime.date` object for December 19, 2016, the day Pybites was founded. 🎉 Assign this object to a variable called `start_date`.
 3. Use the `.weekday()` method on `start_date` to get the day of the week (integer) and store it in a new variable called `day_of_the_week`.
-4. Lastly use the `weekdays` dictionary, the we defined for you at the top of the module, to look up the `day_of_the_week` integer variable you just defined and retrieve its corresponding value (we've covered this in Newbie Bite 29). Return this retrieved value from the function.
+4. Lastly use the `weekdays` dictionary, that we defined for you at the top of the module, to look up the `day_of_the_week` integer variable you just defined and retrieve its corresponding value (we covered this in Newbie Bite 32). Return this retrieved value from the function.
 
 Good luck, and happy coding!

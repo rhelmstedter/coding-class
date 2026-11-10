@@ -7,11 +7,11 @@ Related Bites:
 
 # Bite Description
 
-In this bite, you'll learn about the `namedtuple` object. These objects are similar to a regular tuple; However, while elements in a regular tuple are accessed by index, elements in a `namedtuple` can be accessed by an attribute through dot notation, making your code more readable.
+In this bite, you'll learn about the `namedtuple` object. These objects are similar to a regular tuple. However, while elements in a regular tuple are accessed by index, elements in a `namedtuple` can be accessed by an attribute through dot notation, making your code more readable.
 
 ### Example: Regular Tuple vs. Namedtuple
 
-Recall from [Newbie 24](https://codechalleng.es/bites/292/newbie) that tuples are similar to lists, but they are immutable. That makes them more efficient because Python knows once you have created a tuple, it will never change programmatically. Just like lists, you can use indexing to get the individual items stored in the tuple. Let's illustrate this with a simple example:
+Recall from Newbie Bite 24 that tuples are similar to lists, but they are immutable. That makes them more efficient because Python knows once you have created a tuple, it will never change programmatically. Just like lists, you can use indexing to get the individual items stored in the tuple. Let's illustrate this with a simple example:
 
 ```python
 alice = ('Alice', 30)
@@ -26,7 +26,7 @@ Alice is 30 years old.
 
 When your tuple only has two items, and the code is fresh in your mind, it is not so bad. But as the size of the tuple grows, or it has been months since you have looked at it, it is easy to forget what information is at which index.
 
-# Enter The `namedtuple` Object
+### Enter The `namedtuple` Object
 
 `namedtuple` objects solve this problem by assigning a label to each item and allowing you to access the information using dot notation. Let's look at an example.
 
@@ -47,7 +47,7 @@ Alice is 30 years old.
 
 We first import the `namedtuple` object from the `collections` module. Then we have to create the general `namedtuple` object. In this case, we are creating a `Person` object. Notice that we have to use the label `Person` twice. We are assigning the `namedtuple` to the label `Person`, and passing in the string `'Person'` as an argument for the `namedtuple`. The second argument is a list of the attributes we want to define. Then, we used the `Person` object we just created to create the `alice` object. Finally, when we print the string, you can see how the name and age are accessible using `.name` and `.age`. This makes it easier to read and understand what each part of the tuple represents.
 
-You can also print out a `namedtuple` directly and it comes will a built-in `__str__` method defined for you.
+You can also print out a `namedtuple` directly, and it comes with a readable representation (a `__repr__` method) defined for you.
 
 ```python
 from collections import namedtuple
@@ -84,13 +84,13 @@ There is also a completely different way to make a named tuple that is located i
 from typing import NamedTuple
 
 
-class Persion(NamedTuple):
+class Person(NamedTuple):
     name: str
     age: int
 
 
 alice = Person('Alice', 30)
-print(f"{alice.name} is {alice.age}")
+print(f"{alice.name} is {alice.age} years old.")
 ```
 
 Output:
@@ -98,12 +98,12 @@ Output:
 Alice is 30 years old.
 ```
 
-When we import the `NamedTuple` from the `typing` module, the object is camel-cased. Then we create something that looks very similar to a [dataclass](https://codechalleng.es/bites/536/newbie). But, instead of using a decorator, you pass `NamedTuple` inside of parentheses after the class name. (Technically, this is called sub-classing. Sub-classing is beyond the scope of the newbies, but it's good to know that it exists.) Next, you define the attributes using type hinting just like you would in a `dataclass`.
+When we import the `NamedTuple` from the `typing` module, the object is written in CapWords (`NamedTuple`, not `namedtuple`). Then we create something that looks very similar to a `dataclass` from Newbie Bite 39. But, instead of using a decorator, you pass `NamedTuple` inside of parentheses after the class name. (Technically, this is called sub-classing. Sub-classing is beyond the scope of the newbies, but it's good to know that it exists.) Next, you define the attributes using type hinting just like you would in a `dataclass`.
 
 
 ### Why Not Just Use `dataclass`
 
-You may be wondering, "If it looks like a `dataclass`, why bother making a `namedtuple`?" Great question! We won't go into all the details here in the newbies, but there are some differences between the two. In general, because `NamedTuple` objects are immutable they are more efficient. They are also iterable by default. (Remember, iterable means you access each component using a `for` loop.) `dataclass` objects are more flexible because they are mutable. You can change attributes if you need to. They are also more powerful because you can define dunder methods. If you don't need all the extra power that comes with a `dataclass`, just use a `NamedTuple`.
+You may be wondering, "If it looks like a `dataclass`, why bother making a `namedtuple`?" Great question! We won't go into all the details here in the newbies, but there are some differences between the two. In general, because `NamedTuple` objects are immutable they are more efficient. They are also iterable by default. (Remember, iterable means you can access each component using a `for` loop.) `dataclass` objects are more flexible because they are mutable. You can change attributes if you need to. They also come with more options, like setting default values for attributes or making objects you can sort. If you don't need all the extra power that comes with a `dataclass`, just use a `NamedTuple`.
 
 ### Your Task
 

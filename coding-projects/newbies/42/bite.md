@@ -11,14 +11,14 @@ In this Bite, you will learn how to write list comprehensions. List comprehensio
 
 ### Understanding Iterables
 
-Let's start with some formal definitions for things you are already familiar with. In Python, an object is considered an **iterable** if it is able to return individual components one at a time. Any object that is iterable can be used in a for loop. Some examples of iterables are lists, tuples, strings, and dictionaries. If you loop over lists and tuples, you get each individual item. If you loop over a string, you get back each individual character. And if you loop over a dictionary, you can get the keys, the values, or both depending on which method you call (see: [Newbie 13](https://codechalleng.es/bites/274/newbie)).
+Let's start with some formal definitions for things you are already familiar with. In Python, an object is considered an **iterable** if it is able to return individual components one at a time. Any object that is iterable can be used in a for loop. Some examples of iterables are lists, tuples, strings, and dictionaries. If you loop over lists and tuples, you get each individual item. If you loop over a string, you get back each individual character. And if you loop over a dictionary, you can get the keys, the values, or both depending on which method you call (see Newbie Bite 23).
 
 Read through the code below.
 
 ```python
 friends = ["Bob", "Julian", "Sherri", "Eric", "AJ", "Heather"]
 for friend in friends:
-    print(f"{friend} is my friend")
+    print(f"{friend} is my friend.")
 ```
 Output:
 ```
@@ -30,7 +30,7 @@ AJ is my friend.
 Heather is my friend.
 ```
 
-Whenever you read a `for` loop in Python, you should think to yourself "for each item in the iterable". In this case, we use the label `friend` to represent each individual item. In the example above, we are looping over the `friends` list (the iterable), and printing out the name of each friend followed by `"is my friend"`. 
+Whenever you read a `for` loop in Python, you should think to yourself "for each item in the iterable". In this case, we use the label `friend` to represent each individual item. In the example above, we are looping over the `friends` list (the iterable), and printing out the name of each friend followed by `"is my friend."` 
 
 Sometimes, instead of printing each item, you might want to create a new list based on items in an existing list. In the following example, we are going to create a new list of friends, but for each friend, we want to save their name lower cased. We can do that using tools we have already covered. Read through the code below.
 
@@ -43,7 +43,7 @@ print(lowercased_friends)
 ```
 Output:
 ```
-["bob", "julian", "sherri", "eric", "aj", "heather"]
+['bob', 'julian', 'sherri', 'eric', 'aj', 'heather']
 ```
 
 We have to create a new empty list so there is something to append to. (Sometimes people use the word initialize instead of create.) Then, we loop over the original `friends` list. For each item in the list, we called the `.lower` method and appended the modified item to the new `lowercased_friends` list. When we print out `lowercased_friends` we can see that all the names are the same, they have just been lowercased.
@@ -61,7 +61,7 @@ print(lowercased_friends)
 
 Output:
 ```
-["julian", "sherri", "eric", "heather"]
+['julian', 'sherri', 'eric', 'heather']
 ```
 
 See how now there are only 4 items in the list, but they are still lowercased? Any name that was not at least four letters was filtered out with the conditional `if len(friend) > 3`. (Sorry Bob and AJ!)
@@ -78,7 +78,7 @@ Depending on how you are modifying the items, or what your conditional is, you m
 
 ### Enter List Comprehensions
 
-Every thing we just learned works great. However, there is another way, list comprehensions. List comprehensions offer a special syntax that do all the steps above more efficiently and generally in less lines of code. When you write a list comprehension, you end up with a new list based on the modified items of an original iterable.
+Everything we just learned works great. However, there is another way, list comprehensions. List comprehensions offer a special syntax that does all the steps above more efficiently and generally in fewer lines of code. When you write a list comprehension, you end up with a new list based on the modified items of an original iterable.
 
 Let's go back to our friends example and see what it looks like. Read through the original code, and the list comprehension code. Both examples produce the same new list. What do the examples have in common? What is different about them?
 
@@ -109,7 +109,7 @@ print(lowercased_friends)
 ```
 Output:
 ```
-["julian", "sherri", "eric", "heather"]
+['julian', 'sherri', 'eric', 'heather']
 ```
 
 ### General Syntax
@@ -124,14 +124,14 @@ List comprehensions can be broken down into the following components:
 
 The general syntax for a list comprehension is:
 
-```python
+```
 [expression for item in iterable if condition]
 ```
-When I write list comprehensions I like to use the sentence frame, "I want _____ for each _____ in _____ if _____." With the friends example, the sentence frame I think about when is, "**I want** the friend lower cased **for each** friend **in** the friends list **if** the friend has at least 4 letters."
+When I write list comprehensions I like to use the sentence frame, "I want _____ for each _____ in _____ if _____." With the friends example, the sentence frame I think about is, "**I want** the friend lower cased **for each** friend **in** the friends list **if** the friend has at least 4 letters."
 
 #### Using List Comprehensions Only as a Filter
 
-In certain cases, you don't want to modify the original items, you just want to filter some of them out. Let's say we don't want to lower case our friends names, we only want to filter out names shorter than four letters. My sentence frame now is, "**I want** the friend **for each** friend **in** the friends list **if** the friend has at lest four letters." That sentence becomes this Python code:
+In certain cases, you don't want to modify the original items, you just want to filter some of them out. Let's say we don't want to lower case our friends names, we only want to filter out names shorter than four letters. My sentence frame now is, "**I want** the friend **for each** friend **in** the friends list **if** the friend has at least four letters." That sentence becomes this Python code:
 
 ```python
 friends = ["Bob", "Julian", "Sherri", "Eric", "AJ", "Heather"]
@@ -142,7 +142,7 @@ print(filtered_friends)
 Output:
 
 ```
-["Julian", "Sherri", "Eric", "Heather"]
+['Julian', 'Sherri', 'Eric', 'Heather']
 ```
 
 #### Another Example

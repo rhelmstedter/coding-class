@@ -11,7 +11,7 @@ In this Bite, you'll learn more about manipulating strings in Python. String man
 
 ## String Manipulations
 
-We have talked about string methods before, but in this bite we are taking it to the next level. Let's break down some common manipulations programmers perform, the strings methods required to do so, and explain why and when you would want to do so.
+We have talked about string methods before, but in this bite we are taking it to the next level. Let's break down some common manipulations programmers perform, the string methods required to do so, and explain why and when you would want to do so.
 
 Before we jump into examples, it is important to know that strings in Python are immutable. In this context, "immutable" means that once an object has been made and stored in memory by Python, you cannot change it programmatically. As a result, every time you call a string method, a new string is created.
 
@@ -49,7 +49,7 @@ Output:
 learning python is fun and engaging!
 ```
 
-The original string `"Learning Python is fun and engaging!"` still exists in memory; However, there is no label associated with it anymore because we reassigned the label `text` to the lowercased version.
+The original string `"Learning Python is fun and engaging!"` still exists in memory. However, there is no label associated with it anymore because we reassigned the label `text` to the lowercased version.
 
 #### Why?
 
@@ -65,7 +65,7 @@ else:
 
 This code asks the user to enter some text and stores it with the label `confirm`. If the value of `confirm` is equal to `"yes"`, the program moves on. Otherwise, the program quits. 
 
-What happens is the user types in `Yes`? In Python, the string `"yes"` and the string `"Yes"` are not equivalent, so the code will display `OK, quitting now.` even though the user wanted to continue.
+What happens if the user types in `Yes`? In Python, the string `"yes"` and the string `"Yes"` are not equivalent, so the code will display `OK, quitting now.` even though the user wanted to continue.
 
 One way to address this issue is to use the `.lower` method to convert the value of `confirm` to all lowercase no matter what the user types in.
 
@@ -199,7 +199,7 @@ Whenever you are working with methods that return a new copy of an object, you c
 
 ### Extracting Specific Words
 
-We learned about the `.split` method back in [Newbie 31](https://codechalleng.es/bites/528/newbie). Let's take it up a notch. This time, instead of splitting right away, let's strip off some punctuation first, and then get the individual words. 
+We learned about the `.split` method back in Newbie Bite 31. Let's take it up a notch. This time, instead of splitting right away, let's strip off some punctuation first, and then get the individual words. 
 
 ```python
 text = "Learning Python is fun and engaging!"
@@ -210,14 +210,14 @@ print(words)
 Output:
 
 ```
-['Learning', 'python', 'is', 'fun', 'and', 'engaging']
+['Learning', 'Python', 'is', 'fun', 'and', 'engaging']
 ```
 
 This is another example of chaining methods together. Did you notice that we used `.rstrip` since the only punctuation was at the end of the sentence. We could have also used `.strip` here. Now, we have all the words without any of the punctuation on that final word.
 
 ### Why?
 
-Why would you want to do this? Perhaps you are interested in the length of the individual words. Using list indexing we learned about in [Newbie 10](https://codechalleng.es/bites/271/newbie) and the `len` function we learned in Newbie 31 we can extract individual words and calculate their lengths.
+Why would you want to do this? Perhaps you are interested in the length of the individual words. Using list indexing we learned about in Newbie Bite 10 and the `len` function we learned in Newbie Bite 31 we can extract individual words and calculate their lengths.
 
 ```python
 text = "Learning Python is fun and engaging!"
@@ -249,7 +249,7 @@ Your task is to create a function `extract_words` that performs string manipulat
 
 ### Example Usage
 
-```python
+```
 text = "Today it's a sunny day in LA!"
 print(extract_words(text))
 ```

@@ -39,13 +39,13 @@ In this example, the string is split into individual lines.
 
 Now, let's apply these methods to some text processing tasks.
 
-# Your Task
+### Your Task
 
 You are provided with a string `prince_of_py` and two functions: `word_count` and `line_count`.
 
 1. Implement `word_count`: This function takes a string as input and returns the number of words in the string.
 
-Use the `.split()` method on the string passed into the function to split it into a list of _words_. Then, use the `len()` built-in on this list to get the length and return this integer from the function. _Built-in_ means here that it's readably available, you don't have to import it into the script to use it.
+Use the `.split()` method on the string passed into the function to split it into a list of _words_. Then, use the `len()` built-in on this list to get the length and return this integer from the function. _Built-in_ means here that it's readily available, you don't have to import it into the script to use it.
 
 2. Implement `line_count`: This function takes a string as input and returns the number of lines in the string.
 
@@ -55,7 +55,7 @@ Optionally, you can add type hints to specify that the input is a string and the
 
 Here are the initial function definitions you need to modify.
 
-_Note: don't modify the `prince_of_py` string nor the function argument: `string = prince_of_py` (this is another example of a default argument we covered in the previous Bite), only write code in the body of the function where it says `# Your code here`._
+_Note: don't modify the `prince_of_py` string nor the function argument: `string = prince_of_py` (this is another example of a default argument we covered in the previous Bite), only write code in the body of each function._
 
 ```
 prince_of_py = """This is a story all about how,

@@ -9,11 +9,11 @@ Related Bites: class_with_str, make_dataclass
 
 In this Bite, you'll learn about writing Python classes. Classes are like blueprints for creating custom objects. 
 
-We have seen classes already. In the `datetime` module, the `date` object is a class. The attributes and methods of the `data` class that are great for working with dates. Today, we are going to look at creating a `Circle` object, which will have attributes and methods that are great for working with circles.
+We have seen classes already. In the `datetime` module, the `date` object is a class. The `date` class has attributes and methods that are great for working with dates. Today, we are going to look at creating a `Circle` object, which will have attributes and methods that are great for working with circles.
 
 ### Building a Class
 
-When creating a class, you type the `class` keyword followed by the name of the class and end the line with a colon. For example, `class ClassName:`. Since this line ends in a colon, the body of the class will be indented. It is a very strong convention to use [camel case](https://en.wikipedia.org/wiki/Camel_case) when naming your class. If you don't use camel case, your program will still work, but it is a good idea to stick with this practice.
+When creating a class, you type the `class` keyword followed by the name of the class and end the line with a colon. For example, `class ClassName:`. Since this line ends in a colon, the body of the class will be indented. It is a very strong convention to use [CapWords](https://peps.python.org/pep-0008/#class-names) (also called Pascal case) when naming your class, where every word starts with a capital letter, like `ClassName`. If you don't use CapWords, your program will still work, but it is a good idea to stick with this practice.
 
 Before you start writing the body of the class, you should think about all the attributes your object will have. In our class, every `Circle` object will have a radius. When building your own classes, you can have as many attributes as you would like.
 
@@ -26,16 +26,16 @@ class Circle:
 ```
 This can be overwhelming the first time you see it, but let's break it down. All you are doing is defining a function, but instead of creating your own name for it, you have to use `__init__`. It starts and ends with double underscores, so many people refer to this as "dunder init". `init` is short for "initialize", which in computer science means to give something a starting value. It is also known as the constructor method, because you use it to construct, or build, the class.
 
-The first parameter of the `__init__` method, always refers to the object you are constructing. That means you need a label for the object that is created when you call the class later in your program. In python, we like to use the word `self`. While in other languages, they use the word `this`. Just like using camel case to name a class, using the label `self` to refer to the object created when you call the `Circle` class is a convention. While you can use any label you want, it is a good idea to stick with the label `self`.
+The first parameter of the `__init__` method, always refers to the object you are constructing. That means you need a label for the object that is created when you call the class later in your program. In python, we like to use the word `self`. While in other languages, they use the word `this`. Just like using CapWords to name a class, using the label `self` to refer to the object created when you call the `Circle` class is a convention. While you can use any label you want, it is a good idea to stick with the label `self`.
 
-So we are saying, when use the `Circle` class later in the program to create a `Circle` object, initialize the `radius` attribute to the value we pass in. Let's see what that looks like: 
+So we are saying, when we use the `Circle` class later in the program to create a `Circle` object, initialize the `radius` attribute to the value we pass in. Let's see what that looks like: 
 
 ```python
 class Circle:
     def __init__(self, radius):
         self.radius = radius
-	   
-	   
+
+
 # Here we are calling the class to create a Circle object
 my_circle = Circle(3)
 
@@ -58,13 +58,13 @@ OK, we have a basic class that creates a `Circle` and gives it a radius. But tha
 
 We will use these formulas to create class methods. Remember, methods are just functions that are associated with a certain object. So we will define two functions inside the `Circle` class, one for the area, the other for the circumference. 
 
-Starting with the area, before we write to the entire function, let's convert the formula from math to something that python will understand. We will use 3.14159 for π, and the operation for exponents in python is `**`. Translating the formula from math to python we would get: Area = `3.14159 * radius ** 2`. However, which radius are we talking about? Well, we want to use the radius that will be passed in when we call the `Circle` class, so we need to add `self`. The area becomes `3.14159 * self.radius ** 2`. That means we will also need to pass `self` in as a parameter for the function itself. Adding the entire method to the class looks like this:
+Starting with the area, before we write the entire function, let's convert the formula from math to something that python will understand. We will use 3.14159 for π, and the operation for exponents in python is `**`. Translating the formula from math to python we would get: Area = `3.14159 * radius ** 2`. However, which radius are we talking about? Well, we want to use the radius that will be passed in when we call the `Circle` class, so we need to add `self`. The area becomes `3.14159 * self.radius ** 2`. That means we will also need to pass `self` in as a parameter for the function itself. Adding the entire method to the class looks like this:
 
 ```python
 class Circle:
     def __init__(self, radius):
         self.radius = radius
-	
+
     def calc_area(self):
         return 3.14159 * self.radius ** 2
 ```
@@ -122,7 +122,7 @@ My circle has a circumference of 18.849539999999998.
 
 ### Type Hints
 
-This section is optional. If we want to add some more information, we can add type hints! We know that the radius should be a number. Does it have to be limited to only integers? Probably not, so we should go with `float`. If we do pass in an integer for the radius that will be OK because integers are what's called a subset of floats. Since `self.radius` can be a float and in each of the methods we are multiplying by a float, the return value will always be a float. The final class with type hints looks like this: 
+This section is optional. If we want to add some more information, we can add type hints! We know that the radius should be a number. Does it have to be limited to only integers? Probably not, so we should go with `float`. If we do pass in an integer for the radius that will be OK, because type checkers accept an integer anywhere a float is expected. Since `self.radius` can be a float and in each of the methods we are multiplying by a float, the return value will always be a float. The final class with type hints looks like this: 
 
 ```python
 class Circle:
@@ -136,7 +136,7 @@ class Circle:
         return 2 * 3.14159 * self.radius
 ```
 
-# Your Task
+### Your Task
 
 Create a `Rectangle` class and add the following methods:
 

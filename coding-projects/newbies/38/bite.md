@@ -61,7 +61,7 @@ Notice, for the `__str__` method, we also pass in `self` and inside the f-string
 class Circle:
     def __init__(self, radius):
         self.radius = radius
-	   
+
     def calc_area(self):
         return 3.14159 * self.radius**2
 
@@ -72,17 +72,17 @@ class Circle:
         return f"A circle with a radius of {self.radius}."
 ```
 
-We could put the `__str__` method about the `calc_area` and `calc_circumference` methods or even the `__init__` method if we wanted to. Generally, programmers write the `__init__` first.
+We could put the `__str__` method above the `calc_area` and `calc_circumference` methods or even the `__init__` method if we wanted to. Generally, programmers write the `__init__` first.
 
-## Your Task
+### Your Task
 
-Add the `__str__` method to the existing `Rectangle` class. Given a `Rectangle` object with a base of 3 and a height of 4, he `__str__` method should return a string that describes the rectangle in the following format: `"A rectangle with a base of 3 and a height of 4."`.
+Add the `__str__` method to the existing `Rectangle` class. Given a `Rectangle` object with a base of 3 and a height of 4, the `__str__` method should return a string that describes the rectangle in the following format: `"A rectangle with a base of 3 and a height of 4."`.
 
 ### Steps to Complete
 
 1. **Define the `__str__` Method**: Add the `__str__` method to the `Rectangle` class. This method should return an f-string with the format shown below.
 
-```python
+```
 rectangle = Rectangle(3, 4)
 print(rectangle)
 ```

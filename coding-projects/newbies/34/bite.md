@@ -33,7 +33,7 @@ random.randint(a, b)  # Returns a random integer where `a` is the minimum and `b
 
 This setup is critical for our guessing game, as you will use the `randint` function to generate the secret number the player tries to guess.
 
-# Your Task
+### Your Task
 
 Follow these steps:
 

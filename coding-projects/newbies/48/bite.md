@@ -14,7 +14,7 @@ But we'll add another concept to the mix: the `string` module, which provides a 
 
 ### The `string` Module
 
-There maybe times when you need to get all of the letters of the alphabet or perhaps all of the possible punctuation symbols. One option would be to type them all out and assign the string to a constant. Here is an example of that.
+There may be times when you need to get all of the letters of the alphabet or perhaps all of the possible punctuation symbols. One option would be to type them all out and assign the string to a constant. Here is an example of that.
  
 ```python
 LOWER_CASE_LETTERS = "abcdefghijklmnopqrstuvwxyz"
@@ -35,7 +35,7 @@ abcdefghijklmnopqrstuvwxyz
 
 Just as we have seen before, we import the module, and then access the object using dot notation. In this case, we used `string.ascii_lowercase`.
 
-Now, you might be wondering what the heck `ascii` is. It is an acronym for American Standard Code for Information Interchange ([ASCII](https://en.wikipedia.org/wiki/ASCII#:~:text=ASCII%20(%2Fˈæsk,telecommunications%20equipment%2C%20and%20other%20devices.)). ASCII codes are how text characters are stored by computers. We won't go into all the details here in the newbies bites, but you should know that ASCII codes represent the [English alphabet](https://en.wikipedia.org/wiki/English_alphabet) letters A through Z (uppercase and lowercase), the digits 0 through 9, and some punctuation characters. Sometimes people refer to this as plain text, but there is a lot more to it. (Check out this excellent talk on [Plain Text](https://youtu.be/4mRxIgu9R70?si=t4aA05k5Sz2ZME2L) by Dylan Beattie for more information.)
+Now, you might be wondering what the heck `ascii` is. It is an acronym for American Standard Code for Information Interchange ([ASCII](https://en.wikipedia.org/wiki/ASCII)). ASCII codes are how text characters are stored by computers. We won't go into all the details here in the newbies bites, but you should know that ASCII codes represent the [English alphabet](https://en.wikipedia.org/wiki/English_alphabet) letters A through Z (uppercase and lowercase), the digits 0 through 9, and some punctuation characters. Sometimes people refer to this as plain text, but there is a lot more to it. (Check out this excellent talk on [Plain Text](https://youtu.be/4mRxIgu9R70?si=t4aA05k5Sz2ZME2L) by Dylan Beattie for more information.)
 
 Let's see a couple more examples of objects available in the `string` module.
 
@@ -55,7 +55,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
-In the snippet above, we see all the uppercase letters, both the lowercase and uppercase letters combined, and a set of punctuation characters. If you want to see all of the available string constants, the are available in the [Python Docs](https://docs.python.org/3/library/string.html#string-constants).
+In the snippet above, we see all the uppercase letters, both the lowercase and uppercase letters combined, and a set of punctuation characters. If you want to see all of the available string constants, they are available in the [Python Docs](https://docs.python.org/3/library/string.html#string-constants).
 
 
 ### The `.join` Method
@@ -74,7 +74,7 @@ Output:
 These are words
 ```
 
-`.join` works by calling it on the string that will be used to concatenate the items together. Then the iterable is passed in the parenthesis. So in the code snippet above, we used a space character (`" "`) to join together the words from the list `words`. You can use whatever character you want though. Here is the same snippet, but this time the words are joined with a pipe character (`"|"`).
+`.join` works by calling it on the string that will be used to concatenate the items together. Then the iterable is passed in the parentheses. So in the code snippet above, we used a space character (`" "`) to join together the words from the list `words`. You can use whatever character you want though. Here is the same snippet, but this time the words are joined with a pipe character (`"|"`).
 
 
 ```python
@@ -119,7 +119,7 @@ You're tasked with completing the `get_letters_from_string` function. This funct
 
 ### Example Usage
 
-```python
+```
 print(get_letters_from_string("123abcABC!"))
 print(get_letters_from_string("Hello World 2024 "))
 print(get_letters_from_string("@#Sky^Is.Blue@"))

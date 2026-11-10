@@ -7,11 +7,9 @@ Related Bites:
 
 # Bite Description
 
-Your last Newbie Bite! 🎉
+As you continue your coding journey, it's essential to become proficient in reading and interpreting failing test outputs. Understanding how to read test failures is a crucial skill in software development as well, because it helps you identify and fix issues in your code.
 
-As you continue your coding journey on our platform, it's essential to become proficient in reading and interpreting failing test outputs. Understanding how to read test failures is a crucial skill in software development as well, because it helps you identify and fix issues in your code.
-
-In this Bite, you'll practice reading and interpreting failing test outputs to debug and correct your code. This ability not only helps in resolving issues here but also in any real-world programming scenarios.
+In this Bite, you'll practice reading and interpreting failing test outputs to debug and correct your code. This ability helps not only in the Newbie Bites but also in any real-world programming scenarios.
 
 ### Understanding Test Failures
 
@@ -38,7 +36,7 @@ The code in this Bite runs, but it is not doing what we expect it to do, hence t
 
 ### Steps to Complete
 
-1. **Run the Tests**: Execute the provided tests to see the failures.
+1. **Run the Tests**: Save your code, then run the **Run Tests** cell to see the failures.
 2. **Read the Output**: Carefully read through the pytest output to understand why the tests are failing.
 3. **Identify the Issue**: Determine what is wrong with the current implementation based on the test output.
 4. **Fix the Code**: Correct the logic in the `perfect_squares_to_20` function so that the tests pass again.
@@ -92,8 +90,4 @@ After running the tests and reading the failure output, correct the logic in the
 
 By completing this task, you'll gain a better understanding of how to read and interpret test failures, and how to use this information to debug and fix your code.
 
-### Wrapping Up
-
-Good luck, and congratulations on completing our Newbie Bites! We hope you've enjoyed them and learned a lot. 🎉 🔥
-
-Now onto the regular Bites, keep calm and code in Python, good luck! 🐍 💪
+Good luck, and happy coding! 🐍

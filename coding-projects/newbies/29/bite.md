@@ -29,7 +29,7 @@ In this example, the `greet` function has a default argument `name` set to "Worl
 
 Now, let's apply this concept to a couple of functions that calculate the area and perimeter of a rectangle. You will add default arguments to these functions, allowing them to work even if no arguments are provided.
 
-# Your Task
+### Your Task
 
 You are given two functions: `calc_rectangle_area` and `calc_rectangle_perimeter`.
 

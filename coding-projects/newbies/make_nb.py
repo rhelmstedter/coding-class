@@ -20,7 +20,8 @@ md = md.replace("# Bite Description", f"# Newbie Bite {int(bite)}", 1)
 templates = list(d.glob("*template*.py"))
 template = templates[0].read_text(encoding="utf-8") if templates else "# Enter your code below this line:\n"
 test = next(d.glob("test_*.py")).name
-module = test[len("test_"):]
+# A test file name may use a hyphen (test_list-comprehension.py), but the module it imports can't.
+module = test[len("test_"):].replace("-", "_")
 test_src = (d / test).read_text(encoding="utf-8")
 # A bite asks for functions when its test calls something it imports from the student's module.
 imported = re.findall(rf"from {module[:-3]} import (\([^)]*\)|[^\n]+)", test_src)

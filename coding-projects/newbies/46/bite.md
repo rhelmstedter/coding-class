@@ -11,7 +11,7 @@ In this Bite, you'll learn how to control the flow of a `for` loop using the `br
 
 ### Understanding `break` and `continue`
 
-Python offers two keywords to increase control when working with loops: `break` and `continue`. We have already encountered the `break` keyword when working with `while` loops ([Newbie 20](https://codechalleng.es/bites/286/newbie)). Today, we will look at both keywords in the context of a `for` loop. When used in a `for` loop:
+Python offers two keywords to increase control when working with loops: `break` and `continue`. We have already encountered the `break` keyword when working with `while` loops (Newbie Bite 21). Today, we will look at both keywords in the context of a `for` loop. When used in a `for` loop:
  
 - **`break`** stops the loop immediately and moves on with the program. I like to think of it as, we are breaking out of the loop completely.
 - **`continue`** skips the rest of the code inside the loop for the current iteration and moves to the next item. I like to think of it as, we are skipping a given item and continuing onto the next item in the iterable. 
@@ -34,8 +34,8 @@ Output:
 ```
 Processing Alice
 Processing Bob
-Processing David
 Processing Charlie
+Processing David
 Processing Eve
 Processing Frank
 ```
@@ -66,7 +66,7 @@ As Python gets each item, it checks if `student` is equal to `"Charlie"`. If so,
 
 Here is the same example, but with `break`.
 
-```
+```python
 students = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"]
 
 for student in students:
@@ -81,9 +81,9 @@ Output:
 Processing Alice
 Processing Bob
 ```
-Here, we have the some conditional. But instead of continuing when `student` is equal to `"Charlie"`, we exit the loop completely. Notice all the students including and after Charlie are not processed.
+Here, we have the same conditional. But instead of continuing when `student` is equal to `"Charlie"`, we exit the loop completely. Notice all the students including and after Charlie are not processed.
 
-# A More Realistic Example
+### A More Realistic Example
 
 In the examples above, we just printed a statement mimicking that we were processing students in some way. The following example is a little more complex, but also more realistic. There will be some functions and methods that we have not covered yet. Don't worry if you don't understand every detail. Instead, focus on the big picture of what is happening, especially in regards to the `continue` keyword.
 

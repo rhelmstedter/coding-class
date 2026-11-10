@@ -24,7 +24,8 @@ message = "Hello from the global scope."
 
 def message_printer():
     print(message)
-    
+
+
 message_printer()
 ```
 
@@ -42,7 +43,8 @@ If we define `message` inside the function, it is now referred to as a "local va
 def message_printer():
     message = "Hello from the local scope."
     print(message)
-    
+
+
 message_printer()
 ```
 
@@ -52,13 +54,13 @@ Output:
 Hello from the local scope.
 ```
 
-But if we try to print the local `message` directly from the global scope instead of calling `message_printer`, we get an error.
+But if we try to print the local `message` directly from the global scope instead of calling `message_printer`, we get an error. (This example is shown as text, not a code cell, because the `message` you made a few cells up would still exist in this notebook.)
 
-```python
+```
 def message_printer():
     message = "Hello from the local scope."
     print(message)
-    
+
 
 print(message)
 ```
@@ -83,9 +85,9 @@ We have seen this keyword before, but now we have more context. `return` allows 
 
 ```python
 def message_creator():
-	local_message = "This string was assigned to a local variable that will get passed to the global scope."
-	return local_message
-	
+    local_message = "This string was assigned to a local variable that will get passed to the global scope."
+    return local_message
+
 
 message = message_creator()
 print(message)
@@ -113,8 +115,8 @@ def local_scope_example():
 def global_scope_example():
     global message
     return message
-    
-    
+
+
 print(local_scope_example())
 print()
 print(global_scope_example())
@@ -131,7 +133,7 @@ In this example:
 
 - `message` is a global variable defined outside any function.
 - `local_scope_example` defines a local variable named `message` that shadows the global `message` within the function.
-- `global_scope_example` uses the `global` keyword to refer to the global `message` within the function. As we saw earlier, in this case the `global` keyword is not strictly necessary. Inside `global_scope_example` with Python doesn't find `message` it will look for it in the global scope. But it is good to know that the `global` keyword exists.
+- `global_scope_example` uses the `global` keyword to refer to the global `message` within the function. As we saw earlier, in this case the `global` keyword is not strictly necessary. Inside `global_scope_example`, when Python doesn't find `message` it will look for it in the global scope. But it is good to know that the `global` keyword exists.
 
 ### Recap
 
@@ -143,8 +145,8 @@ There are mainly three types of variable scopes in Python:
 
 ### Your Task
 
-1. **Implement `use_local_object` Function**: This function should return the local `object` string: "This is the local object".
-2. **Implement `use_global_object` Function**: This function should return the global `object` string: "This is the global object". Use the `global` keyword inside the function.
+1. **Implement `use_local_object` Function**: This function should return the local `object` string: "This is the local object."
+2. **Implement `use_global_object` Function**: This function should return the global `object` string: "This is the global object." Use the `global` keyword inside the function.
 
 By understanding and implementing these functions, you'll gain a better grasp of how variable scope works in Python.
 

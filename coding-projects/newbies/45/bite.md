@@ -11,7 +11,7 @@ In this Bite, we introduce you to the essentials of exception handling in Python
 
 ### Errors and Exceptions
 
-We have worked with errors before in [Newbie 26](https://codechalleng.es/bites/523/newbie). According the [Python docs](https://docs.python.org/3/tutorial/errors.html), there are (at least) two types of errors: syntax errors and exceptions. Examples of syntax errors are forgetting to put a closing parenthesis or quotation mark. Or perhaps you wrote a `for` loop, but forget the colon (`:`) at the end. These types of errors crash your program because you haven't followed the syntax rules. (Crash is a term that people use when you program stops running before you want it to.)
+We have worked with errors before in Newbie Bite 26. According to the [Python docs](https://docs.python.org/3/tutorial/errors.html), there are (at least) two types of errors: syntax errors and exceptions. Examples of syntax errors are forgetting to put a closing parenthesis or quotation mark. Or perhaps you wrote a `for` loop, but forgot the colon (`:`) at the end. These types of errors crash your program because you haven't followed the syntax rules. (Crash is a term that people use when your program stops running before you want it to.)
 
 Exceptions are errors that occur when code is syntactically correct. They can be caused by various issues, such as invalid input, trying to divide by zero, or trying to open up files that don't exist. 
 
@@ -22,13 +22,13 @@ Python provides a way to handle these exceptions gracefully using `try`, `except
 I created a Python file called `errors_example.py`. The contents of the file are shown below. I ran the code and then pasted the output.
 ```python
 def divide(a, b):
-	result = a / b
+    result = a / b
     return result
 
 
 print(divide(10, 2))
 ```
-Output
+Output:
 ```
 5.0
 ```
@@ -38,7 +38,7 @@ Now look what happens when I run the code again, but this time try to divide by 
 
 ```python
 def divide(a, b):
-	result = a / b
+    result = a / b
     return result
 
 
@@ -112,6 +112,6 @@ In this exercise, you will add exception handling to two functions: `get_number`
 
 By completing this task, you'll gain a better understanding of how to handle exceptions in Python, making your code more robust and user-friendly.
 
-By the way, there are many built-in exceptions in Python, check out the [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html) documentation for more detail, specially at the end of the page where you can see the hierarchy of exceptions.
+By the way, there are many built-in exceptions in Python, check out the [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html) documentation for more detail, especially at the end of the page where you can see the hierarchy of exceptions.
 
-Good luck, and getting there! Less Newbies left!
+Good luck, you're getting there! Only five Newbie Bites left!
