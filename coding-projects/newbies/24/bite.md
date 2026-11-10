@@ -46,7 +46,7 @@ Here's where some common data types land:
 | floats    | sets         |
 | tuples    |              |
 
-So why have both? **Immutable** objects are faster for Python to access. **Mutable** objects are easy to change.
+So why have both? **Mutable** objects are easy to change as your program runs. **Immutable** objects stay put, so Python lets you use them in places where a list isn't allowed, like as the keys of a dictionary.
 
 ### Converting Between Types
 
@@ -66,6 +66,6 @@ Complete the `convert_to_tuple` function. It takes **one** parameter: a list. Ad
 
 Convert the list to a tuple and **return** it.
 
-The tests will call your function with a few different lists. To try it out yourself, call it with a list of your own and print what comes back.
+The tests will call your function with a few different lists. If you are having trouble, you can try calling it with a list of your own and printing what comes back.
 
 Good luck, and happy coding! 🐍

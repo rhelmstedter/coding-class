@@ -39,7 +39,7 @@ Since every item holds two pieces of information, a `for` loop over `.items()` c
 
 ```
 for key, value in dictionary.items():
-    # do something with both the key and the value
+    do something with both the key and the value
 ```
 
 ```python
@@ -59,6 +59,6 @@ Use a `for` loop with `.items()` to print each car and its year on its own line,
 Nissan: 2004
 ```
 
-The tests will call your function with a few different dictionaries. To try it out yourself, call it with one of your own, like `print_cars({"Nissan": 2004, "Jeep": 2013})`.
+The tests will call your function with a few different dictionaries. If you are having trouble, you can try calling it with a dictionary of your own.
 
 Good luck, and happy coding! 🐍

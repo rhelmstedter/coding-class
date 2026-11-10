@@ -13,7 +13,7 @@ A `while` loop keeps going until something changes. But a lot of the time, you j
 
 **Iterable:** anything you can loop over (e.g., a list or a string)
 
-**Iteration:** one execution (think step) of the loop
+**Iteration:** one pass through the loop
 
 ### `for` Loops
 
@@ -71,6 +71,6 @@ Complete the `list_cars` function. It takes **one** parameter: a list of car bra
 
 Use a `for` loop to print each car brand on its own line, in order.
 
-The tests will call your function with a few different lists, so it has to work for any list of car brands. To try it out yourself, call it with a list of your own, like `list_cars(["Mazda", "Honda", "Toyota"])`.
+The tests will call your function with a few different lists, so it has to work for any list of car brands. If you are having trouble, you can try calling it with a list of your own.
 
 Good luck, and happy coding! 🐍

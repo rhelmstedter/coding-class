@@ -13,9 +13,9 @@ In the last Bite, you saw that a comparison gives you back `True` or `False`. In
 
 ```
 if conditional:
-    # do something if the conditional is True
+    do something if the conditional is True
 else:
-    # do something if the conditional is False
+    do something if the conditional is False
 ```
 
 A few things to notice:
@@ -50,6 +50,6 @@ Complete the `check_battery` function. It takes one parameter, `percent`, the am
 
 The template already has the function line for you. Your code goes inside it, so don't forget your indents!
 
-Before you run the tests, call your function with a few values of your own. What should happen at exactly `20`?
+If you are having trouble, you can try calling the function with a few values of your own. Which values are most likely to break it?
 
 Good luck, and happy coding! 🐍

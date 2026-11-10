@@ -30,7 +30,10 @@ defines_functions = any(re.search(rf"\b{n}\(", test_src) for n in names)
 if defines_functions:
     run_note = ("The cell above only *saves* your code. Run the cell below to load it. "
                 "Your code defines functions, so nothing will print until you call one. "
-                "To try it out, add a code cell under the **Run your code** cell and call your function with your own values.")
+                # A call left in the %%writefile cell runs when the tests import the file,
+                # which crashes them (an input() call, for example, can't read while pytest runs).
+                "If you do call your function, do it in a new cell, not in the `%%writefile` cell. "
+                "A call left in that cell can make the tests crash.")
 else:
     run_note = "The cell above only *saves* your code. Run the cell below to actually run it and see the output."
 url = f"https://raw.githubusercontent.com/rhelmstedter/coding-class/{BRANCH}/coding-projects/newbies/{bite}/{test}"
@@ -68,6 +71,11 @@ def cell(kind, src, title=None):
     return c
 
 
+# A "### Wrapping Up" section is pulled out and placed after Run Tests as the last cell.
+wrap_up = re.search(r"^### Wrapping Up\n(.*?)(?=^###|^Good luck|\Z)", md, flags=re.S | re.M)
+if wrap_up:
+    md = md[:wrap_up.start()] + md[wrap_up.end():]
+
 # ```python fences become runnable code cells; everything else stays markdown.
 cells = []
 for i, part in enumerate(re.split(r"^```python\n(.*?)^```\n?", md, flags=re.S | re.M)):
@@ -95,6 +103,8 @@ cells += [
     cell("markdown", "Run the cell below to check your code against the tests. If a test fails, read the output carefully. It tells you what was expected and what your code actually did."),
     cell("code", RUN_TESTS.format(conftest=conftest_url, url=url, bite=bite, test=test), title="Run Tests"),
 ]
+if wrap_up:
+    cells.append(cell("markdown", "## Wrapping Up\n\n" + wrap_up.group(1).strip()))
 nb = {
     "cells": cells,
     "metadata": {
