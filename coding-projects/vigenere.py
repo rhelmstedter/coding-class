@@ -1,13 +1,13 @@
-"""This module is a simple vigenere cipher."""
+"""Encrypt and decrypt messages with the Vigenère cipher."""
 
-from string import ascii_uppercase
 from itertools import cycle
+from string import ascii_uppercase
 
 LETTERS = ascii_uppercase
 
 
 def main() -> None:
-    """Handle the main logic of the vigenere cipher."""
+    """Run the Vigenère cipher program."""
     mode = get_mode()
     key = get_key()
     message = get_message(mode)
@@ -16,7 +16,7 @@ def main() -> None:
 
 
 def get_mode() -> str:
-    """Get the mode from the user."""
+    """Ask the user for the mode and return "encrypt" or "decrypt"."""
     while True:
         print("Do you want to (e)ncrypt or (d)ecrypt?")
         response = input("> ").lower()
@@ -31,7 +31,7 @@ def get_mode() -> str:
 
 
 def get_key() -> str:
-    """Get the key from the user."""
+    """Ask the user for the key and return it in uppercase."""
     while True:
         print("Please specify the key to use.")
         print("It can be a word or any combination of letters:")
@@ -39,36 +39,39 @@ def get_key() -> str:
         if response.isalpha():
             key = response
             break
+        print("The key can only contain letters.")
     return key
 
 
 def get_message(mode: str) -> str:
-    """Get the message from the user."""
+    """Ask the user for the message and return it in uppercase."""
     print(f"Enter the message to {mode}.")
     message = input("> ").upper()
     return message
 
 
 def translate_message(mode: str, key: str, message: str) -> str:
-    """Encrypt or decrypt the message using the key."""
+    """Return the message encrypted or decrypted with the key."""
     translated = []
-    key_char = cycle(key)
-    for char in message:
-        if char in LETTERS:
-            idx = LETTERS.find(char)
-            shift = LETTERS.find(next(key_char))
+    key_letters = cycle(key)
+    for symbol in message:
+        if symbol in LETTERS:
+            idx = LETTERS.find(symbol)
+            # Only move to the next key letter when a letter is translated.
+            shift = LETTERS.find(next(key_letters))
             if mode == "encrypt":
                 new_idx = (idx + shift) % len(LETTERS)
             elif mode == "decrypt":
                 new_idx = (idx - shift) % len(LETTERS)
             translated.append(LETTERS[new_idx])
         else:
-            translated.append(char)
+            # Spaces, numbers, and punctuation are not changed.
+            translated.append(symbol)
     return "".join(translated)
 
 
 def print_message(mode: str, translated_message: str) -> None:
-    """Print the mode and translated message."""
+    """Print the mode and the translated message."""
     print(f"{mode.title()}ed message:")
     print(translated_message)
 

@@ -1,38 +1,41 @@
+"""Bagels by <YOUR NAME HERE>."""
+
+import random
+
 NUM_DIGITS = 3
 MAX_GUESSES = 10
+INSTRUCTIONS = f"""Instructions:
 
-
-def main():
-    """Stores the logic for the game loop."""
-    # Print the Instructions outside the main game loop.
-    print(
-        f"""Instructions:\n
 I am thinking of a {NUM_DIGITS}-digit number with no repeated digits.
-Try to guess what it is. Here are some clues:\n
+Try to guess what it is. I will give you clues about your guess:
+
 When I say:    That means:
-  Pico         One digit is correct but in the wrong position.
-  Fermi        One digit is correct and in the right position.
-  Bagels       No digit is correct.
+  Pico           One digit is correct but in the wrong position.
+  Fermi          One digit is correct and in the right position.
+  Bagels         No digit is correct.
 
 For example, if the secret number was 248 and your guess was 843, the
-clues would be Fermi Pico."""
-    )
+clues would be Fermi Pico.
+"""
+
+
+def generate_secret_num() -> str:
+    """Return a string made up of NUM_DIGITS unique random digits."""
     pass
 
 
-def generate_secret_num():
-    """Returns a string made up of NUM_DIGITS unique random digits."""
+def get_guess() -> str:
+    """Keep asking until the user enters a valid guess, then return it."""
     pass
 
 
-def get_guess():
-    """Returns a valid guess from the user"""
+def get_clues(guess: str, secret_num: str) -> str:
+    """Return a string with the Pico, Fermi, Bagels clues for a guess."""
     pass
 
 
-def get_clues(guess, secret_num):
-    """Returns a string with the pico, fermi, bagels clues for a guess
-    and secret number pair."""
+def main() -> None:
+    """Run the game loop."""
     pass
 
 

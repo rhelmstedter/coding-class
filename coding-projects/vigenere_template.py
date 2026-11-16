@@ -1,4 +1,4 @@
-"""This module is a simple vigenere cipher"""
+"""Vigenère Cipher by <YOUR NAME HERE>."""
 
 from string import ascii_uppercase
 
@@ -6,7 +6,7 @@ LETTERS = ascii_uppercase
 
 
 def main() -> None:
-    """Handles the main logic of the vigenere cipher."""
+    """Run the Vigenère cipher program."""
     mode = get_mode()
     key = get_key()
     message = get_message(mode)
@@ -15,7 +15,7 @@ def main() -> None:
 
 
 def get_mode() -> str:
-    """Get the mode from the user."""
+    """Ask the user for the mode and return "encrypt" or "decrypt"."""
     while True:
         print("Do you want to (e)ncrypt or (d)ecrypt?")
         response = input("> ").lower()
@@ -30,22 +30,22 @@ def get_mode() -> str:
 
 
 def get_key() -> str:
-    """Get the key from the user."""
+    """Ask the user for the key and return it in uppercase."""
     pass
 
 
 def get_message(mode: str) -> str:
-    """Get the message from the user."""
+    """Ask the user for the message and return it in uppercase."""
     pass
 
 
 def translate_message(mode: str, key: str, message: str) -> str:
-    """Encrypt or decrypt the message using the key."""
+    """Return the message encrypted or decrypted with the key."""
     pass
 
 
 def print_message(mode: str, translated_message: str) -> None:
-    """Print the mode and translated message."""
+    """Print the mode and the translated message."""
     pass
 
 

@@ -2,64 +2,97 @@
 #+auto_tangle: t
 #+PROPERTY: header-args :tangle ./bagels.py
 
-Don't let the name fool you (as it did me), this is awesome. [[https://www.armoredpenguin.com/bagels/][Bagels]] is a logic game originally played with paper and pencil. This is from Al Sweigart's [[https://inventwithpython.com/bigbookpython/][Big Book of Small Python Projects]]. I modified the code so that it uses snake case instead of camel case and is formatted with f-strings. I also added a function for validating the user's guess. I plan to give students a template that includes the directions for the game to avoid making them type everything. It will also serve as an outline for the program.
+Don't let the name fool you (as it did me). This is awesome. [[https://www.armoredpenguin.com/bagels/][Bagels]] is a deductive logic game originally played with paper and pencil. It is a close cousin of [[https://www.archimedes-lab.org/mastermind.html][Mastermind]] that uses digits instead of colored pegs, which makes it a natural follow-up once students have played Mastermind and thought about strategy.
 
+This version is from Al Sweigart's [[https://inventwithpython.com/bigbookpython/][Big Book of Small Python Projects]]. I modified the code so that it uses snake case instead of camel case and is formatted with f-strings. I also added a function for validating the user's guess. Students get a template that includes the instructions for the game so they don't have to type everything. The template also serves as an outline for the program.
+
+* Files
 
 - [[file:./bagels_template.py][Bagels Template]]
 - [[file:./bagels.py][Bagels Full]]
 - [[https://watch.screencastify.com/v/NvA5eLk4m8dnyb4uTNqt][Bagels Screencast]]
 
-#+begin_src python :exports both :results output
+* Mastermind and Bagels
 
-"""A Python Version of Bagels."""
+| Mastermind                             | Bagels                             |
+|----------------------------------------+------------------------------------|
+| Black peg (right color, right place)   | Fermi (right digit, right place)   |
+| White peg (right color, wrong place)   | Pico (right digit, wrong place)    |
+| No pegs                                | Bagels                             |
+| 6 colors, 4 positions, repeats allowed | 10 digits, 3 positions, no repeats |
+
+The clues are sorted before they are shown, so, just as in Mastermind, the player knows how many digits earned a clue but not which ones.
+
+* Code
+
+** Setup
+
+The constants control the difficulty. Changing =NUM_DIGITS= or =MAX_GUESSES= changes the game without touching any other line.
+
+#+begin_src python
+"""A Python version of Bagels, a deductive logic game."""
+
 import random
 
-
 NUM_DIGITS = 3
-MAX_GUESSES = 3
-INSTRUCTIONS = f"""Instructions:\n
+MAX_GUESSES = 10
+INSTRUCTIONS = f"""Instructions:
+
 I am thinking of a {NUM_DIGITS}-digit number with no repeated digits.
 Try to guess what it is. I will give you clues about your guess:
+
 When I say:    That means:
   Pico           One digit is correct but in the wrong position.
   Fermi          One digit is correct and in the right position.
   Bagels         No digit is correct.
 
 For example, if the secret number was 248 and your guess was 843, the
-clues would be Fermi Pico.\n"""
+clues would be Fermi Pico.
+"""
+
 
 #+end_src
 
-#+begin_src python :exports both :results output
+** =generate_secret_num()=
 
+Shuffling a list of the ten digits and taking the first =NUM_DIGITS= guarantees that no digit repeats.
+
+#+begin_src python
 def generate_secret_num() -> str:
     """Return a string made up of NUM_DIGITS unique random digits."""
     numbers = list("0123456789")  # Create a list of digits 0 to 9.
     random.shuffle(numbers)  # Shuffle them into random order.
 
-    # Get the first NUM_DIGITS digits in the list for the secret number:
-    return "".join(numbers[:3])
+    # Join the first NUM_DIGITS digits in the list into the secret number.
+    return "".join(numbers[:NUM_DIGITS])
+
 
 #+end_src
 
-#+begin_src python :exports both :results output
+** =get_guess()=
 
+The loop only ends when the guess is the right length and made up entirely of digits.
+
+#+begin_src python
 def get_guess() -> str:
-    """Get the clue from the user."""
+    """Keep asking until the user enters a valid guess, then return it."""
     while True:
         guess = input("> ")
-        if len(guess) != NUM_DIGITS or not guess.isdecimal():
-            print("Enter a valid guess.")
-            continue
-        else:
+        if len(guess) == NUM_DIGITS and guess.isdecimal():
             break
+        print(f"Enter a valid guess: {NUM_DIGITS} digits, no letters.")
     return guess
 
-#+end_src
-#+begin_src python :exports both :results output
 
-def get_clues(guess, secret_num) -> str:
-    """Calculate the clues."""
+#+end_src
+
+** =get_clues()=
+
+=zip()= pairs each digit of the guess with the digit in the same position of the secret number.
+
+#+begin_src python
+def get_clues(guess: str, secret_num: str) -> str:
+    """Return a string with the Pico, Fermi, Bagels clues for a guess."""
     if guess == secret_num:
         return "You got it!"
     clues = []
@@ -72,53 +105,60 @@ def get_clues(guess, secret_num) -> str:
             clues.append("Pico")
     if len(clues) == 0:
         return "Bagels"  # There are no correct digits at all.
-    else:
-        clues.sort()
-        return " ".join(clues)
+    # Sort the clues so their order doesn't give away information.
+    clues.sort()
+    return " ".join(clues)
+
 
 #+end_src
 
-#+begin_src python :exports both :results output
+** =main()=
 
-def main():
-    """Store the logic of the game loop."""
+The outer loop is one full game. The inner loop is one guess.
+
+#+begin_src python
+def main() -> None:
+    """Run the game loop."""
     # Print the instructions outside the game loop.
     print(INSTRUCTIONS)
     while True:  # Main game loop.
-        # Create secret number
+        # Create the secret number.
         secret_num = generate_secret_num()
         print(f"I have thought of a number that is {NUM_DIGITS} digits long.")
         print(f"You have {MAX_GUESSES} guesses to get it.")
 
-        # Create game logic loop.
+        # Keep asking for guesses until the player wins or runs out.
         num_guesses = 1
         while num_guesses <= MAX_GUESSES:
-            guess = get_guess()
-            # Create loop for user input and make sure it is valid.
             print(f"Guess #{num_guesses}: ")
+            guess = get_guess()
 
-            # Get the clues based on the user input
+            # Get the clues based on the guess.
             clues = get_clues(guess, secret_num)
             print(clues)
             num_guesses += 1
 
             if guess == secret_num:
-                break  # They"re correct, so break out of this loop.
+                break  # They're correct, so break out of this loop.
             if num_guesses > MAX_GUESSES:
                 print("You ran out of guesses.")
                 print(f"The answer was {secret_num}.")
 
-        # Ask player if they want to play again.
+        # Ask the player if they want to play again.
         print("Do you want to play again? (yes or no)")
         if not input("> ").lower().startswith("y"):
             break
     print("Thanks for playing!")
 
+
 #+end_src
 
-#+begin_src python :exports both :results output
+** Run
 
+#+begin_src python
 # If the program is run (instead of imported), run the game:
 if __name__ == "__main__":
     main()
+
+
 #+end_src

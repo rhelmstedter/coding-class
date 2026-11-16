@@ -1,8 +1,10 @@
+"""Encrypt and decrypt messages with the Caesar cipher."""
+
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
-def main():
-    """Main function that handles logic of the program."""
+def main() -> None:
+    """Run the Caesar cipher program."""
     mode = get_mode()
     key = get_key()
     message = get_message(mode)
@@ -10,10 +12,11 @@ def main():
     print_message(mode, translated_message)
 
 
-def get_mode():
-    """Get the mode from the user."""
+def get_mode() -> str:
+    """Ask the user for the mode and return "encrypt" or "decrypt"."""
     while True:
-        response = input("Do you want to (e)ncrypt or (d)ecrypt?\n> ").lower()
+        print("Do you want to (e)ncrypt or (d)ecrypt?")
+        response = input("> ").lower()
         if response.startswith("e"):
             mode = "encrypt"
             break
@@ -24,29 +27,28 @@ def get_mode():
     return mode
 
 
-def get_key():
-    """Get the key number from the user."""
+def get_key() -> int:
+    """Ask the user for the key and return it as an integer."""
+    max_key = len(LETTERS) - 1
     while True:
-        max_key = len(LETTERS) - 1
         print(f"Please enter the key (0 to {max_key}) to use.")
-        response = input("> ").upper()
-        if not response.isdecimal():
-            continue
-        if 0 <= int(response) < len(LETTERS):
+        response = input("> ")
+        if response.isdecimal() and int(response) <= max_key:
             key = int(response)
             break
+        print(f"The key must be a whole number from 0 to {max_key}.")
     return key
 
 
-def get_message(mode):
-    """Get the message from the user."""
+def get_message(mode: str) -> str:
+    """Ask the user for the message and return it in uppercase."""
     print(f"Enter the message to {mode}.")
     message = input("> ").upper()
     return message
 
 
-def translate_message(mode, key, message):
-    """Translate the message based on the mode (encrypt/decrypt) and key."""
+def translate_message(mode: str, key: int, message: str) -> str:
+    """Return the message encrypted or decrypted with the key."""
     translated = ""
     for symbol in message:
         if symbol in LETTERS:
@@ -57,12 +59,13 @@ def translate_message(mode, key, message):
                 new_idx = (idx - key) % len(LETTERS)
             translated += LETTERS[new_idx]
         else:
+            # Spaces, numbers, and punctuation are not changed.
             translated += symbol
     return translated
 
 
-def print_message(mode, translated_message):
-    """Print the mode and translated message."""
+def print_message(mode: str, translated_message: str) -> None:
+    """Print the mode and the translated message."""
     print(f"{mode.title()}ed message:")
     print(translated_message)
 

@@ -1,0 +1,197 @@
+#+title: The Vigenère Cipher on Paper
+#+OPTIONS: toc:nil num:nil author:nil date:nil
+#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist{nosep}
+#+LATEX_HEADER: \hypersetup{colorlinks=true, urlcolor=blue}
+
+Name: @@latex:\rule{3in}{0.4pt}@@ Period: @@latex:\rule{0.75in}{0.4pt}@@
+
+The Caesar cipher has a weakness: one key for the whole message. The Vigenère cipher fixes that by using a *keyword*. Every letter of the keyword is its own Caesar key, and the message cycles through them.
+
+* The Alphabet as Numbers
+
+#+ATTR_LATEX: :align |l|c|c|c|c|c|c|c|c|c|c|c|c|c|
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| Letter | A | B | C | D | E | F | G | H | I | J | K | L | M |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| Index  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+
+#+ATTR_LATEX: :align |l|c|c|c|c|c|c|c|c|c|c|c|c|c|
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| Letter | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| Index  | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
+|---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+
+* How It Works
+
+1. Write the keyword above the message, one key letter per message letter. Repeat the keyword as many times as you need. *Skip the spaces.* A space does not use up a key letter.
+2. For each column, add the index of the message letter and the index of the key letter.
+3. If the sum is 26 or more, wrap around.
+4. Write the letter at the new index.
+
+*Example.* Encrypt =HELLO WORLD= with the keyword =CODE=.
+
+#+ATTR_LATEX: :align |l|c|c|c|c|c|c|c|c|c|c|c|
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| Key        | C | O |  D |  E | C |   |  O |  D |  E |  C | O |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| Plaintext  | H | E |  L |  L | O |   |  W |  O |  R |  L | D |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| Key index  | 2 | 14 |  3 |  4 |  2 |   | 14 |  3 |  4 |  2 | 14 |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| Text index | 7 |  4 | 11 | 11 | 14 |   | 22 | 14 | 17 | 11 |  3 |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| Sum        | 9 | 18 | 14 | 15 | 16 |   | 36 | 17 | 21 | 13 | 17 |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| New index  | 9 | 18 | 14 | 15 | 16 |   | 10 | 17 | 21 | 13 | 17 |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+| Ciphertext | J | S |  O |  P |  Q |   |  K |  R |  V |  N |  R |
+|---+---+---+---+---+---+---+---+---+---+---+---|
+
+* Part 1: Encrypt
+
+1. Encrypt =BE MINDFUL= with the keyword =KEY=.
+
+   #+ATTR_LATEX: :align |l|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Plaintext | B | E |  | M | I | N | D | F | U | L |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Key |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Key index |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Text index |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Sum |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | New index |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Ciphertext |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+
+2. Encrypt =NO EXCUSES= with the keyword =PYTHON=.
+
+   #+ATTR_LATEX: :align |l|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Plaintext | N | O |  | E | X | C | U | S | E | S |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Key |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Key index |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Text index |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Sum |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | New index |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+   | Ciphertext |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---|
+
+#+LATEX: \newpage
+
+* Part 2: Decrypt
+
+1. To encrypt you add the key letter's index. What do you do to decrypt? What do you do if the result is negative?
+
+   #+LATEX: \vspace{1.5cm}
+
+2. Decrypt =DS SVQOFXKJH= with the keyword =CODE=.
+
+   #+ATTR_LATEX: :align |l|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   | Ciphertext | D | S |  | S | V | Q | O | F | X | K | J | H |
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   | Key |  |  |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   | Key index |  |  |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   | Text index |  |  |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   | Difference |  |  |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   | New index |  |  |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   | Plaintext |  |  |  |  |  |  |  |  |  |  |  |  |
+   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+
+* Part 3: Compare
+
+1. Look back at the example. =HELLO= has two Ls. What happened to them? What would have happened to them in a Caesar cipher?
+
+   #+LATEX: \vspace{2cm}
+
+2. In the example, the ciphertext has two Rs. Were they the same letter in the plaintext?
+
+   #+LATEX: \vspace{1.5cm}
+
+3. Why do questions 1 and 2 make the Vigenère cipher harder to break than the Caesar cipher?
+
+   #+LATEX: \vspace{2cm}
+
+4. Encrypt =AAAAAAAA= with the keyword =CODE=. What do you notice? Why does it happen?
+
+   #+LATEX: \vspace{2cm}
+
+5. Encrypt =HELLO= with the one-letter keyword =D=. Which Caesar key gives the same ciphertext? What does that tell you about how the two ciphers are related?
+
+   #+LATEX: \vspace{2cm}
+
+* Part 4: Think Like a Programmer
+
+1. A message is 40 letters long and the keyword is =CODE=. Which key letter encrypts the 1st letter? The 5th? The 23rd? How did you figure out the 23rd without writing everything out?
+
+   #+LATEX: \vspace{2.5cm}
+
+2. Your Caesar cipher program already encrypts a message with one key. Describe what has to change to turn it into a Vigenère cipher program. What can stay exactly the same?
+
+   #+LATEX: \vspace{3cm}
+
+#+LATEX: \newpage
+
+* Reference: The Vigenère Square
+
+There is a second way to encrypt that needs no arithmetic. Find the *key letter's row* and the *plaintext letter's column*. The ciphertext letter is where they meet. Every row is a Caesar cipher: row C is the alphabet shifted by 2.
+
+To decrypt, go to the key letter's row, find the ciphertext letter in that row, and read the letter at the top of that column.
+
+Check two columns of the example with the square. Do you get the same answers as the arithmetic?
+
+#+begin_export latex
+\begin{center}
+{\footnotesize\ttfamily\setlength{\tabcolsep}{3.2pt}\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{c|cccccccccccccccccccccccccc}
+ & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & \textbf{F} & \textbf{G} & \textbf{H} & \textbf{I} & \textbf{J} & \textbf{K} & \textbf{L} & \textbf{M} & \textbf{N} & \textbf{O} & \textbf{P} & \textbf{Q} & \textbf{R} & \textbf{S} & \textbf{T} & \textbf{U} & \textbf{V} & \textbf{W} & \textbf{X} & \textbf{Y} & \textbf{Z} \\ \hline
+\textbf{A} & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z \\
+\textbf{B} & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A \\
+\textbf{C} & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B \\
+\textbf{D} & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C \\
+\textbf{E} & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D \\
+\textbf{F} & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E \\
+\textbf{G} & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F \\
+\textbf{H} & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G \\
+\textbf{I} & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H \\
+\textbf{J} & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I \\
+\textbf{K} & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J \\
+\textbf{L} & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K \\
+\textbf{M} & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L \\
+\textbf{N} & N & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M \\
+\textbf{O} & O & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N \\
+\textbf{P} & P & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O \\
+\textbf{Q} & Q & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P \\
+\textbf{R} & R & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q \\
+\textbf{S} & S & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R \\
+\textbf{T} & T & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S \\
+\textbf{U} & U & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T \\
+\textbf{V} & V & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U \\
+\textbf{W} & W & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V \\
+\textbf{X} & X & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W \\
+\textbf{Y} & Y & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X \\
+\textbf{Z} & Z & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y \\
+\end{tabular}}
+\end{center}
+#+end_export

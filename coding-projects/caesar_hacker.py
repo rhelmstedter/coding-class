@@ -1,23 +1,44 @@
-# Let the user specify the message to hack:
-print("Enter the encrypted Caesar cipher message to hack.")
-message = input("> ")
-# Every possible symbol that can be encrypted/decrypted:
-# (This must match the LETTERS used when encrypting the message.)
+"""Hack the Caesar cipher by trying every possible key (brute force)."""
+
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-for key in range(len(LETTERS)):  # Loop through every possible key.
+
+
+def main() -> None:
+    """Run the Caesar hacker program."""
+    message = get_message()
+    hack_message(message)
+
+
+def get_message() -> str:
+    """Ask the user for the encrypted message and return it in uppercase."""
+    print("Enter the encrypted Caesar cipher message to hack.")
+    message = input("> ").upper()
+    return message
+
+
+def translate_message(mode: str, key: int, message: str) -> str:
+    """Return the message encrypted or decrypted with the key."""
     translated = ""
-    # Decrypt each symbol in the message:
     for symbol in message:
         if symbol in LETTERS:
-            num = LETTERS.find(symbol)  # Get the number of the symbol.
-            num = num - key  # Decrypt the number.
-            # Handle the wrap-around if num is less than 0:
-            if num < 0:
-                num = num + len(LETTERS)
-            # Add decrypted number's symbol to translated:
-            translated = translated + LETTERS[num]
+            idx = LETTERS.find(symbol)
+            if mode == "encrypt":
+                new_idx = (idx + key) % len(LETTERS)
+            elif mode == "decrypt":
+                new_idx = (idx - key) % len(LETTERS)
+            translated += LETTERS[new_idx]
         else:
-            # Just add the symbol without decrypting:
-            translated = translated + symbol
-    # Display the key being tested, along with its decrypted text:
-    print(f"Key #{key}: {translated}")
+            # Spaces, numbers, and punctuation are not changed.
+            translated += symbol
+    return translated
+
+
+def hack_message(message: str) -> None:
+    """Print the message decrypted with every possible key."""
+    for key in range(len(LETTERS)):
+        translated_message = translate_message("decrypt", key, message)
+        print(f"Key #{key}: {translated_message}")
+
+
+if __name__ == "__main__":
+    main()

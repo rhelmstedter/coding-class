@@ -1,0 +1,147 @@
+#+title: Mastermind Strategy
+#+OPTIONS: toc:nil num:nil author:nil date:nil
+#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist{nosep}
+#+LATEX_HEADER: \renewcommand{\arraystretch}{1.6}
+#+LATEX_HEADER: \hypersetup{colorlinks=true, urlcolor=blue}
+
+Name: @@latex:\rule{3in}{0.4pt}@@ Period: @@latex:\rule{0.75in}{0.4pt}@@
+
+Play Mastermind at [[https://www.archimedes-lab.org/mastermind.html][archimedes-lab.org/mastermind.html]]. Play at least three full games before you start Part 2.
+
+The secret code is 4 pegs long. Each peg is one of 6 colors, and a color can show up more than once. After every guess you get two numbers:
+
+- *Black* :: how many pegs are the right color in the right position.
+- *White* :: how many pegs are the right color in the wrong position.
+
+You are never told /which/ pegs earned the black and white. That is the puzzle.
+
+This worksheet writes colors as letters: *R* red, *O* orange, *Y* yellow, *G* green, *B* blue, *P* purple. The colors on the site may be different. The logic is the same.
+
+* Part 1: Play
+
+Record one full game here. Use any letters you like for the site's colors.
+
+#+ATTR_LATEX: :align |c|p{1.5in}|c|c|
+|---+---+---+---|
+| Guess | Code | Black | White |
+|---+---+---+---|
+|     1 |      |       |       |
+|---+---+---+---|
+|     2 |      |       |       |
+|---+---+---+---|
+|     3 |      |       |       |
+|---+---+---+---|
+|     4 |      |       |       |
+|---+---+---+---|
+|     5 |      |       |       |
+|---+---+---+---|
+|     6 |      |       |       |
+|---+---+---+---|
+|     7 |      |       |       |
+|---+---+---+---|
+|     8 |      |       |       |
+|---+---+---+---|
+
+Did you break the code? @@latex:\rule{0.75in}{0.4pt}@@ In how many guesses? @@latex:\rule{0.75in}{0.4pt}@@
+
+* Part 2: Be the Code-Maker
+
+The computer has to score every guess. Now you do it. Fill in the black and white counts.
+
+#+ATTR_LATEX: :align |c|c|p{0.6in}|p{0.6in}|
+|---+---+---+---|
+| Secret code | Guess   | Black | White |
+|---+---+---+---|
+| B G R Y     | B R Y P |       |       |
+|---+---+---+---|
+| B G R Y     | O O P P |       |       |
+|---+---+---+---|
+| G Y B G     | Y G G B |       |       |
+|---+---+---+---|
+| R R G B     | R G R R |       |       |
+|---+---+---+---|
+
+Look at the last row. The guess has three R pegs and the secret code has two. Explain how you decided what to count.
+
+#+LATEX: \vspace{2.5cm}
+
+* Part 3: What Does a Guess Tell You?
+
+1. Your first guess is R R O O. The feedback is 0 black and 0 white. Some players call that a wasted guess. Are they right? Explain.
+
+   #+LATEX: \vspace{2.5cm}
+
+2. Before that guess there were $6 \times 6 \times 6 \times 6 = 1296$ possible codes. How many are possible after it? Show how you know.
+
+   #+LATEX: \vspace{2.5cm}
+
+3. A different game. Your guess is Y Y G G and the feedback is 0 black and 2 white. Write two things you now know for sure about the secret code.
+
+   #+LATEX: \vspace{2.5cm}
+
+#+LATEX: \newpage
+
+* Part 4: What Would You Guess Next?
+
+Here is a game in progress.
+
+#+ATTR_LATEX: :align |c|p{1.5in}|c|c|
+|---+---+---+---|
+| Guess | Code    | Black | White |
+|---+---+---+---|
+|     1 | R R O O |     0 |     0 |
+|---+---+---+---|
+|     2 | Y Y G G |     0 |     2 |
+|---+---+---+---|
+|     3 | G Y B B |     1 |     2 |
+|---+---+---+---|
+
+Four players each suggest a fourth guess. Only one of the four could actually be the secret code. For each of the other three, name the guess that rules it out and explain why.
+
+#+ATTR_LATEX: :align |c|c|p{1.5in}|p{3.2in}|
+|---+---+---+---|
+| Player | Suggested guess | Could it be the secret code? | If not, which guess rules it out, and why? |
+|---+---+---+---|
+| A      | B G Y R         |                              |                                            |
+|---+---+---+---|
+| B      | Y G B P         |                              |                                            |
+|---+---+---+---|
+| C      | G B P Y         |                              |                                            |
+|---+---+---+---|
+| D      | G P Y B         |                              |                                            |
+|---+---+---+---|
+
+#+LATEX: \vspace{1cm}
+
+* Part 5: Crack It
+
+You play the one guess from Part 4 that could be the secret code. The feedback is *2 black and 2 white*.
+
+1. All four colors are correct. How do you know?
+
+   #+LATEX: \vspace{1.5cm}
+
+2. Exactly two pegs need to trade places. List every code you can make by swapping two pegs of your guess.
+
+   #+LATEX: \vspace{2cm}
+
+3. Check each code on your list against guesses 1, 2, and 3. Only one survives. What is the secret code?
+
+   #+LATEX: \vspace{2cm}
+
+* Part 6: Your Strategy
+
+1. Write your strategy as numbered steps that someone else could follow without asking you any questions.
+
+   #+LATEX: \vspace{4cm}
+
+2. Is it ever smart to make a guess that you already know cannot be the secret code? Explain.
+
+   #+LATEX: \vspace{2.5cm}
+
+3. Our next project is a game called Bagels. It gives three kinds of clues: /Fermi/ (a digit is correct and in the right position), /Pico/ (a digit is correct but in the wrong position), and /Bagels/ (no digit is correct). Match each Bagels clue to its Mastermind feedback.
+
+   #+LATEX: \vspace{2cm}
