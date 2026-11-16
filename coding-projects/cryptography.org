@@ -4,11 +4,11 @@ This project contains multiple parts. While I first learned of these ciphers ind
 
 * Sequence
 
-1. Mastermind: students play [[https://www.archimedes-lab.org/mastermind.html][online]] and complete [[file:mastermind_strategy.org][the strategy worksheet]].
+1. Mastermind: students play [[https://www.archimedes-lab.org/mastermind.html][online]] and complete the strategy worksheet. The [[https://docs.google.com/document/d/1ey6HbULuq6auPDZvFxymyz4MovhVOyyKkjkNI2Tf-OM/edit][Google Doc]] is the version assigned in Canvas, and [[file:mastermind_strategy.org][mastermind_strategy.org]] is the same worksheet in Org.
 2. [[file:bagels.org][Bagels]]: the same game with digits, written in Python.
-3. [[file:caesar_cipher_practice.org][The Caesar Cipher on Paper]], then the Caesar cipher in Python.
+3. The Caesar Cipher on Paper ([[https://docs.google.com/document/d/1V5edr17a1k-WvTKF22D4XQOZ16bOhjKwL8XhvAkdYGY/edit][Google Doc]] for Canvas, [[file:caesar_cipher_practice.org][Org source]]), then the Caesar cipher in Python. Breaking the cipher is saved for a later activity.
 4. Caesar hacker.
-5. [[file:vigenere_cipher_practice.org][The Vigenère Cipher on Paper]], then the Vigenère cipher in Python.
+5. [[file:vigenere_cipher_practice.org][The Vigenère Cipher on Paper]], which students do with a printed copy of the [[file:Vigenere_square.svg][Vigenère square]], then the Vigenère cipher in Python.
 
 Answer keys for all three worksheets are in [[file:answer_keys.org][answer_keys.org]].
 
@@ -413,7 +413,7 @@ def translate_message(mode: str, key: str, message: str) -> str:
 
 ** Printable Handouts
 
-- [[file:caesar_cipher_practice.org][The Caesar Cipher on Paper]] and [[file:vigenere_cipher_practice.org][The Vigenère Cipher on Paper]]. Written for this unit so the paper method matches the code: letters are indexes 0 to 25 and the wrap-around is a remainder.
-- [[https://www.rigb.org/sites/default/files/attachments/4_ots_codes_ceasar_shift_cipher_1.pdf][Caesar Ciphers worksheet]] (Royal Institution masterclass). Uses a cut-out Caesar wheel.
+- [[file:caesar_cipher_practice.org][The Caesar Cipher on Paper]] and [[file:vigenere_cipher_practice.org][The Vigenère Cipher on Paper]]. Written for this unit. The Caesar handout treats letters as indexes 0 to 25 so the paper method matches the code. The Vigenère handout uses the square and leaves the arithmetic for students to work out.
+- [[file:Vigenere_square.svg][Vigenere_square.svg]]. The Vigenère square from Derek Babb's lesson, credited there to Brandon T. Fields (cdated), based on Vigenere-square.png by Matt Crypto and an Inkscape version by bdesham.
 - [[https://math.colorado.edu/~kstange/teaching-resources/crypto/vig-square.pdf][Vigenère square]] (Katherine Stange, CU Boulder). A one-page printable square with row numbers.
-- [[https://derekbabb.github.io/CyberSecurity/Classic_Cryptography/Vigenere_Cipher.html][The Vigenère cipher lesson]] (Derek Babb). Includes a printable square and an activity worksheet.
+- [[https://derekbabb.github.io/CyberSecurity/Classic_Cryptography/Vigenere_Cipher.html][The Vigenère cipher lesson]] (Derek Babb). The source of the square, and of the open-ended activity that the Vigenère handout's layout is modeled on.

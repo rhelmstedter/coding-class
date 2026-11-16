@@ -1,41 +1,39 @@
 #+title: The Caesar Cipher on Paper
+# Google Doc version for Canvas: https://docs.google.com/document/d/1V5edr17a1k-WvTKF22D4XQOZ16bOhjKwL8XhvAkdYGY/edit
 #+OPTIONS: toc:nil num:nil author:nil date:nil
 #+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
 #+LATEX_HEADER: \usepackage{parskip}
 #+LATEX_HEADER: \usepackage{enumitem}
 #+LATEX_HEADER: \setlist{nosep}
 #+LATEX_HEADER: \renewcommand{\arraystretch}{1.6}
+#+LATEX_HEADER: \newcommand{\answerbox}[1]{\par\noindent\fbox{\parbox[t][#1][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\mbox{}}}\par\medskip}
 #+LATEX_HEADER: \hypersetup{colorlinks=true, urlcolor=blue}
 
 Name: @@latex:\rule{3in}{0.4pt}@@ Period: @@latex:\rule{0.75in}{0.4pt}@@
 
 Julius Caesar sent orders to his generals in a cipher. He replaced every letter with the letter a fixed number of places further down the alphabet. That fixed number is the *key*. The readable message is the *plaintext*. The scrambled message is the *ciphertext*.
 
-Before you teach a computer to do this, do it by hand.
-
 * The Alphabet as Numbers
 
 Python counts from 0, so we will too. Every letter has an *index*.
 
-#+ATTR_LATEX: :align |l|c|c|c|c|c|c|c|c|c|c|c|c|c|
+#+ATTR_LATEX: :align |l|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|
 |---+---+---+---+---+---+---+---+---+---+---+---+---+---|
 | Letter | A | B | C | D | E | F | G | H | I | J | K | L | M |
 |---+---+---+---+---+---+---+---+---+---+---+---+---+---|
-| Index  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+| Index | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
 |---+---+---+---+---+---+---+---+---+---+---+---+---+---|
 
-#+ATTR_LATEX: :align |l|c|c|c|c|c|c|c|c|c|c|c|c|c|
+#+ATTR_LATEX: :align |l|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|p{0.3in}|
 |---+---+---+---+---+---+---+---+---+---+---+---+---+---|
 | Letter | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
 |---+---+---+---+---+---+---+---+---+---+---+---+---+---|
-| Index  | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
+| Index | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
 |---+---+---+---+---+---+---+---+---+---+---+---+---+---|
 
 * Part 1: Encrypt
 
 To encrypt a letter, find its index, add the key, and write the letter at the new index. Spaces stay spaces.
-
-*Example.* Key 3. H is index 7. $7 + 3 = 10$. Index 10 is K.
 
 1. Encrypt =HELLO WORLD= with key 3.
 
@@ -50,125 +48,50 @@ To encrypt a letter, find its index, add the key, and write the letter at the ne
    | Ciphertext |  |  |  |  |  |  |  |  |  |  |  |
    |---+---+---+---+---+---+---+---+---+---+---+---|
 
-2. Encrypt =ZEBRA= with key 3. Something goes wrong at the first letter. What is the problem, and what should you do about it?
+2. Encrypt =ZEBRA= with key 3. Something goes wrong. What is the problem, and what should you do about it?
 
-   #+ATTR_LATEX: :align |l|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|
-   |---+---+---+---+---+---|
-   | Plaintext | Z | E | B | R | A |
-   |---+---+---+---+---+---|
-   | Index |  |  |  |  |  |
-   |---+---+---+---+---+---|
-   | Index + key |  |  |  |  |  |
-   |---+---+---+---+---+---|
-   | Ciphertext |  |  |  |  |  |
-   |---+---+---+---+---+---|
+   #+LATEX: \answerbox{4cm}
 
-   #+LATEX: \vspace{2cm}
+3. Encrypt =PYTHON IS FUN= with key 10.
 
-3. Encrypt =PYTHON= with key 10.
+   #+LATEX: \answerbox{4.5cm}
 
-   #+ATTR_LATEX: :align |l|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|
-   |---+---+---+---+---+---+---|
-   | Plaintext | P | Y | T | H | O | N |
-   |---+---+---+---+---+---+---|
-   | Index |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---|
-   | Index + key |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---|
-   | New index |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---|
-   | Ciphertext |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---|
+4. Write one rule for getting from /index + key/ to the new index. It has to work for every letter, including the ones that do not go past Z.
 
-4. In question 3, how did you get from /Index + key/ to /New index/? Write a rule that works for every letter, including the ones that do not go past Z.
-
-   #+LATEX: \vspace{2cm}
+   #+LATEX: \answerbox{3cm}
 
 #+LATEX: \newpage
 
 * Part 2: Decrypt
 
-1. To encrypt you add the key. What do you do to decrypt?
+1. Decrypt =IL WYVHJAPCL=. The key is 7.
 
-   #+LATEX: \vspace{1cm}
+   #+LATEX: \answerbox{4.5cm}
 
-2. Decrypt =IL WYVHJAPCL= with key 7.
+2. Decrypt =HI QBCHCHA=. The key is 20.
 
-   #+ATTR_LATEX: :align |l|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|
-   |---+---+---+---+---+---+---+---+---+---+---+---+---|
-   | Ciphertext | I | L |  | W | Y | V | H | J | A | P | C | L |
-   |---+---+---+---+---+---+---+---+---+---+---+---+---|
-   | Index |  |  |  |  |  |  |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---+---+---+---+---+---+---|
-   | New index |  |  |  |  |  |  |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---+---+---+---+---+---+---|
-   | Plaintext |  |  |  |  |  |  |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---+---+---+---+---+---+---|
+   #+LATEX: \answerbox{4.5cm}
 
-3. Decrypt =HI QBCHCHA= with key 20.
+3. Something went wrong again while you were decrypting. What was it, which letters caused it, and how did you fix it?
 
-   #+ATTR_LATEX: :align |l|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|p{0.22in}|
-   |---+---+---+---+---+---+---+---+---+---+---|
-   | Ciphertext | H | I |  | Q | B | C | H | C | H | A |
-   |---+---+---+---+---+---+---+---+---+---+---|
-   | Index |  |  |  |  |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---+---+---+---+---|
-   | New index |  |  |  |  |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---+---+---+---+---|
-   | Plaintext |  |  |  |  |  |  |  |  |  |  |
-   |---+---+---+---+---+---+---+---+---+---+---|
+   #+LATEX: \answerbox{3cm}
 
-4. When you decrypt, the wrap-around problem shows up at the other end of the alphabet. Which letters in question 2 caused it, and how did you fix it?
+* Part 3: Your Own Message
 
-   #+LATEX: \vspace{2cm}
+1. Pick a key and a short message. Encrypt it. Show your work here, then give a classmate the ciphertext and the key.
 
-* Part 3: Break It
+   #+LATEX: \answerbox{5cm}
 
-You intercept this message. You know it is a Caesar cipher. You do not know the key.
+2. Decrypt the message your classmate gave you.
 
-#+begin_center
-=HK SOTJLAR=
-#+end_center
-
-1. Try keys until the message turns into English. Record every try.
-
-   #+ATTR_LATEX: :align |c|p{4in}|
-   |---+---|
-   | Key | Decrypted message |
-   |---+---|
-   |   1 |                   |
-   |---+---|
-   |   2 |                   |
-   |---+---|
-   |   3 |                   |
-   |---+---|
-   |   4 |                   |
-   |---+---|
-   |   5 |                   |
-   |---+---|
-   |   6 |                   |
-   |---+---|
-   |   7 |                   |
-   |---+---|
-   |   8 |                   |
-   |---+---|
-
-2. What was the key? @@latex:\rule{0.75in}{0.4pt}@@ What does the message say? @@latex:\rule{2.5in}{0.4pt}@@
-
-3. How many different keys does the Caesar cipher have? What is the largest number of tries you would ever need?
-
-   #+LATEX: \vspace{1.5cm}
-
-4. Trying every possible key is called a *brute-force attack*. It was slow for you. Would it be slow for a computer? What does that tell you about how secure the Caesar cipher is?
-
-   #+LATEX: \vspace{2cm}
+   #+LATEX: \answerbox{5cm}
 
 * Part 4: Think Like a Programmer
 
-1. Write the steps for encrypting *one letter* in plain English. Be exact enough that a computer could follow them. Remember the wrap-around.
+1. Write the steps for encrypting *one letter* in plain English. Be exact enough that a computer could follow them.
 
-   #+LATEX: \vspace{3.5cm}
+   #+LATEX: \answerbox{5cm}
 
 2. What should your steps do with a space, a number, or a question mark?
 
-   #+LATEX: \vspace{1.5cm}
+   #+LATEX: \answerbox{2cm}

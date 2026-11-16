@@ -68,40 +68,18 @@ After guess 3 only four codes are still possible: G B Y P, G B P Y, P G Y B, and
 
 1. =KHOOR ZRUOG=
 2. =CHEUD=. Z is index 25, and $25 + 3 = 28$, which is past the end of the alphabet. Wrap around to the start: 28 becomes 2, which is C.
-3. =ZIDRYX=. Sums are 25, 34, 29, 17, 24, 23. New indexes are 25, 8, 3, 17, 24, 23.
+3. =ZIDRYX SC PEX=
 4. If the sum is 26 or more, subtract 26. The rule that works for every letter is "divide by 26 and keep the remainder," which is exactly what =%= does in Python: =(index + key) % 26=.
 
 ** Part 2: Decrypt
 
-1. Subtract the key.
-2. =BE PROACTIVE=
-3. =NO WHINING=
-4. A (index 0) and C (index 2). Subtracting 7 gives a negative number, so add 26: $0 - 7 + 26 = 19$ (T) and $2 - 7 + 26 = 21$ (V). In Python, =(index - key) % 26= already handles this.
+1. =BE PROACTIVE=
+2. =NO WHINING=
+3. Subtracting the key can give a negative number. In question 1 that happens at A (index 0) and C (index 2), so add 26: $0 - 7 + 26 = 19$ (T) and $2 - 7 + 26 = 21$ (V). In question 2 it happens at every letter. In Python, =(index - key) % 26= already handles this.
 
-** Part 3: Break It
+** Part 3: Your Own Message
 
-#+ATTR_LATEX: :align |l|c|
-|---+---|
-| Key | Decrypted message |
-|---+---|
-|   1 | GJ RNSIKZQ        |
-|---+---|
-|   2 | FI QMRHJYP        |
-|---+---|
-|   3 | EH PLQGIXO        |
-|---+---|
-|   4 | DG OKPFHWN        |
-|---+---|
-|   5 | CF NJOEGVM        |
-|---+---|
-|   6 | BE MINDFUL        |
-|---+---|
-|   7 | AD LHMCETK        |
-|---+---|
-
-2. Key 6. =BE MINDFUL=
-3. 26 keys counting 0, which changes nothing, so 25 useful keys. At most 25 tries.
-4. A computer tries all of them instantly. A cipher with only 25 keys is not secure, no matter how well the key is hidden.
+Answers vary.
 
 ** Part 4: Think Like a Programmer
 
@@ -110,28 +88,36 @@ After guess 3 only four codes are still possible: G B Y P, G B P Y, P G Y B, and
 
 * The Vigenère Cipher on Paper
 
+Students need a printed copy of =Vigenere_square.svg=.
+
 ** Part 1: Encrypt
 
-1. =LI KSRBPYJ=. The key letters line up as K E Y K E Y K E Y.
-2. =CM XEQHHCL=. The key letters line up as P Y T H O N P Y T.
+1. =JSOPQ KRVNR=. The key letters line up as C O D E C, then O D E C O.
+2. =EI XABOIYW SBO EI AJCLFXTNS.= The key letters line up as DE LSOLDEL SOL DE LSOLDELSO.
 
 ** Part 2: Decrypt
 
-1. Subtract the key letter's index. If the result is negative, add 26.
-2. =BE PROACTIVE=. The key letters line up as C O D E C O D E C O D.
+1. Go to the key letter's row, find the ciphertext letter in that row, and read the letter at the top of that column.
+2. =NO WHINING, NO COMPLAINING, NO EXCUSES.=
 
-** Part 3: Compare
+** Part 3: Your Own Message
+
+1. Answers vary.
+2. Answers vary.
+
+** Part 4: Compare
 
 1. The two Ls became O and P, because they were encrypted with different key letters (D and E). In a Caesar cipher both would become the same letter.
 2. No. The first R came from O (with key letter D) and the second came from D (with key letter O).
-3. In a Caesar cipher a letter always turns into the same letter, so patterns in the message survive. In Vigenère the same plaintext letter can become different ciphertext letters, and the same ciphertext letter can come from different plaintext letters. There is also no longer a short list of 25 keys to try.
-4. =CODECODE=. A is index 0, and adding 0 to the key letter's index gives the key letter back. Encrypting a run of As leaks the key.
-5. =KHOOR=, the same as Caesar key 3, because D is index 3. A Caesar cipher is a Vigenère cipher with a one-letter keyword.
+3. In a Caesar cipher a letter always turns into the same letter, so patterns in the message survive. In Vigenère the same plaintext letter can become different ciphertext letters, and the same ciphertext letter can come from different plaintext letters.
+4. =CODECODE=. Column A of the square is the same as the row labels, so encrypting A gives the key letter back. Encrypting a run of As leaks the key.
+5. Row D is the Caesar cipher with key 3. Every row is a Caesar cipher, so a Caesar cipher is a Vigenère cipher with a one-letter keyword.
 
-** Part 4: Think Like a Programmer
+** Part 5: Think Like a Programmer
 
-1. C, C, and D. The keyword repeats every 4 letters, so divide the position by 4 and look at the remainder. Counting from 0 the way Python does, the 23rd letter is at index 22, and $22 \bmod 4 = 2$, which is D.
-2. The key becomes a word, so =get_key()= changes, and =translate_message()= has to look up a different shift for each letter and keep track of which key letter comes next. =main()=, =get_mode()=, =get_message()=, and =print_message()= stay the same.
+1. Row C shifts every letter 2 places and row O shifts every letter 14 places. A key letter's number is its position in the alphabet counting from 0, which is its index.
+2. D. The keyword repeats every 4 letters, so divide the position by 4 and look at the remainder. Counting from 0 the way Python does, the 23rd letter is at index 22, and $22 \bmod 4 = 2$, which is D.
+3. The key becomes a word, so =get_key()= changes, and =translate_message()= has to look up a different shift for each letter and keep track of which key letter comes next. =main()=, =get_mode()=, =get_message()=, and =print_message()= stay the same.
 
 * Caesar Hacker Notebook
 
