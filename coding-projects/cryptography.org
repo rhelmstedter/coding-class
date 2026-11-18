@@ -10,7 +10,7 @@ This project contains multiple parts. While I first learned of these ciphers ind
 4. Caesar hacker.
 5. [[file:vigenere_cipher_practice.org][The Vigenère Cipher on Paper]], which students do with a printed copy of the [[file:Vigenere_square.svg][Vigenère square]], then the Vigenère cipher in Python.
 
-Answer keys for all three worksheets are in [[file:answer_keys.org][answer_keys.org]].
+Answer keys are kept in a private Google Doc, not in this repo.
 
 * Caesar Cipher
 

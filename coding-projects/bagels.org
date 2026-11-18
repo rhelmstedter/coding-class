@@ -10,7 +10,9 @@ This version is from Al Sweigart's [[https://inventwithpython.com/bigbookpython/
 
 - [[file:./bagels_template.py][Bagels Template]]
 - [[file:./bagels.py][Bagels Full]]
+- [[https://colab.research.google.com/drive/1MY5rdgM66HFljwAewwwBKPFlpCu8DPhP][Colab template]], with the Exploring the Program questions adapted from the Big Book of Small Python Projects
 - Bagels: Writing the Algorithm ([[https://docs.google.com/document/d/1wEPHPnNasWrWZaLql7lM9Hf0AqGjHtMWRblHctbS-1M/edit][Google Doc]] for Canvas, [[file:./bagels_algorithm.org][Org source]]). Students play, score guesses, then write the algorithm in plain English and in AP pseudocode.
+- [[https://docs.google.com/document/d/11daAEbLA0tXvxHj2FNLlwytndYRoR_La1kfHOzGOqgY/edit][Example Algorithms]]: the GPA Calculator and the number guessing game, in plain English and AP pseudocode, as models for the Bagels algorithm.
 - [[https://watch.screencastify.com/v/NvA5eLk4m8dnyb4uTNqt][Bagels Screencast]]
 
 * Mastermind and Bagels
