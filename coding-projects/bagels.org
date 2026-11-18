@@ -10,6 +10,7 @@ This version is from Al Sweigart's [[https://inventwithpython.com/bigbookpython/
 
 - [[file:./bagels_template.py][Bagels Template]]
 - [[file:./bagels.py][Bagels Full]]
+- Bagels: Writing the Algorithm ([[https://docs.google.com/document/d/1wEPHPnNasWrWZaLql7lM9Hf0AqGjHtMWRblHctbS-1M/edit][Google Doc]] for Canvas, [[file:./bagels_algorithm.org][Org source]]). Students play, score guesses, then write the algorithm in plain English and in AP pseudocode.
 - [[https://watch.screencastify.com/v/NvA5eLk4m8dnyb4uTNqt][Bagels Screencast]]
 
 * Mastermind and Bagels

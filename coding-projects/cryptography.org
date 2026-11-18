@@ -5,7 +5,7 @@ This project contains multiple parts. While I first learned of these ciphers ind
 * Sequence
 
 1. Mastermind: students play [[https://www.archimedes-lab.org/mastermind.html][online]] and complete the strategy worksheet. The [[https://docs.google.com/document/d/1ey6HbULuq6auPDZvFxymyz4MovhVOyyKkjkNI2Tf-OM/edit][Google Doc]] is the version assigned in Canvas, and [[file:mastermind_strategy.org][mastermind_strategy.org]] is the same worksheet in Org.
-2. [[file:bagels.org][Bagels]]: the same game with digits, written in Python.
+2. [[file:bagels.org][Bagels]]: the same game with digits. Students write the algorithm first ([[https://docs.google.com/document/d/1wEPHPnNasWrWZaLql7lM9Hf0AqGjHtMWRblHctbS-1M/edit][Google Doc]], [[file:bagels_algorithm.org][Org source]]), then the program in Python.
 3. The Caesar Cipher on Paper ([[https://docs.google.com/document/d/1V5edr17a1k-WvTKF22D4XQOZ16bOhjKwL8XhvAkdYGY/edit][Google Doc]] for Canvas, [[file:caesar_cipher_practice.org][Org source]]), then the Caesar cipher in Python. Breaking the cipher is saved for a later activity.
 4. Caesar hacker.
 5. [[file:vigenere_cipher_practice.org][The Vigenère Cipher on Paper]], which students do with a printed copy of the [[file:Vigenere_square.svg][Vigenère square]], then the Vigenère cipher in Python.

@@ -62,6 +62,87 @@ After guess 3 only four codes are still possible: G B Y P, G B P Y, P G Y B, and
 2. Yes. A guess that cannot be the answer can still split the remaining possibilities faster than one that can. Guess 1 in Part 4 is the simplest example of a guess whose value is in what it rules out.
 3. Fermi is a black peg. Pico is a white peg. Bagels is 0 black and 0 white.
 
+* Bagels: Writing the Algorithm
+
+** Part 2: Be the Code-Maker
+
+| Guess | Clues            |
+|-------+------------------|
+|   843 | Fermi Pico       |
+|   123 | Pico             |
+|   284 | Fermi Pico Pico  |
+|   567 | Bagels           |
+
+1. Compare each digit of the guess with the digit in the same spot of the secret. If they match, it is a Fermi. If not, check whether the digit is anywhere else in the secret. If it is, it is a Pico. If no digit earns a clue, the clue is Bagels.
+2. The 2. It is the only digit in the right spot. Listing the clues in order would tell the guesser which spot each clue belongs to, which gives away too much.
+
+** Part 3: Write the Algorithm
+
+Sample, matching =bagels.py=:
+
+1. Display the instructions.
+2. Repeat until the player is done playing:
+   - Generate a secret number with no repeated digits.
+   - Tell the player how many digits it has and how many guesses they get.
+   - Repeat until the guess is correct or the player is out of guesses:
+     - Get a valid guess from the player.
+     - Display the clues, or "You got it!" if the guess is correct.
+     - Count the guess.
+   - If the player ran out of guesses, display the secret number.
+   - Ask whether they want to play again.
+3. Thank the player for playing.
+
+1. Sequencing: steps 1 and 3, and the steps inside each loop, run in order. Selection: deciding whether the guess is correct, whether the player ran out, and whether to play again. Iteration: the two loops, one for each game and one for each guess.
+2. The player guesses correctly, or runs out of guesses. The inner loop stops on either, and only running out reveals the secret number.
+3. Answers vary.
+
+** Part 4: AP Pseudocode
+
+Sample:
+
+#+begin_example
+DISPLAY(instructions)
+playing ← true
+REPEAT UNTIL(NOT playing)
+{
+   secret ← generateSecret()
+   numGuesses ← 1
+   correct ← false
+   REPEAT UNTIL(correct OR numGuesses > MAX_GUESSES)
+   {
+      guess ← getGuess()
+      DISPLAY(getClues(guess, secret))
+      correct ← isCorrect(guess, secret)
+      numGuesses ← numGuesses + 1
+   }
+   IF(NOT correct)
+   {
+      DISPLAY(secret)
+   }
+   DISPLAY("Do you want to play again?")
+   IF(INPUT() = "no")
+   {
+      playing ← false
+   }
+}
+DISPLAY("Thanks for playing!")
+#+end_example
+
+1. AP pseudocode has no =break=, so winning becomes part of the stopping condition: =REPEAT UNTIL(correct OR numGuesses > MAX_GUESSES)=. =bagels.py= uses =break= for both loops; comparing the two is a good discussion.
+
+* Bagels Notebook: Exploring the Program
+
+Each answer was checked by making the change to =bagels.py= and running it.
+
+1. The secret number and every guess have that many digits. With 1 digit the game is mostly luck. With 10, every digit is used, so every guess earns only Fermis and Picos, and the game is about order.
+2. Players get that many guesses. With 1 the game is almost unwinnable; with 100 it is hard to lose.
+3. The secret number stops at 10 digits, because there are only ten digits to shuffle and the slice cannot take more than the list has. =get_guess()= still demands =NUM_DIGITS= digits, so no guess can ever match and the game cannot be won.
+4. The secret number is always 123, so typing 123 wins on the first guess.
+5. =UnboundLocalError: cannot access local variable 'num_guesses' where it is not associated with a value=. The =while= loop checks =num_guesses= before anything has been put in it.
+6. The secret number is always 012, the first three digits in order.
+7. A correct guess shows =Fermi Fermi Fermi= instead of =You got it!=. The game still ends, because =main()= checks =guess == secret_num= on its own.
+8. The guess count never goes up. Every guess is labeled =Guess #1=, and the player never runs out of guesses.
+
 * The Caesar Cipher on Paper
 
 ** Part 1: Encrypt

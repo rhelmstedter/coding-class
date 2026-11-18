@@ -1,0 +1,113 @@
+#+title: Bagels: Writing the Algorithm
+# Google Doc version for Canvas: https://docs.google.com/document/d/1wEPHPnNasWrWZaLql7lM9Hf0AqGjHtMWRblHctbS-1M/edit
+#+OPTIONS: toc:nil num:nil author:nil date:nil
+#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist{nosep}
+#+LATEX_HEADER: \renewcommand{\arraystretch}{1.6}
+#+LATEX_HEADER: \newcommand{\answerbox}[1]{\par\noindent\fbox{\parbox[t][#1][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\mbox{}}}\par\medskip}
+#+LATEX_HEADER: \hypersetup{colorlinks=true, urlcolor=blue}
+
+Name: @@latex:\rule{3in}{0.4pt}@@ Period: @@latex:\rule{0.75in}{0.4pt}@@
+
+Bagels is a code-breaking game, a cousin of Mastermind. One player thinks of a secret 3-digit number with no repeated digits. The other player has 10 guesses to find it. After each guess, the code-maker gives clues:
+
+- *Fermi:* one digit is correct and in the right spot.
+- *Pico:* one digit is correct but in the wrong spot.
+- *Bagels:* no digit is correct.
+
+All the Fermis are listed before the Picos.
+
+* Part 1: Play
+
+Play at least two games with a partner, taking turns as the code-maker. Record one game.
+
+#+ATTR_LATEX: :align |c|p{1.3in}|p{4.2in}|
+|---+---+---|
+| Guess # | Guess | Clues |
+|---+---+---|
+| 1 |  |  |
+|---+---+---|
+| 2 |  |  |
+|---+---+---|
+| 3 |  |  |
+|---+---+---|
+| 4 |  |  |
+|---+---+---|
+| 5 |  |  |
+|---+---+---|
+| 6 |  |  |
+|---+---+---|
+| 7 |  |  |
+|---+---+---|
+| 8 |  |  |
+|---+---+---|
+| 9 |  |  |
+|---+---+---|
+| 10 |  |  |
+|---+---+---|
+
+* Part 2: Be the Code-Maker
+
+The secret number is 248. Give the clues for each guess.
+
+#+ATTR_LATEX: :align |c|p{5.2in}|
+|---+---|
+| Guess | Clues |
+|---+---|
+| 843 |  |
+|---+---|
+| 123 |  |
+|---+---|
+| 284 |  |
+|---+---|
+| 567 |  |
+|---+---|
+
+1. Explain how you decided the clue for one digit of a guess.
+
+   #+LATEX: \answerbox{2cm}
+
+2. For 284 the clues are Fermi Pico Pico. Which digit earned the Fermi? Why does the game list the clues this way instead of in order?
+
+   #+LATEX: \answerbox{1.5cm}
+
+#+LATEX: \newpage
+
+* Part 3: Write the Algorithm
+
+An *algorithm* is a list of steps exact enough that someone else could follow it. Write the steps a computer follows to run Bagels, from the instructions until the player is done playing.
+
+Keep it high level. A step like "generate the clues" is fine. You do not need to explain how.
+
+#+LATEX: \answerbox{8cm}
+
+1. Label your algorithm. Where does it use *sequencing*, *selection*, and *iteration*?
+
+   #+LATEX: \answerbox{2cm}
+
+2. A game can end in two different ways. Does your algorithm handle both?
+
+   #+LATEX: \answerbox{1.5cm}
+
+3. Trade algorithms with a partner. Follow theirs exactly as written: the secret is 248, and you guess 843 and then 248. Where did it break, or where did you have to guess what they meant? Revise your algorithm.
+
+   #+LATEX: \answerbox{2.5cm}
+
+#+LATEX: \newpage
+
+* Part 4: AP Pseudocode
+
+Rewrite your algorithm using the AP CSP Exam Reference Sheet. You can call these procedures without writing them:
+
+- =generateSecret()= returns a secret number with no repeated digits.
+- =getGuess()= returns a valid guess from the player.
+- =getClues(guess, secret)= returns the clues for a guess.
+- =isCorrect(guess, secret)= returns =true= if the guess matches the secret.
+
+#+LATEX: \answerbox{8cm}
+
+1. How does your loop stop when the player wins?
+
+   #+LATEX: \answerbox{1.5cm}
