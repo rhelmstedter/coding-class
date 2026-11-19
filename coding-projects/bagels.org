@@ -4,7 +4,7 @@
 
 Don't let the name fool you (as it did me). This is awesome. [[https://www.armoredpenguin.com/bagels/][Bagels]] is a deductive logic game originally played with paper and pencil. It is a close cousin of [[https://www.archimedes-lab.org/mastermind.html][Mastermind]] that uses digits instead of colored pegs, which makes it a natural follow-up once students have played Mastermind and thought about strategy.
 
-This version is from Al Sweigart's [[https://inventwithpython.com/bigbookpython/][Big Book of Small Python Projects]]. I modified the code so that it uses snake case instead of camel case and is formatted with f-strings. I also added a function for validating the user's guess. Students get a template that includes the instructions for the game so they don't have to type everything. The template also serves as an outline for the program.
+This version is from Al Sweigart's [[https://inventwithpython.com/bigbookpython/][Big Book of Small Python Projects]]. I modified the code so that it uses snake case instead of camel case and is formatted with f-strings. I also added a function for validating the user's guess, and moved the win check into =main()= so the guess is only compared to the secret number once. Students get a template that includes the instructions for the game so they don't have to type everything. The template also serves as an outline for the program.
 
 * Files
 
@@ -63,10 +63,8 @@ Shuffling a list of the ten digits and taking the first =NUM_DIGITS= guarantees 
 #+begin_src python
 def generate_secret_num() -> str:
     """Return a string made up of NUM_DIGITS unique random digits."""
-    numbers = list("0123456789")  # Create a list of digits 0 to 9.
-    random.shuffle(numbers)  # Shuffle them into random order.
-
-    # Join the first NUM_DIGITS digits in the list into the secret number.
+    numbers = list("0123456789")
+    random.shuffle(numbers)
     return "".join(numbers[:NUM_DIGITS])
 
 
@@ -96,19 +94,14 @@ def get_guess() -> str:
 #+begin_src python
 def get_clues(guess: str, secret_num: str) -> str:
     """Return a string with the Pico, Fermi, Bagels clues for a guess."""
-    if guess == secret_num:
-        return "You got it!"
     clues = []
     for guess_digit, secret_digit in zip(guess, secret_num):
         if guess_digit == secret_digit:
-            # A correct digit is in the correct place.
             clues.append("Fermi")
         elif guess_digit in secret_num:
-            # A correct digit is in the incorrect place.
             clues.append("Pico")
     if len(clues) == 0:
-        return "Bagels"  # There are no correct digits at all.
-    # Sort the clues so their order doesn't give away information.
+        return "Bagels"
     clues.sort()
     return " ".join(clues)
 
@@ -117,37 +110,31 @@ def get_clues(guess: str, secret_num: str) -> str:
 
 ** =main()=
 
-The outer loop is one full game. The inner loop is one guess.
+The outer loop is one full game. The inner loop is one guess. A correct guess ends the inner loop early, so =get_clues()= only ever sees wrong guesses. If the loop runs all the way out, =num_guesses= ends past =MAX_GUESSES= and the player lost.
 
 #+begin_src python
 def main() -> None:
     """Run the game loop."""
-    # Print the instructions outside the game loop.
     print(INSTRUCTIONS)
-    while True:  # Main game loop.
-        # Create the secret number.
+    while True:
         secret_num = generate_secret_num()
         print(f"I have thought of a number that is {NUM_DIGITS} digits long.")
         print(f"You have {MAX_GUESSES} guesses to get it.")
 
-        # Keep asking for guesses until the player wins or runs out.
         num_guesses = 1
         while num_guesses <= MAX_GUESSES:
             print(f"Guess #{num_guesses}: ")
             guess = get_guess()
-
-            # Get the clues based on the guess.
-            clues = get_clues(guess, secret_num)
-            print(clues)
+            if guess == secret_num:
+                print("You got it!")
+                break
+            print(get_clues(guess, secret_num))
             num_guesses += 1
 
-            if guess == secret_num:
-                break  # They're correct, so break out of this loop.
-            if num_guesses > MAX_GUESSES:
-                print("You ran out of guesses.")
-                print(f"The answer was {secret_num}.")
+        if num_guesses > MAX_GUESSES:
+            print("You ran out of guesses.")
+            print(f"The answer was {secret_num}.")
 
-        # Ask the player if they want to play again.
         print("Do you want to play again? (yes or no)")
         if not input("> ").lower().startswith("y"):
             break
@@ -159,7 +146,6 @@ def main() -> None:
 ** Run
 
 #+begin_src python
-# If the program is run (instead of imported), run the game:
 if __name__ == "__main__":
     main()
 

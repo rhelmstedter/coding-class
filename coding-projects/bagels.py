@@ -21,10 +21,8 @@ clues would be Fermi Pico.
 
 def generate_secret_num() -> str:
     """Return a string made up of NUM_DIGITS unique random digits."""
-    numbers = list("0123456789")  # Create a list of digits 0 to 9.
-    random.shuffle(numbers)  # Shuffle them into random order.
-
-    # Join the first NUM_DIGITS digits in the list into the secret number.
+    numbers = list("0123456789")
+    random.shuffle(numbers)
     return "".join(numbers[:NUM_DIGITS])
 
 
@@ -40,57 +38,45 @@ def get_guess() -> str:
 
 def get_clues(guess: str, secret_num: str) -> str:
     """Return a string with the Pico, Fermi, Bagels clues for a guess."""
-    if guess == secret_num:
-        return "You got it!"
     clues = []
     for guess_digit, secret_digit in zip(guess, secret_num):
         if guess_digit == secret_digit:
-            # A correct digit is in the correct place.
             clues.append("Fermi")
         elif guess_digit in secret_num:
-            # A correct digit is in the incorrect place.
             clues.append("Pico")
     if len(clues) == 0:
-        return "Bagels"  # There are no correct digits at all.
-    # Sort the clues so their order doesn't give away information.
+        return "Bagels"
     clues.sort()
     return " ".join(clues)
 
 
 def main() -> None:
     """Run the game loop."""
-    # Print the instructions outside the game loop.
     print(INSTRUCTIONS)
-    while True:  # Main game loop.
-        # Create the secret number.
+    while True:
         secret_num = generate_secret_num()
         print(f"I have thought of a number that is {NUM_DIGITS} digits long.")
         print(f"You have {MAX_GUESSES} guesses to get it.")
 
-        # Keep asking for guesses until the player wins or runs out.
         num_guesses = 1
         while num_guesses <= MAX_GUESSES:
             print(f"Guess #{num_guesses}: ")
             guess = get_guess()
-
-            # Get the clues based on the guess.
-            clues = get_clues(guess, secret_num)
-            print(clues)
+            if guess == secret_num:
+                print("You got it!")
+                break
+            print(get_clues(guess, secret_num))
             num_guesses += 1
 
-            if guess == secret_num:
-                break  # They're correct, so break out of this loop.
-            if num_guesses > MAX_GUESSES:
-                print("You ran out of guesses.")
-                print(f"The answer was {secret_num}.")
+        if num_guesses > MAX_GUESSES:
+            print("You ran out of guesses.")
+            print(f"The answer was {secret_num}.")
 
-        # Ask the player if they want to play again.
         print("Do you want to play again? (yes or no)")
         if not input("> ").lower().startswith("y"):
             break
     print("Thanks for playing!")
 
 
-# If the program is run (instead of imported), run the game:
 if __name__ == "__main__":
     main()
