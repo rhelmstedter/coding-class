@@ -38,14 +38,8 @@ def test_remove_letter():
     assert remove_letter("bagels", "z") == "bagels"
 
 
-def test_pick_three():
-    pick_three = _get("pick_three")
-    results = set()
-    for _ in range(30):
-        result = pick_three(list("0123456789"))
-        assert isinstance(result, str), "Return a string, not a list."
-        assert len(result) == 3, "Return exactly three characters."
-        assert len(set(result)) == 3, "No character should repeat."
-        assert all(char in "0123456789" for char in result)
-        results.add(result)
-    assert len(results) > 1, "Shuffle the list so the result changes from run to run."
+def test_make_acronym():
+    make_acronym = _get("make_acronym")
+    assert make_acronym(["portable", "network", "graphics"]) == "PNG"
+    assert make_acronym(["Del", "Sol", "High", "School"]) == "DSHS"
+    assert make_acronym(["be"]) == "B"
