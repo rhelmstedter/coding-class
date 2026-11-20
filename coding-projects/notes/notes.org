@@ -1,0 +1,30 @@
+#+title: Python Notes
+
+These are the instructional Colab notebooks for the Python unit, listed in the order I present them. Each notebook relies only on the notes before it and on itself, so the order matters: moving a notebook earlier means checking that nothing in it depends on a later one. The notebooks live in the [[https://drive.google.com/drive/folders/1__-vMjIKbluCMMVONzeXfEQw8VQTiQsv][Notes folder]] in Drive, and every title starts with "Python - " so notes stand apart from assignments. The "Followed by" column marks where each assignment falls in the sequence.
+
+* Sequence
+
+|  # | Notes                                    | Followed by                                         | Tests                                       |
+|----+------------------------------------------+-----------------------------------------------------+---------------------------------------------|
+|  1 | [[https://colab.research.google.com/drive/1WCXz-BRIh_iDigZ9zjnIcb0HRjZw2vrL][Introduction to Python]]                   |                                                     |                                             |
+|  2 | [[https://colab.research.google.com/drive/1bX0gOv4ws4ips_Biny7ZmJtQECIHJwxO][print(), f-strings, input()]]              | [[file:../introduction_paragraph.org][Introduction Paragraph]]                              |                                             |
+|  3 | [[https://colab.research.google.com/drive/1Zt-VvdLdjH4NbGD-wuEkhxdEkqjXuxiB][Multiline Strings]]                        | [[file:../madlibs.org][Madlibs]]                                             |                                             |
+|  4 | [[https://colab.research.google.com/drive/17I6H8VjjOOMsbKkhJyWckeKAnEajM0XL][Booleans and Conditionals]]                |                                                     |                                             |
+|  5 | [[https://colab.research.google.com/drive/1dyKsqGGLNpcF93vxGzEOkWNMiTy1kKWO][String Methods]]                           | Chatbot                                             |                                             |
+|  6 | [[https://colab.research.google.com/drive/1SH6znJ-w8qcdUWRqHjht1hcesicMeSF7][Lists]]                                    |                                                     |                                             |
+|  7 | [[https://colab.research.google.com/drive/1ohpIF4w5bPLLLZVncgruaq_8UZVJ3539][Loops]]                                    |                                                     |                                             |
+|  8 | [[https://thepythoncodingbook.com/understanding-programming-the-white-room/][The White Room]] (Stephen Gruppetta)      |                                                     |                                             |
+|  9 | [[https://colab.research.google.com/drive/1xPIa5zyBUVzGdQ9Dd4U-n6lqGQ_0rVth][Dictionaries]]                             | [[file:../gpa-calculator/miniproject2.org][GPA Calculator]]                                      |                                             |
+| 10 | [[https://colab.research.google.com/drive/1spAtxrrvs9RnctjJs8fsulw5l0tBDmbj][Handling Bad Input]]                       |                                                     |                                             |
+| 11 | [[https://colab.research.google.com/drive/1roMK4dSO7FVx--tXlFmOKBWs4Gc4Im-I][Modules]]                                  |                                                     |                                             |
+| 12 | [[https://colab.research.google.com/drive/1BYdh_q5EhkeLyP3WAjwYnXHddTT2ikjp][Defining Functions]]                       |                                                     |                                             |
+| 13 | [[https://colab.research.google.com/drive/1HwVHOFm6od5oBMq_h8Yydbs17MufTW2J][Sequences]]                                | [[file:../chatbot-2.0/miniproject3.org][Chatbot 2.0]] (proposal, then project)              |                                             |
+| 14 | [[https://colab.research.google.com/drive/1doZwAjgZVv9FLiZb3jLx2R10NDqqtGIH][Docstrings, Type Hints, and Constants]]    |                                                     | [[file:docstrings/test_docstrings_practice.py][=test_docstrings_practice.py=]] |
+| 15 | [[https://colab.research.google.com/drive/1StPSwytR49jsBVyE1syOwZjWD2jnYzPb][Joining Strings with .join()]]             |                                                     | [[file:join/test_join_practice.py][=test_join_practice.py=]]       |
+| 16 | [[https://colab.research.google.com/drive/1_ukLWe_fZJGfZdmdBjtxEn38bVwxtW6P][The main() Function]]                      |                                                     | [[file:main/test_main_practice.py][=test_main_practice.py=]]       |
+| 17 | [[https://colab.research.google.com/drive/1EhWTp9SzK96089qHLVCBR3BspZP3Cl6P][More List Tools]]                          | Mastermind, then [[file:../bagels.org][Bagels]] ([[file:../cryptography.org][Cryptography]])          | [[file:list-tools/test_list_tools_practice.py][=test_list_tools_practice.py=]] |
+| 18 | [[https://colab.research.google.com/drive/1mVAabn6wYzCgO98Q0KFSILrmVHNnEC3d][Modulo]]                                   | Caesar cipher ([[file:../cryptography.org][Cryptography]])                         | [[file:modulo/test_modulo_practice.py][=test_modulo_practice.py=]]     |
+
+* Tests
+
+Notes are tested only after the Newbie Bites have introduced pytest. A tested notebook's "Your Turn" section saves the student's code with =%%writefile=, and its Run Tests cell downloads the matching test file from =main= and runs it. The results are feedback for the student only; nothing is reported or graded. Each test file lives in a subfolder here named for its notebook, so a change to a test goes live as soon as it is merged into =main=.
